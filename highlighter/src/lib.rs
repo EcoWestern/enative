@@ -1,5 +1,5 @@
-//! A syntax highlighter for iced.
-use iced_core as core;
+//! A syntax highlighter for enative.
+use enative_core as core;
 
 use crate::core::Color;
 use crate::core::font::{self, Font};

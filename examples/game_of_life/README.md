@@ -7,7 +7,7 @@ It runs a simulation in a background thread while allowing interaction with a `C
 The __[`main`]__ file contains the relevant code of the example.
 
 <div align="center">
-  <img src="https://iced.rs/examples/game_of_life.gif">
+  <img src="https://enative.rs/examples/game_of_life.gif">
 </div>
 
 You can run it with `cargo run`:

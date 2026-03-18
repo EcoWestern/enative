@@ -2,10 +2,10 @@
 //!
 //! # Example
 //! ```no_run
-//! # mod iced { pub mod widget { pub use iced_widget::*; } }
+//! # mod enative { pub mod widget { pub use enative_widget::*; } }
 //! # pub type State = ();
-//! # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-//! use iced::widget::button;
+//! # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+//! use enative::widget::button;
 //!
 //! #[derive(Clone)]
 //! enum Message {
@@ -35,10 +35,10 @@ use crate::core::{
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::button;
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::button;
 ///
 /// #[derive(Clone)]
 /// enum Message {
@@ -54,10 +54,10 @@ use crate::core::{
 /// be disabled:
 ///
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::button;
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::button;
 ///
 /// #[derive(Clone)]
 /// enum Message {
@@ -507,8 +507,8 @@ impl Default for Style {
 ///
 /// # Example
 /// ```no_run
-/// # use iced_widget::core::{Color, Background};
-/// # use iced_widget::button::{Catalog, Status, Style};
+/// # use enative_widget::core::{Color, Background};
+/// # use enative_widget::button::{Catalog, Status, Style};
 /// # struct MyTheme;
 /// #[derive(Debug, Default)]
 /// pub enum ButtonClass {

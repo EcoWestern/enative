@@ -2,17 +2,17 @@ mod changelog;
 
 use crate::changelog::Changelog;
 
-use iced::font;
-use iced::widget::{
+use enative::font;
+use enative::widget::{
     button, center, column, container, markdown, pick_list, progress_bar, rich_text, row,
     scrollable, span, stack, text, text_input,
 };
-use iced::{Center, Element, Fill, FillPortion, Font, Task, Theme};
+use enative::{Center, Element, Fill, FillPortion, Font, Task, Theme};
 
-pub fn main() -> iced::Result {
+pub fn main() -> enative::Result {
     tracing_subscriber::fmt::init();
 
-    iced::application(Generator::new, Generator::update, Generator::view)
+    enative::application(Generator::new, Generator::update, Generator::view)
         .theme(Generator::theme)
         .run()
 }
@@ -191,7 +191,7 @@ impl Generator {
                 }
             }
             Message::OpenPullRequest(id) => {
-                let _ = webbrowser::open(&format!("https://github.com/iced-rs/iced/pull/{id}"));
+                let _ = webbrowser::open(&format!("https://github.com/enative-rs/enative/pull/{id}"));
 
                 Task::none()
             }
@@ -204,7 +204,7 @@ impl Generator {
 
                 Task::none()
             }
-            Message::Quit => iced::exit(),
+            Message::Quit => enative::exit(),
         }
     }
 

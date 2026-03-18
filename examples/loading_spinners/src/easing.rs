@@ -1,4 +1,4 @@
-use iced::Point;
+use enative::Point;
 
 use lyon_algorithms::measure::PathMeasurements;
 use lyon_algorithms::path::{Path, builder::NoAttributes, path::BuilderImpl};

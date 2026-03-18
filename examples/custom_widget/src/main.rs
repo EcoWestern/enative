@@ -1,11 +1,11 @@
 //! This example showcases a simple native custom widget that draws a circle.
 mod circle {
-    use iced::advanced::layout::{self, Layout};
-    use iced::advanced::renderer;
-    use iced::advanced::widget::{self, Widget};
-    use iced::border;
-    use iced::mouse;
-    use iced::{Color, Element, Length, Rectangle, Size};
+    use enative::advanced::layout::{self, Layout};
+    use enative::advanced::renderer;
+    use enative::advanced::widget::{self, Widget};
+    use enative::border;
+    use enative::mouse;
+    use enative::{Color, Element, Length, Rectangle, Size};
 
     pub struct Circle {
         radius: f32,
@@ -73,11 +73,11 @@ mod circle {
 }
 
 use circle::circle;
-use iced::widget::{center, column, slider, text};
-use iced::{Center, Element};
+use enative::widget::{center, column, slider, text};
+use enative::{Center, Element};
 
-pub fn main() -> iced::Result {
-    iced::run(Example::update, Example::view)
+pub fn main() -> enative::Result {
+    enative::run(Example::update, Example::view)
 }
 
 struct Example {

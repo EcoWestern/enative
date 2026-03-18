@@ -189,7 +189,7 @@ pub enum Action {
     RelayoutAll,
 }
 
-/// A window managed by iced.
+/// A window managed by enative.
 ///
 /// It implements both [`HasWindowHandle`] and [`HasDisplayHandle`].
 pub trait Window: HasWindowHandle + HasDisplayHandle {}

@@ -1,13 +1,13 @@
 //! Show a circular progress indicator.
-use iced::advanced::layout;
-use iced::advanced::renderer;
-use iced::advanced::widget::tree::{self, Tree};
-use iced::advanced::{self, Layout, Shell, Widget};
-use iced::mouse;
-use iced::time::Instant;
-use iced::widget::canvas;
-use iced::window;
-use iced::{Background, Color, Element, Event, Length, Radians, Rectangle, Renderer, Size, Vector};
+use enative::advanced::layout;
+use enative::advanced::renderer;
+use enative::advanced::widget::tree::{self, Tree};
+use enative::advanced::{self, Layout, Shell, Widget};
+use enative::mouse;
+use enative::time::Instant;
+use enative::widget::canvas;
+use enative::window;
+use enative::{Background, Color, Element, Event, Length, Radians, Rectangle, Renderer, Size, Vector};
 
 use super::easing::{self, Easing};
 
@@ -325,7 +325,7 @@ where
         });
 
         renderer.with_translation(Vector::new(bounds.x, bounds.y), |renderer| {
-            use iced::advanced::graphics::geometry::Renderer as _;
+            use enative::advanced::graphics::geometry::Renderer as _;
 
             renderer.draw_geometry(geometry);
         });
@@ -371,7 +371,7 @@ pub trait StyleSheet {
     fn appearance(&self, style: &Self::Style) -> Appearance;
 }
 
-impl StyleSheet for iced::Theme {
+impl StyleSheet for enative::Theme {
     type Style = ();
 
     fn appearance(&self, _style: &Self::Style) -> Appearance {

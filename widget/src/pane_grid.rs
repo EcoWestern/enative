@@ -1,6 +1,6 @@
 //! Pane grids let your users split regions of your application and organize layout dynamically.
 //!
-//! ![Pane grid - Iced](https://iced.rs/examples/pane_grid.gif)
+//! ![Pane grid - enative](https://enative.rs/examples/pane_grid.gif)
 //!
 //! This distribution of space is common in tiling window managers (like
 //! [`awesome`](https://awesomewm.org/), [`i3`](https://i3wm.org/), or even
@@ -18,10 +18,10 @@
 //!
 //! # Example
 //! ```no_run
-//! # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-//! # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+//! # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+//! # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 //! #
-//! use iced::widget::{pane_grid, text};
+//! use enative::widget::{pane_grid, text};
 //!
 //! struct State {
 //!     panes: pane_grid::State<Pane>,
@@ -52,7 +52,7 @@
 //! The [`pane_grid` example] showcases how to use a [`PaneGrid`] with resizing,
 //! drag and drop, and hotkey support.
 //!
-//! [`pane_grid` example]: https://github.com/iced-rs/iced/tree/master/examples/pane_grid
+//! [`pane_grid` example]: https://github.com/enative-rs/enative/tree/master/examples/pane_grid
 mod axis;
 mod configuration;
 mod content;
@@ -98,7 +98,7 @@ const THICKNESS_RATIO: f32 = 25.0;
 /// A collection of panes distributed using either vertical or horizontal splits
 /// to completely fill the space available.
 ///
-/// ![Pane grid - Iced](https://iced.rs/examples/pane_grid.gif)
+/// ![Pane grid - enative](https://enative.rs/examples/pane_grid.gif)
 ///
 /// This distribution of space is common in tiling window managers (like
 /// [`awesome`](https://awesomewm.org/), [`i3`](https://i3wm.org/), or even
@@ -116,10 +116,10 @@ const THICKNESS_RATIO: f32 = 25.0;
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::{pane_grid, text};
+/// use enative::widget::{pane_grid, text};
 ///
 /// struct State {
 ///     panes: pane_grid::State<Pane>,

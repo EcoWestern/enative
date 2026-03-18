@@ -1,14 +1,14 @@
-use iced::mouse;
-use iced::time::{self, milliseconds};
-use iced::widget::canvas;
-use iced::{Color, Element, Fill, Font, Point, Rectangle, Renderer, Subscription, Theme};
+use enative::mouse;
+use enative::time::{self, milliseconds};
+use enative::widget::canvas;
+use enative::{Color, Element, Fill, Font, Point, Rectangle, Renderer, Subscription, Theme};
 
 use std::cell::RefCell;
 
-pub fn main() -> iced::Result {
+pub fn main() -> enative::Result {
     tracing_subscriber::fmt::init();
 
-    iced::application(TheMatrix::default, TheMatrix::update, TheMatrix::view)
+    enative::application(TheMatrix::default, TheMatrix::update, TheMatrix::view)
         .subscription(TheMatrix::subscription)
         .run()
 }

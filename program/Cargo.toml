@@ -1,6 +1,6 @@
 [package]
-name = "iced_program"
-description = "The definition of an iced program"
+name = "enative_program"
+description = "The definition of an enative program"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
@@ -19,5 +19,5 @@ debug = []
 time-travel = []
 
 [dependencies]
-iced_graphics.workspace = true
-iced_runtime.workspace = true
+enative_graphics.workspace = true
+enative_runtime.workspace = true

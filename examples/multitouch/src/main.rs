@@ -1,18 +1,18 @@
 //! This example shows how to use touch events in `Canvas` to draw
 //! a circle around each fingertip. This only works on touch-enabled
 //! computers like Microsoft Surface.
-use iced::mouse;
-use iced::touch;
-use iced::widget::canvas::stroke::{self, Stroke};
-use iced::widget::canvas::{self, Canvas, Event, Geometry};
-use iced::{Color, Element, Fill, Point, Rectangle, Renderer, Theme};
+use enative::mouse;
+use enative::touch;
+use enative::widget::canvas::stroke::{self, Stroke};
+use enative::widget::canvas::{self, Canvas, Event, Geometry};
+use enative::{Color, Element, Fill, Point, Rectangle, Renderer, Theme};
 
 use std::collections::HashMap;
 
-pub fn main() -> iced::Result {
+pub fn main() -> enative::Result {
     tracing_subscriber::fmt::init();
 
-    iced::application(Multitouch::default, Multitouch::update, Multitouch::view)
+    enative::application(Multitouch::default, Multitouch::update, Multitouch::view)
         .centered()
         .run()
 }

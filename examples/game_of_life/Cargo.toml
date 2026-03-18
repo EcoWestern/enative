@@ -6,8 +6,8 @@ edition = "2024"
 publish = false
 
 [dependencies]
-iced.workspace = true
-iced.features = ["debug", "canvas", "tokio"]
+enative.workspace = true
+enative.features = ["debug", "canvas", "tokio"]
 
 itertools = "0.12"
 rustc-hash.workspace = true

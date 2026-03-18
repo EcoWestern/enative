@@ -1,6 +1,6 @@
-use iced_wgpu::Renderer;
-use iced_widget::{bottom, column, row, slider, text, text_input};
-use iced_winit::core::{Color, Element, Theme};
+use enative_wgpu::Renderer;
+use enative_widget::{bottom, column, row, slider, text, text_input};
+use enative_winit::core::{Color, Element, Theme};
 
 pub struct Controls {
     background_color: Color,

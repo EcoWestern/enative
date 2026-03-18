@@ -11,7 +11,7 @@ use crate::window;
 /// _**Note:** This type is largely incomplete! If you need to track
 /// additional events, feel free to [open an issue] and share your use case!_
 ///
-/// [open an issue]: https://github.com/iced-rs/iced/issues
+/// [open an issue]: https://github.com/enative-rs/enative/issues
 #[derive(Debug, Clone, PartialEq)]
 pub enum Event {
     /// A keyboard event
@@ -49,7 +49,7 @@ impl Status {
     /// `Captured` takes precedence over `Ignored`:
     ///
     /// ```
-    /// use iced_core::event::Status;
+    /// use enative_core::event::Status;
     ///
     /// assert_eq!(Status::Ignored.merge(Status::Ignored), Status::Ignored);
     /// assert_eq!(Status::Ignored.merge(Status::Captured), Status::Captured);

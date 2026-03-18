@@ -2,10 +2,10 @@
 //!
 //! # Example
 //! ```no_run
-//! # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-//! # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+//! # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+//! # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 //! #
-//! use iced::widget::checkbox;
+//! use enative::widget::checkbox;
 //!
 //! struct State {
 //!    is_checked: bool,
@@ -30,7 +30,7 @@
 //!     }
 //! }
 //! ```
-//! ![Checkbox drawn by `iced_wgpu`](https://github.com/iced-rs/iced/blob/7760618fb112074bc40b148944521f312152012a/docs/images/checkbox.png?raw=true)
+//! ![Checkbox drawn by `enative_wgpu`](https://github.com/enative-rs/enative/blob/7760618fb112074bc40b148944521f312152012a/docs/images/checkbox.png?raw=true)
 use crate::core::alignment;
 use crate::core::layout;
 use crate::core::mouse;
@@ -50,10 +50,10 @@ use crate::core::{
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::checkbox;
+/// use enative::widget::checkbox;
 ///
 /// struct State {
 ///    is_checked: bool,
@@ -78,7 +78,7 @@ use crate::core::{
 ///     }
 /// }
 /// ```
-/// ![Checkbox drawn by `iced_wgpu`](https://github.com/iced-rs/iced/blob/7760618fb112074bc40b148944521f312152012a/docs/images/checkbox.png?raw=true)
+/// ![Checkbox drawn by `enative_wgpu`](https://github.com/enative-rs/enative/blob/7760618fb112074bc40b148944521f312152012a/docs/images/checkbox.png?raw=true)
 pub struct Checkbox<'a, Message, Theme = crate::Theme, Renderer = crate::Renderer>
 where
     Renderer: text::Renderer,

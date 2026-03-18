@@ -1,4 +1,4 @@
-use iced::futures;
+use enative::futures;
 
 use futures::channel::mpsc;
 use futures::{SinkExt, StreamExt};

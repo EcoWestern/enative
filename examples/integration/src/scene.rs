@@ -1,5 +1,5 @@
-use iced_wgpu::wgpu;
-use iced_winit::core::Color;
+use enative_wgpu::wgpu;
+use enative_winit::core::Color;
 
 pub struct Scene {
     pipeline: wgpu::RenderPipeline,

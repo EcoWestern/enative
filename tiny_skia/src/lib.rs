@@ -16,9 +16,9 @@ mod vector;
 #[cfg(feature = "geometry")]
 pub mod geometry;
 
-use iced_debug as debug;
-pub use iced_graphics as graphics;
-pub use iced_graphics::core;
+use enative_debug as debug;
+pub use enative_graphics as graphics;
+pub use enative_graphics::core;
 
 pub use layer::Layer;
 pub use primitive::Primitive;
@@ -33,10 +33,10 @@ use crate::graphics::Viewport;
 use crate::graphics::compositor;
 use crate::graphics::text::{Editor, Paragraph};
 
-/// A [`tiny-skia`] graphics renderer for [`iced`].
+/// A [`tiny-skia`] graphics renderer for [`enative`].
 ///
 /// [`tiny-skia`]: https://github.com/RazrFalcon/tiny-skia
-/// [`iced`]: https://github.com/iced-rs/iced
+/// [`enative`]: https://github.com/enative-rs/enative
 #[derive(Debug)]
 pub struct Renderer {
     settings: renderer::Settings,
@@ -241,10 +241,10 @@ impl core::text::Renderer for Renderer {
     type Paragraph = Paragraph;
     type Editor = Editor;
 
-    const ICON_FONT: Font = Font::new("Iced-Icons");
+    const ICON_FONT: Font = Font::new("enative-Icons");
     const CHECKMARK_ICON: char = '\u{f00c}';
     const ARROW_DOWN_ICON: char = '\u{e800}';
-    const ICED_LOGO: char = '\u{e801}';
+    const ENATIVE_LOGO: char = '\u{e801}';
     const SCROLL_UP_ICON: char = '\u{e802}';
     const SCROLL_DOWN_ICON: char = '\u{e803}';
     const SCROLL_LEFT_ICON: char = '\u{e804}';
@@ -342,11 +342,11 @@ impl graphics::geometry::Renderer for Renderer {
 
 impl graphics::mesh::Renderer for Renderer {
     fn draw_mesh(&mut self, _mesh: graphics::Mesh) {
-        log::warn!("iced_tiny_skia does not support drawing meshes");
+        log::warn!("enative_tiny_skia does not support drawing meshes");
     }
 
-    fn draw_mesh_cache(&mut self, _cache: iced_graphics::mesh::Cache) {
-        log::warn!("iced_tiny_skia does not support drawing meshes");
+    fn draw_mesh_cache(&mut self, _cache: enative_graphics::mesh::Cache) {
+        log::warn!("enative_tiny_skia does not support drawing meshes");
     }
 }
 

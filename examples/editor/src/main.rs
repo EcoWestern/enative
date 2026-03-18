@@ -1,19 +1,19 @@
-use iced::highlighter;
-use iced::keyboard;
-use iced::widget::{
+use enative::highlighter;
+use enative::keyboard;
+use enative::widget::{
     button, center_x, column, container, operation, pick_list, row, space, text, text_editor,
     toggler, tooltip,
 };
-use iced::window;
-use iced::{Center, Element, Fill, Font, Task, Theme, Window};
+use enative::window;
+use enative::{Center, Element, Fill, Font, Task, Theme, Window};
 
 use std::ffi;
 use std::io;
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
 
-pub fn main() -> iced::Result {
-    iced::application(Editor::new, Editor::update, Editor::view)
+pub fn main() -> enative::Result {
+    enative::application(Editor::new, Editor::update, Editor::view)
         .theme(Editor::theme)
         .font(include_bytes!("../fonts/icons.ttf").as_slice())
         .default_font(Font::MONOSPACE)

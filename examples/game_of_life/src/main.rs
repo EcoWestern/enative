@@ -5,14 +5,14 @@ mod preset;
 use grid::Grid;
 use preset::Preset;
 
-use iced::time::{self, milliseconds};
-use iced::widget::{button, checkbox, column, container, pick_list, row, slider, text};
-use iced::{Center, Element, Fill, Function, Subscription, Task, Theme};
+use enative::time::{self, milliseconds};
+use enative::widget::{button, checkbox, column, container, pick_list, row, slider, text};
+use enative::{Center, Element, Fill, Function, Subscription, Task, Theme};
 
-pub fn main() -> iced::Result {
+pub fn main() -> enative::Result {
     tracing_subscriber::fmt::init();
 
-    iced::application(GameOfLife::default, GameOfLife::update, GameOfLife::view)
+    enative::application(GameOfLife::default, GameOfLife::update, GameOfLife::view)
         .subscription(GameOfLife::subscription)
         .theme(Theme::Dark)
         .centered()
@@ -176,14 +176,14 @@ fn view_controls<'a>(
 
 mod grid {
     use crate::Preset;
-    use iced::alignment;
-    use iced::mouse;
-    use iced::time::{Duration, Instant};
-    use iced::touch;
-    use iced::widget::canvas;
-    use iced::widget::canvas::{Cache, Canvas, Event, Frame, Geometry, Path, Text};
-    use iced::widget::text;
-    use iced::{Color, Element, Fill, Point, Rectangle, Renderer, Size, Theme, Vector};
+    use enative::alignment;
+    use enative::mouse;
+    use enative::time::{Duration, Instant};
+    use enative::touch;
+    use enative::widget::canvas;
+    use enative::widget::canvas::{Cache, Canvas, Event, Frame, Geometry, Path, Text};
+    use enative::widget::text;
+    use enative::{Color, Element, Fill, Point, Rectangle, Renderer, Size, Theme, Vector};
     use rustc_hash::{FxHashMap, FxHashSet};
     use std::ops::RangeInclusive;
 

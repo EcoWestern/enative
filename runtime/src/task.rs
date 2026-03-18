@@ -17,7 +17,7 @@ use std::thread;
 #[doc(no_inline)]
 pub use sipper::{Never, Sender, Sipper, Straw, sipper, stream};
 
-/// A set of concurrent actions to be performed by the iced runtime.
+/// A set of concurrent actions to be performed by the enative runtime.
 ///
 /// A [`Task`] _may_ produce a bunch of values of type `T`.
 #[must_use = "`Task` must be returned to the runtime to take effect; normally in your `update` or `new` functions."]

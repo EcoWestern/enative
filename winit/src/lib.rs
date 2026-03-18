@@ -1,8 +1,8 @@
-//! A windowing shell for Iced, on top of [`winit`].
+//! A windowing shell for enative, on top of [`winit`].
 //!
-//! ![The native path of the Iced ecosystem](https://github.com/iced-rs/iced/blob/0525d76ff94e828b7b21634fa94a747022001c83/docs/graphs/native.png?raw=true)
+//! ![The native path of the enative ecosystem](https://github.com/enative-rs/enative/blob/0525d76ff94e828b7b21634fa94a747022001c83/docs/graphs/native.png?raw=true)
 //!
-//! `iced_winit` offers some convenient abstractions on top of [`iced_runtime`]
+//! `enative_winit` offers some convenient abstractions on top of [`enative_runtime`]
 //! to quickstart development when using [`winit`].
 //!
 //! It exposes a renderer-agnostic [`Program`] trait that can be implemented
@@ -11,16 +11,16 @@
 //! Additionally, a [`conversion`] module is available for users that decide to
 //! implement a custom event loop.
 //!
-//! [`iced_runtime`]: https://github.com/iced-rs/iced/tree/master/runtime
+//! [`enative_runtime`]: https://github.com/enative-rs/enative/tree/master/runtime
 //! [`winit`]: https://github.com/rust-windowing/winit
 //! [`conversion`]: crate::conversion
 #![doc(
-    html_logo_url = "https://raw.githubusercontent.com/iced-rs/iced/9ab6923e943f784985e9ef9ca28b10278297225d/docs/logo.svg"
+    html_logo_url = "https://raw.githubusercontent.com/enative-rs/enative/9ab6923e943f784985e9ef9ca28b10278297225d/docs/logo.svg"
 )]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-pub use iced_debug as debug;
-pub use iced_program as program;
-pub use iced_runtime as runtime;
+pub use enative_debug as debug;
+pub use enative_program as program;
+pub use enative_runtime as runtime;
 pub use program::core;
 pub use program::graphics;
 pub use runtime::futures;

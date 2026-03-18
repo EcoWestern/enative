@@ -214,14 +214,14 @@ async fn run(
 
 /// Returns the address of the beacon server in this environment.
 ///
-/// The value of the `ICED_BEACON_SERVER_ADDRESS` env variable will
+/// The value of the `enative_BEACON_SERVER_ADDRESS` env variable will
 /// be returned, if defined.
 ///
 /// Otherwise, a default local server address will be returned.
 pub fn server_address_from_env() -> String {
     const DEFAULT_ADDRESS: &str = "127.0.0.1:9167";
 
-    std::env::var("ICED_BEACON_SERVER_ADDRESS").unwrap_or_else(|_| String::from(DEFAULT_ADDRESS))
+    std::env::var("enative_BEACON_SERVER_ADDRESS").unwrap_or_else(|_| String::from(DEFAULT_ADDRESS))
 }
 
 async fn _connect() -> Result<net::TcpStream, io::Error> {

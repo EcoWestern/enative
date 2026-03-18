@@ -1,6 +1,6 @@
 [package]
-name = "iced_beacon"
-description = "A client/server protocol to monitor and supervise iced applications"
+name = "enative_beacon"
+description = "A client/server protocol to monitor and supervise enative applications"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -11,8 +11,8 @@ categories.workspace = true
 keywords.workspace = true
 
 [dependencies]
-iced_core.workspace = true
-iced_core.features = ["serde"]
+enative_core.workspace = true
+enative_core.features = ["serde"]
 
 bincode.workspace = true
 futures.workspace = true

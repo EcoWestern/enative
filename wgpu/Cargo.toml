@@ -1,6 +1,6 @@
 [package]
-name = "iced_wgpu"
-description = "A renderer for iced on top of wgpu"
+name = "enative_wgpu"
+description = "A renderer for enative on top of wgpu"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -19,16 +19,16 @@ all-features = true
 
 [features]
 default = ["wgpu/default"]
-geometry = ["iced_graphics/geometry", "lyon"]
-image = ["iced_graphics/image"]
-svg = ["iced_graphics/svg", "resvg/text"]
-web-colors = ["iced_graphics/web-colors"]
+geometry = ["enative_graphics/geometry", "lyon"]
+image = ["enative_graphics/image"]
+svg = ["enative_graphics/svg", "resvg/text"]
+web-colors = ["enative_graphics/web-colors"]
 webgl = ["wgpu/webgl"]
 strict-assertions = []
 
 [dependencies]
-iced_debug.workspace = true
-iced_graphics.workspace = true
+enative_debug.workspace = true
+enative_graphics.workspace = true
 
 bitflags.workspace = true
 bytemuck.workspace = true

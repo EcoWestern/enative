@@ -1,9 +1,9 @@
-use iced::system;
-use iced::widget::{button, center, column, text};
-use iced::{Element, Task};
+use enative::system;
+use enative::widget::{button, center, column, text};
+use enative::{Element, Task};
 
-pub fn main() -> iced::Result {
-    iced::application(Example::new, Example::update, Example::view).run()
+pub fn main() -> enative::Result {
+    enative::application(Example::new, Example::update, Example::view).run()
 }
 
 #[derive(Default)]

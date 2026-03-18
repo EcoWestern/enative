@@ -102,7 +102,7 @@ where
     const SCROLL_DOWN_ICON: char = A::SCROLL_DOWN_ICON;
     const SCROLL_LEFT_ICON: char = A::SCROLL_LEFT_ICON;
     const SCROLL_RIGHT_ICON: char = A::SCROLL_RIGHT_ICON;
-    const ICED_LOGO: char = A::ICED_LOGO;
+    const ENATIVE_LOGO: char = A::ENATIVE_LOGO;
 
     fn default_font(&self) -> Self::Font {
         delegate!(self, renderer, renderer.default_font())
@@ -262,7 +262,7 @@ where
 
         let backends = backend
             .map(str::to_owned)
-            .or_else(|| env::var("ICED_BACKEND").ok());
+            .or_else(|| env::var("enative_BACKEND").ok());
 
         let mut candidates: Vec<_> = backends
             .map(|backends| {
@@ -417,12 +417,12 @@ where
 }
 
 #[cfg(feature = "wgpu-bare")]
-impl<A, B> iced_wgpu::primitive::Renderer for Renderer<A, B>
+impl<A, B> enative_wgpu::primitive::Renderer for Renderer<A, B>
 where
-    A: iced_wgpu::primitive::Renderer,
+    A: enative_wgpu::primitive::Renderer,
     B: core::Renderer,
 {
-    fn draw_primitive(&mut self, bounds: Rectangle, primitive: impl iced_wgpu::Primitive) {
+    fn draw_primitive(&mut self, bounds: Rectangle, primitive: impl enative_wgpu::Primitive) {
         match self {
             Self::Primary(renderer) => {
                 renderer.draw_primitive(bounds, primitive);

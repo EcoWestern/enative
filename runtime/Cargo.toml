@@ -1,6 +1,6 @@
 [package]
-name = "iced_runtime"
-description = "A renderer-agnostic runtime for iced"
+name = "enative_runtime"
+description = "A renderer-agnostic runtime for enative"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -11,16 +11,16 @@ categories.workspace = true
 keywords.workspace = true
 
 [features]
-selector = ["dep:iced_selector"]
-image = ["iced_core/image"]
+selector = ["dep:enative_selector"]
+image = ["enative_core/image"]
 
 [lints]
 workspace = true
 
 [dependencies]
 bytes.workspace = true
-iced_core.workspace = true
-iced_futures.workspace = true
+enative_core.workspace = true
+enative_futures.workspace = true
 
 raw-window-handle.workspace = true
 thiserror.workspace = true
@@ -28,5 +28,5 @@ thiserror.workspace = true
 sipper.workspace = true
 sipper.optional = true
 
-iced_selector.workspace = true
-iced_selector.optional = true
+enative_selector.workspace = true
+enative_selector.optional = true

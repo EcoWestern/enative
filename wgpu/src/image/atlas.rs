@@ -61,7 +61,7 @@ impl Atlas {
         };
 
         let texture = device.create_texture(&wgpu::TextureDescriptor {
-            label: Some("iced_wgpu::image texture atlas"),
+            label: Some("enative_wgpu::image texture atlas"),
             size: extent,
             mip_level_count: 1,
             sample_count: 1,
@@ -83,7 +83,7 @@ impl Atlas {
         });
 
         let texture_bind_group = device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("iced_wgpu::image texture atlas bind group"),
+            label: Some("enative_wgpu::image texture atlas bind group"),
             layout: &texture_layout,
             entries: &[wgpu::BindGroupEntry {
                 binding: 0,
@@ -446,7 +446,7 @@ impl Atlas {
         };
 
         let new_texture = device.create_texture(&wgpu::TextureDescriptor {
-            label: Some("iced_wgpu::image texture atlas"),
+            label: Some("enative_wgpu::image texture atlas"),
             size: wgpu::Extent3d {
                 width: self.size,
                 height: self.size,
@@ -509,7 +509,7 @@ impl Atlas {
         });
 
         self.texture_bind_group = Arc::new(device.create_bind_group(&wgpu::BindGroupDescriptor {
-            label: Some("iced_wgpu::image texture atlas bind group"),
+            label: Some("enative_wgpu::image texture atlas bind group"),
             layout: &self.texture_layout,
             entries: &[wgpu::BindGroupEntry {
                 binding: 0,

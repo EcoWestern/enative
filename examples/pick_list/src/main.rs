@@ -1,8 +1,8 @@
-use iced::widget::{column, pick_list, scrollable, space};
-use iced::{Center, Element, Fill};
+use enative::widget::{column, pick_list, scrollable, space};
+use enative::{Center, Element, Fill};
 
-pub fn main() -> iced::Result {
-    iced::run(Example::update, Example::view)
+pub fn main() -> enative::Result {
+    enative::run(Example::update, Example::view)
 }
 
 #[derive(Default)]

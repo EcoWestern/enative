@@ -1,13 +1,13 @@
-use iced::mouse;
-use iced::widget::canvas::{self, Canvas, Event, Geometry};
-use iced::widget::{column, row, slider, text};
-use iced::{Center, Color, Element, Fill, Point, Rectangle, Renderer, Size, Theme};
+use enative::mouse;
+use enative::widget::canvas::{self, Canvas, Event, Geometry};
+use enative::widget::{column, row, slider, text};
+use enative::{Center, Color, Element, Fill, Point, Rectangle, Renderer, Size, Theme};
 
 use rand::Rng;
 use std::fmt::Debug;
 
-fn main() -> iced::Result {
-    iced::application(
+fn main() -> enative::Result {
+    enative::application(
         SierpinskiEmulator::default,
         SierpinskiEmulator::update,
         SierpinskiEmulator::view,

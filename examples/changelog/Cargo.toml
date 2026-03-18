@@ -9,8 +9,8 @@ publish = false
 large_enum_variant = "allow"
 
 [dependencies]
-iced.workspace = true
-iced.features = ["tokio", "markdown", "highlighter", "debug"]
+enative.workspace = true
+enative.features = ["tokio", "markdown", "highlighter", "debug"]
 
 log.workspace = true
 thiserror.workspace = true

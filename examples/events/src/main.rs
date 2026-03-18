@@ -1,10 +1,10 @@
-use iced::event::{self, Event};
-use iced::widget::{Column, button, center, checkbox, text};
-use iced::window;
-use iced::{Center, Element, Fill, Subscription, Task};
+use enative::event::{self, Event};
+use enative::widget::{Column, button, center, checkbox, text};
+use enative::window;
+use enative::{Center, Element, Fill, Subscription, Task};
 
-pub fn main() -> iced::Result {
-    iced::application(Events::default, Events::update, Events::view)
+pub fn main() -> enative::Result {
+    enative::application(Events::default, Events::update, Events::view)
         .subscription(Events::subscription)
         .exit_on_close_request(false)
         .run()

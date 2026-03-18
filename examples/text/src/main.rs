@@ -1,11 +1,11 @@
-use iced::event;
-use iced::font;
-use iced::widget::{center, column, pick_list, right, stack, text};
-use iced::window;
-use iced::{Element, Event, Font, Subscription, Task};
+use enative::event;
+use enative::font;
+use enative::widget::{center, column, pick_list, right, stack, text};
+use enative::window;
+use enative::{Element, Event, Font, Subscription, Task};
 
-pub fn main() -> iced::Result {
-    iced::application(Text::new, Text::update, Text::view)
+pub fn main() -> enative::Result {
+    enative::application(Text::new, Text::update, Text::view)
         .subscription(Text::subscription)
         .run()
 }

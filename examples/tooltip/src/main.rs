@@ -1,11 +1,11 @@
-use iced::Element;
-use iced::alignment;
-use iced::time::seconds;
-use iced::widget::tooltip::Position;
-use iced::widget::{button, center, checkbox, column, container, tooltip};
+use enative::Element;
+use enative::alignment;
+use enative::time::seconds;
+use enative::widget::tooltip::Position;
+use enative::widget::{button, center, checkbox, column, container, tooltip};
 
-pub fn main() -> iced::Result {
-    iced::run(Tooltip::update, Tooltip::view)
+pub fn main() -> enative::Result {
+    enative::run(Tooltip::update, Tooltip::view)
 }
 
 #[derive(Default)]

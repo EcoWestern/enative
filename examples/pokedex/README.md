@@ -4,7 +4,7 @@ An application that loads a random Pokédex entry using the [PokéAPI].
 All the example code can be found in the __[`main`](src/main.rs)__ file.
 
 <div align="center">
-  <img src="https://iced.rs/examples/pokedex.gif">
+  <img src="https://enative.rs/examples/pokedex.gif">
 </div>
 
 You can run it on native platforms with `cargo run`:

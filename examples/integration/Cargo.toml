@@ -6,13 +6,13 @@ edition = "2024"
 publish = false
 
 [dependencies]
-iced_winit.workspace = true
+enative_winit.workspace = true
 
-iced_wgpu.workspace = true
-iced_wgpu.default-features = true
+enative_wgpu.workspace = true
+enative_wgpu.default-features = true
 
-iced_widget.workspace = true
-iced_widget.features = ["wgpu"]
+enative_widget.workspace = true
+enative_widget.features = ["wgpu"]
 
 futures.workspace = true
 futures.features = ["thread-pool"]
@@ -21,8 +21,8 @@ futures.features = ["thread-pool"]
 tracing-subscriber = "0.3"
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-iced_wgpu.workspace = true
-iced_wgpu.features = ["webgl"]
+enative_wgpu.workspace = true
+enative_wgpu.features = ["webgl"]
 
 console_error_panic_hook = "0.1"
 console_log = "1.0"

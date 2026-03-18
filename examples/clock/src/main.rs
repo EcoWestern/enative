@@ -1,17 +1,17 @@
-use iced::alignment;
-use iced::mouse;
-use iced::time::{self, milliseconds};
-use iced::widget::canvas::{Cache, Geometry, LineCap, Path, Stroke, stroke};
-use iced::widget::{canvas, container, text};
-use iced::{
+use enative::alignment;
+use enative::mouse;
+use enative::time::{self, milliseconds};
+use enative::widget::canvas::{Cache, Geometry, LineCap, Path, Stroke, stroke};
+use enative::widget::{canvas, container, text};
+use enative::{
     Degrees, Element, Fill, Font, Point, Radians, Rectangle, Renderer, Size, Subscription, Theme,
     Vector,
 };
 
-pub fn main() -> iced::Result {
+pub fn main() -> enative::Result {
     tracing_subscriber::fmt::init();
 
-    iced::application(Clock::new, Clock::update, Clock::view)
+    enative::application(Clock::new, Clock::update, Clock::view)
         .subscription(Clock::subscription)
         .theme(Clock::theme)
         .run()

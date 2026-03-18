@@ -6,21 +6,21 @@ mod civitai;
 
 use crate::civitai::{Bytes, Error, Id, Image, Rgba, Size};
 
-use iced::animation;
-use iced::border;
-use iced::time::{Instant, milliseconds};
-use iced::widget::{
+use enative::animation;
+use enative::border;
+use enative::time::{Instant, milliseconds};
+use enative::widget::{
     button, container, float, grid, image, mouse_area, opaque, scrollable, sensor, space, stack,
 };
-use iced::window;
-use iced::{
+use enative::window;
+use enative::{
     Animation, Color, ContentFit, Element, Fill, Function, Shadow, Subscription, Task, Theme, color,
 };
 
 use std::collections::{HashMap, HashSet};
 
-fn main() -> iced::Result {
-    iced::application::timed(
+fn main() -> enative::Result {
+    enative::application::timed(
         Gallery::new,
         Gallery::update,
         Gallery::subscription,

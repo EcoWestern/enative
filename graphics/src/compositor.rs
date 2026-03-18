@@ -14,7 +14,7 @@ use std::borrow::Cow;
 
 /// A graphics compositor that can draw to windows.
 pub trait Compositor: Sized {
-    /// The iced renderer of the backend.
+    /// The enative renderer of the backend.
     type Renderer;
 
     /// The surface of the backend.

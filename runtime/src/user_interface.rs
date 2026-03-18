@@ -12,14 +12,14 @@ use crate::core::{Clipboard, Element, InputMethod, Layout, Rectangle, Shell, Siz
 ///
 /// It can be updated and drawn.
 ///
-/// Iced tries to avoid dictating how to write your event loop. You are in
+/// enative tries to avoid dictating how to write your event loop. You are in
 /// charge of using this type in your system in any way you want.
 ///
 /// # Example
-/// The [`integration`] example uses a [`UserInterface`] to integrate Iced in an
+/// The [`integration`] example uses a [`UserInterface`] to integrate enative in an
 /// existing graphical application.
 ///
-/// [`integration`]: https://github.com/iced-rs/iced/tree/master/examples/integration
+/// [`integration`]: https://github.com/enative-rs/enative/tree/master/examples/integration
 pub struct UserInterface<'a, Message, Theme, Renderer> {
     root: Element<'a, Message, Theme, Renderer>,
     base: layout::Node,
@@ -48,7 +48,7 @@ where
     /// is naive way to set up our application loop:
     ///
     /// ```no_run
-    /// # mod iced_wgpu {
+    /// # mod enative_wgpu {
     /// #     pub type Renderer = ();
     /// # }
     /// #
@@ -56,12 +56,12 @@ where
     /// #
     /// # impl Counter {
     /// #     pub fn new() -> Self { Counter }
-    /// #     pub fn view(&self) -> iced_core::Element<(), (), Renderer> { unimplemented!() }
+    /// #     pub fn view(&self) -> enative_core::Element<(), (), Renderer> { unimplemented!() }
     /// #     pub fn update(&mut self, _: ()) {}
     /// # }
-    /// use iced_runtime::core::Size;
-    /// use iced_runtime::user_interface::{self, UserInterface};
-    /// use iced_wgpu::Renderer;
+    /// use enative_runtime::core::Size;
+    /// use enative_runtime::user_interface::{self, UserInterface};
+    /// use enative_wgpu::Renderer;
     ///
     /// // Initialization
     /// let mut counter = Counter::new();
@@ -124,7 +124,7 @@ where
     /// completing [the previous example](#example):
     ///
     /// ```no_run
-    /// # mod iced_wgpu {
+    /// # mod enative_wgpu {
     /// #     pub type Renderer = ();
     /// # }
     /// #
@@ -132,13 +132,13 @@ where
     /// #
     /// # impl Counter {
     /// #     pub fn new() -> Self { Counter }
-    /// #     pub fn view(&self) -> iced_core::Element<(), (), Renderer> { unimplemented!() }
+    /// #     pub fn view(&self) -> enative_core::Element<(), (), Renderer> { unimplemented!() }
     /// #     pub fn update(&mut self, _: ()) {}
     /// # }
-    /// use iced_runtime::core::mouse;
-    /// use iced_runtime::core::Size;
-    /// use iced_runtime::user_interface::{self, UserInterface};
-    /// use iced_wgpu::Renderer;
+    /// use enative_runtime::core::mouse;
+    /// use enative_runtime::core::Size;
+    /// use enative_runtime::user_interface::{self, UserInterface};
+    /// use enative_wgpu::Renderer;
     ///
     /// let mut counter = Counter::new();
     /// let mut cache = user_interface::Cache::new();
@@ -402,7 +402,7 @@ where
     /// [completing the last example](#example-1):
     ///
     /// ```no_run
-    /// # mod iced_wgpu {
+    /// # mod enative_wgpu {
     /// #     pub type Renderer = ();
     /// #     pub type Theme = ();
     /// # }
@@ -414,11 +414,11 @@ where
     /// #     pub fn view(&self) -> Element<(), (), Renderer> { unimplemented!() }
     /// #     pub fn update(&mut self, _: ()) {}
     /// # }
-    /// use iced_runtime::core::mouse;
-    /// use iced_runtime::core::renderer;
-    /// use iced_runtime::core::{Element, Size};
-    /// use iced_runtime::user_interface::{self, UserInterface};
-    /// use iced_wgpu::{Renderer, Theme};
+    /// use enative_runtime::core::mouse;
+    /// use enative_runtime::core::renderer;
+    /// use enative_runtime::core::{Element, Size};
+    /// use enative_runtime::user_interface::{self, UserInterface};
+    /// use enative_wgpu::{Renderer, Theme};
     ///
     /// let mut counter = Counter::new();
     /// let mut cache = user_interface::Cache::new();

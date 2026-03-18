@@ -1,12 +1,12 @@
-use iced::gradient;
-use iced::theme;
-use iced::widget::{checkbox, column, container, row, slider, space, text};
-use iced::{Center, Color, Element, Fill, Radians, Theme, color};
+use enative::gradient;
+use enative::theme;
+use enative::widget::{checkbox, column, container, row, slider, space, text};
+use enative::{Center, Color, Element, Fill, Radians, Theme, color};
 
-pub fn main() -> iced::Result {
+pub fn main() -> enative::Result {
     tracing_subscriber::fmt::init();
 
-    iced::application(Gradient::default, Gradient::update, Gradient::view)
+    enative::application(Gradient::default, Gradient::update, Gradient::view)
         .style(Gradient::style)
         .transparent(true)
         .run()
@@ -76,7 +76,7 @@ impl Gradient {
         .padding(8)
         .align_y(Center);
 
-        let transparency_toggle = iced::widget::Container::new(
+        let transparency_toggle = enative::widget::Container::new(
             checkbox(transparent)
                 .label("Transparent window")
                 .on_toggle(Message::TransparentToggled),

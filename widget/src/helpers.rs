@@ -36,10 +36,10 @@ pub use crate::table::table;
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::{button, column};
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::{button, column};
 ///
 /// #[derive(Debug, Clone)]
 /// enum Message {
@@ -70,10 +70,10 @@ macro_rules! column {
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::{button, row};
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::{button, row};
 ///
 /// #[derive(Debug, Clone)]
 /// enum Message {
@@ -136,7 +136,7 @@ macro_rules! grid {
 /// # Examples
 ///
 /// ```no_run
-/// # mod iced {
+/// # mod enative {
 /// #     pub mod widget {
 /// #         macro_rules! text {
 /// #           ($($arg:tt)*) => {unimplemented!()}
@@ -145,8 +145,8 @@ macro_rules! grid {
 /// #     }
 /// # }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::core::Theme, ()>;
-/// use iced::widget::text;
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::core::Theme, ()>;
+/// use enative::widget::text;
 ///
 /// enum Message {
 ///     // ...
@@ -176,12 +176,12 @@ macro_rules! text {
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::core::*; }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::core::*; }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::font;
-/// use iced::widget::{rich_text, span};
-/// use iced::{color, never, Font};
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::font;
+/// use enative::widget::{rich_text, span};
+/// use enative::{color, never, Font};
 ///
 /// #[derive(Debug, Clone)]
 /// enum Message {
@@ -215,10 +215,10 @@ macro_rules! rich_text {
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::container;
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::container;
 ///
 /// enum Message {
 ///     // ...
@@ -247,8 +247,8 @@ where
 ///
 /// This is equivalent to:
 /// ```rust,no_run
-/// # use iced_widget::core::Length::Fill;
-/// # use iced_widget::Container;
+/// # use enative_widget::core::Length::Fill;
+/// # use enative_widget::Container;
 /// # fn container<A>(x: A) -> Container<'static, ()> { unreachable!() }
 /// let center = container("Center!").center(Fill);
 /// ```
@@ -269,8 +269,8 @@ where
 ///
 /// This is equivalent to:
 /// ```rust,no_run
-/// # use iced_widget::core::Length::Fill;
-/// # use iced_widget::Container;
+/// # use enative_widget::core::Length::Fill;
+/// # use enative_widget::Container;
 /// # fn container<A>(x: A) -> Container<'static, ()> { unreachable!() }
 /// let center_x = container("Horizontal Center!").center_x(Fill);
 /// ```
@@ -291,8 +291,8 @@ where
 ///
 /// This is equivalent to:
 /// ```rust,no_run
-/// # use iced_widget::core::Length::Fill;
-/// # use iced_widget::Container;
+/// # use enative_widget::core::Length::Fill;
+/// # use enative_widget::Container;
 /// # fn container<A>(x: A) -> Container<'static, ()> { unreachable!() }
 /// let center_y = container("Vertical Center!").center_y(Fill);
 /// ```
@@ -313,8 +313,8 @@ where
 ///
 /// This is equivalent to:
 /// ```rust,no_run
-/// # use iced_widget::core::Length::Fill;
-/// # use iced_widget::Container;
+/// # use enative_widget::core::Length::Fill;
+/// # use enative_widget::Container;
 /// # fn container<A>(x: A) -> Container<'static, ()> { unreachable!() }
 /// let right = container("Right!").align_right(Fill);
 /// ```
@@ -335,8 +335,8 @@ where
 ///
 /// This is equivalent to:
 /// ```rust,no_run
-/// # use iced_widget::core::Length::Fill;
-/// # use iced_widget::Container;
+/// # use enative_widget::core::Length::Fill;
+/// # use enative_widget::Container;
 /// # fn container<A>(x: A) -> Container<'static, ()> { unreachable!() }
 /// let right_center = container("Bottom Center!").align_right(Fill).center_y(Fill);
 /// ```
@@ -359,8 +359,8 @@ where
 ///
 /// This is equivalent to:
 /// ```rust,no_run
-/// # use iced_widget::core::Length::Fill;
-/// # use iced_widget::Container;
+/// # use enative_widget::core::Length::Fill;
+/// # use enative_widget::Container;
 /// # fn container<A>(x: A) -> Container<'static, ()> { unreachable!() }
 /// let bottom = container("Bottom!").align_bottom(Fill);
 /// ```
@@ -381,8 +381,8 @@ where
 ///
 /// This is equivalent to:
 /// ```rust,no_run
-/// # use iced_widget::core::Length::Fill;
-/// # use iced_widget::Container;
+/// # use enative_widget::core::Length::Fill;
+/// # use enative_widget::Container;
 /// # fn container<A>(x: A) -> Container<'static, ()> { unreachable!() }
 /// let bottom_center = container("Bottom Center!").center_x(Fill).align_bottom(Fill);
 /// ```
@@ -405,8 +405,8 @@ where
 ///
 /// This is equivalent to:
 /// ```rust,no_run
-/// # use iced_widget::core::Length::Fill;
-/// # use iced_widget::Container;
+/// # use enative_widget::core::Length::Fill;
+/// # use enative_widget::Container;
 /// # fn container<A>(x: A) -> Container<'static, ()> { unreachable!() }
 /// let bottom_right = container("Bottom!").align_right(Fill).align_bottom(Fill);
 /// ```
@@ -430,11 +430,11 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::core::Length::Fill; }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::core::Length::Fill; }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::pin;
-/// use iced::Fill;
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::pin;
+/// use enative::Fill;
 ///
 /// enum Message {
 ///     // ...
@@ -462,10 +462,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::{column, text};
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::{column, text};
 ///
 /// enum Message {
 ///     // ...
@@ -490,10 +490,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::{keyed_column, text};
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::{keyed_column, text};
 ///
 /// enum Message {
 ///     // ...
@@ -521,10 +521,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::{row, text};
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::{row, text};
 ///
 /// enum Message {
 ///     // ...
@@ -998,10 +998,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::{column, scrollable, space};
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::{column, scrollable, space};
 ///
 /// enum Message {
 ///     // ...
@@ -1029,10 +1029,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::button;
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::button;
 ///
 /// #[derive(Clone)]
 /// enum Message {
@@ -1060,10 +1060,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::{container, tooltip};
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::{container, tooltip};
 ///
 /// enum Message {
 ///     // ...
@@ -1095,18 +1095,18 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::core::Theme, ()>;
-/// use iced::widget::text;
-/// use iced::color;
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::core::Theme, ()>;
+/// use enative::widget::text;
+/// use enative::color;
 ///
 /// enum Message {
 ///     // ...
 /// }
 ///
 /// fn view(state: &State) -> Element<'_, Message> {
-///     text("Hello, this is iced!")
+///     text("Hello, this is enative!")
 ///         .size(20)
 ///         .color(color!(0x0000ff))
 ///         .into()
@@ -1135,12 +1135,12 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::core::*; }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::core::*; }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::font;
-/// use iced::widget::{rich_text, span};
-/// use iced::{color, never, Font};
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::font;
+/// use enative::widget::{rich_text, span};
+/// use enative::{color, never, Font};
 ///
 /// #[derive(Debug, Clone)]
 /// enum Message {
@@ -1180,12 +1180,12 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::core::*; }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::core::*; }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::font;
-/// use iced::widget::{rich_text, span};
-/// use iced::{color, never, Font};
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::font;
+/// use enative::widget::{rich_text, span};
+/// use enative::{color, never, Font};
 ///
 /// #[derive(Debug, Clone)]
 /// enum Message {
@@ -1215,10 +1215,10 @@ pub use crate::markdown::view as markdown;
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::checkbox;
+/// use enative::widget::checkbox;
 ///
 /// struct State {
 ///    is_checked: bool,
@@ -1243,7 +1243,7 @@ pub use crate::markdown::view as markdown;
 ///     }
 /// }
 /// ```
-/// ![Checkbox drawn by `iced_wgpu`](https://github.com/iced-rs/iced/blob/7760618fb112074bc40b148944521f312152012a/docs/images/checkbox.png?raw=true)
+/// ![Checkbox drawn by `enative_wgpu`](https://github.com/enative-rs/enative/blob/7760618fb112074bc40b148944521f312152012a/docs/images/checkbox.png?raw=true)
 pub fn checkbox<'a, Message, Theme, Renderer>(
     is_checked: bool,
 ) -> Checkbox<'a, Message, Theme, Renderer>
@@ -1260,10 +1260,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::{column, radio};
+/// use enative::widget::{column, radio};
 ///
 /// struct State {
 ///    selection: Option<Choice>,
@@ -1335,10 +1335,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::toggler;
+/// use enative::widget::toggler;
 ///
 /// struct State {
 ///    is_checked: bool,
@@ -1379,10 +1379,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::text_input;
+/// use enative::widget::text_input;
 ///
 /// struct State {
 ///    content: String,
@@ -1425,10 +1425,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::text_editor;
+/// use enative::widget::text_editor;
 ///
 /// struct State {
 ///    content: text_editor::Content,
@@ -1471,10 +1471,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::slider;
+/// use enative::widget::slider;
 ///
 /// struct State {
 ///    value: f32,
@@ -1516,10 +1516,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::vertical_slider;
+/// use enative::widget::vertical_slider;
 ///
 /// struct State {
 ///    value: f32,
@@ -1561,10 +1561,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::pick_list;
+/// use enative::widget::pick_list;
 ///
 /// struct State {
 ///    favorite: Option<Fruit>,
@@ -1642,10 +1642,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::combo_box;
+/// use enative::widget::combo_box;
 ///
 /// struct State {
 ///    fruits: combo_box::State<Fruit>,
@@ -1726,10 +1726,10 @@ pub fn space() -> Space {
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::progress_bar;
+/// use enative::widget::progress_bar;
 ///
 /// struct State {
 ///    progress: f32,
@@ -1758,10 +1758,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::image;
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::image;
 ///
 /// enum Message {
 ///     // ...
@@ -1771,7 +1771,7 @@ where
 ///     image("ferris.png").into()
 /// }
 /// ```
-/// <img src="https://github.com/iced-rs/iced/blob/9712b319bb7a32848001b96bd84977430f14b623/examples/resources/ferris.png?raw=true" width="300">
+/// <img src="https://github.com/enative-rs/enative/blob/9712b319bb7a32848001b96bd84977430f14b623/examples/resources/ferris.png?raw=true" width="300">
 #[cfg(feature = "image")]
 pub fn image<Handle>(handle: impl Into<Handle>) -> crate::Image<Handle> {
     crate::Image::new(handle.into())
@@ -1786,10 +1786,10 @@ pub fn image<Handle>(handle: impl Into<Handle>) -> crate::Image<Handle> {
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::svg;
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::svg;
 ///
 /// enum Message {
 ///     // ...
@@ -1807,11 +1807,11 @@ where
     crate::Svg::new(handle)
 }
 
-/// Creates an [`Element`] that displays the iced logo with the given `text_size`.
+/// Creates an [`Element`] that displays the enative logo with the given `text_size`.
 ///
 /// Useful for showing some love to your favorite GUI library in your "About" screen,
 /// for instance.
-pub fn iced<'a, Message, Theme, Renderer>(
+pub fn enative<'a, Message, Theme, Renderer>(
     text_size: impl Into<core::Pixels>,
 ) -> Element<'a, Message, Theme, Renderer>
 where
@@ -1830,7 +1830,7 @@ where
 
     row![
         container(
-            text(Renderer::ICED_LOGO)
+            text(Renderer::ENATIVE_LOGO)
                 .line_height(1.0)
                 .size(text_size)
                 .font(Renderer::ICON_FONT)
@@ -1847,7 +1847,7 @@ where
             border: border::rounded(border::radius(text_size * 0.4)),
             ..container::Style::default()
         }),
-        text("iced").size(text_size).font(Font::MONOSPACE)
+        text("enative").size(text_size).font(Font::MONOSPACE)
     ]
     .spacing(text_size.0 / 3.0)
     .align_y(Alignment::Center)
@@ -1862,13 +1862,13 @@ where
 ///
 /// # Example: Drawing a Simple Circle
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::mouse;
-/// use iced::widget::canvas;
-/// use iced::{Color, Rectangle, Renderer, Theme};
+/// use enative::mouse;
+/// use enative::widget::canvas;
+/// use enative::{Color, Rectangle, Renderer, Theme};
 ///
 /// // First, we define the data we need for drawing
 /// #[derive(Debug)]
@@ -1926,10 +1926,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::qr_code;
+/// use enative::widget::qr_code;
 ///
 /// struct State {
 ///    data: qr_code::Data,
@@ -1991,10 +1991,10 @@ where
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::{pane_grid, text};
+/// use enative::widget::{pane_grid, text};
 ///
 /// struct State {
 ///     panes: pane_grid::State<Pane>,

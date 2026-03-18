@@ -1,10 +1,10 @@
-use iced::keyboard;
-use iced::widget::pane_grid::{self, PaneGrid};
-use iced::widget::{button, center_y, column, container, responsive, row, scrollable, text};
-use iced::{Center, Color, Element, Fill, Size, Subscription};
+use enative::keyboard;
+use enative::widget::pane_grid::{self, PaneGrid};
+use enative::widget::{button, center_y, column, container, responsive, row, scrollable, text};
+use enative::{Center, Color, Element, Fill, Size, Subscription};
 
-pub fn main() -> iced::Result {
-    iced::application(Example::default, Example::update, Example::view)
+pub fn main() -> enative::Result {
+    enative::application(Example::default, Example::update, Example::view)
         .subscription(Example::subscription)
         .run()
 }
@@ -311,8 +311,8 @@ fn view_controls<'a>(
 }
 
 mod style {
-    use iced::widget::container;
-    use iced::{Border, Theme};
+    use enative::widget::container;
+    use enative::{Border, Theme};
 
     pub fn title_bar_active(theme: &Theme) -> container::Style {
         let palette = theme.palette();

@@ -1,10 +1,10 @@
-use iced::alignment;
-use iced::mouse;
-use iced::widget::{canvas, checkbox, column, row, slider, space, text};
-use iced::{Center, Element, Fill, Point, Rectangle, Renderer, Theme, Vector};
+use enative::alignment;
+use enative::mouse;
+use enative::widget::{canvas, checkbox, column, row, slider, space, text};
+use enative::{Center, Element, Fill, Point, Rectangle, Renderer, Theme, Vector};
 
-pub fn main() -> iced::Result {
-    iced::application(
+pub fn main() -> enative::Result {
+    enative::application(
         VectorialText::default,
         VectorialText::update,
         VectorialText::view,

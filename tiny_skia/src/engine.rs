@@ -583,11 +583,11 @@ impl Engine {
             }
             #[cfg(not(feature = "image"))]
             Image::Raster { .. } => {
-                log::warn!("Unsupported primitive in `iced_tiny_skia`: {image:?}",);
+                log::warn!("Unsupported primitive in `enative_tiny_skia`: {image:?}",);
             }
             #[cfg(not(feature = "svg"))]
             Image::Vector { .. } => {
-                log::warn!("Unsupported primitive in `iced_tiny_skia`: {image:?}",);
+                log::warn!("Unsupported primitive in `enative_tiny_skia`: {image:?}",);
             }
         }
     }
@@ -605,7 +605,7 @@ impl Engine {
 
 pub fn into_color(color: Color) -> tiny_skia::Color {
     tiny_skia::Color::from_rgba(color.b, color.g, color.r, color.a)
-        .expect("Convert color from iced to tiny_skia")
+        .expect("Convert color from enative to tiny_skia")
 }
 
 fn into_transform(transformation: Transformation) -> tiny_skia::Transform {

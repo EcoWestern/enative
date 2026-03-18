@@ -1,10 +1,10 @@
-use iced::widget::{button, center, column, text};
-use iced::{Center, Element};
+use enative::widget::{button, center, column, text};
+use enative::{Center, Element};
 
 use loupe::loupe;
 
-pub fn main() -> iced::Result {
-    iced::run(Loupe::update, Loupe::view)
+pub fn main() -> enative::Result {
+    enative::run(Loupe::update, Loupe::view)
 }
 
 #[derive(Default)]
@@ -46,12 +46,12 @@ impl Loupe {
 }
 
 mod loupe {
-    use iced::advanced::Renderer as _;
-    use iced::advanced::layout::{self, Layout};
-    use iced::advanced::renderer;
-    use iced::advanced::widget::{self, Widget};
-    use iced::mouse;
-    use iced::{Color, Element, Length, Rectangle, Renderer, Size, Theme, Transformation};
+    use enative::advanced::Renderer as _;
+    use enative::advanced::layout::{self, Layout};
+    use enative::advanced::renderer;
+    use enative::advanced::widget::{self, Widget};
+    use enative::mouse;
+    use enative::{Color, Element, Length, Rectangle, Renderer, Size, Theme, Transformation};
 
     pub fn loupe<'a, Message>(
         zoom: f32,

@@ -1,5 +1,5 @@
-use iced::widget::{center, column, row, slider, text};
-use iced::{Center, Element};
+use enative::widget::{center, column, row, slider, text};
+use enative::{Center, Element};
 
 use std::time::Duration;
 
@@ -10,8 +10,8 @@ mod linear;
 use circular::Circular;
 use linear::Linear;
 
-pub fn main() -> iced::Result {
-    iced::application(
+pub fn main() -> enative::Result {
+    enative::application(
         LoadingSpinners::default,
         LoadingSpinners::update,
         LoadingSpinners::view,

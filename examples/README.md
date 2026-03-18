@@ -1,22 +1,22 @@
 # Examples
-__Iced moves fast and the `master` branch can contain breaking changes!__ If you want to browse examples that are compatible with the latest release,
-then [switch to the `latest` branch](https://github.com/iced-rs/iced/tree/latest/examples#examples).
+__eNative moves fast and the `master` branch can contain breaking changes!__ If you want to browse examples that are compatible with the latest release,
+then [switch to the `master` branch](https://github.com/ecowestern/enative/tree/master/examples#examples).
 
 ## [Tour](tour)
-A simple UI tour that can run both on native platforms and the web! It showcases different widgets that can be built using Iced.
+A simple UI tour that can run both on native platforms and the web! It showcases different widgets that can be built using enative.
 
 The __[`main`](tour/src/main.rs)__ file contains all the code of the example! All the cross-platform GUI is defined in terms of __state__, __messages__, __update logic__ and __view logic__.
 
 <div align="center">
-  <a href="https://iced.rs/examples/tour.mp4">
-    <img src="https://iced.rs/examples/tour.gif">
+  <a href="https://enative.rs/examples/tour.mp4">
+    <img src="https://enative.rs/examples/tour.gif">
   </a>
 </div>
 
-[`iced_winit`]: ../winit
-[`iced_native`]: ../native
-[`iced_wgpu`]: ../wgpu
-[`iced_web`]: https://github.com/iced-rs/iced_web
+[`enative_winit`]: ../winit
+[`enative_native`]: ../native
+[`enative_wgpu`]: ../wgpu
+[`enative_web`]: https://github.com/enative-rs/enative_web
 [`winit`]: https://github.com/rust-windowing/winit
 [`wgpu`]: https://github.com/gfx-rs/wgpu
 
@@ -31,8 +31,8 @@ A todos tracker inspired by [TodoMVC]. It showcases dynamic layout, text input, 
 The example code is located in the __[`main`](todos/src/main.rs)__ file.
 
 <div align="center">
-  <a href="https://iced.rs/examples/todos.mp4">
-    <img src="https://iced.rs/examples/todos.gif" height="400px">
+  <a href="https://enative.rs/examples/todos.mp4">
+    <img src="https://enative.rs/examples/todos.gif" height="400px">
   </a>
 </div>
 
@@ -51,7 +51,7 @@ It runs a simulation in a background thread while allowing interaction with a `C
 The relevant code is located in the __[`main`](game_of_life/src/main.rs)__ file.
 
 <div align="center">
-  <img src="https://iced.rs/examples/game_of_life.gif">
+  <img src="https://enative.rs/examples/game_of_life.gif">
 </div>
 
 You can run it with `cargo run`:
@@ -68,7 +68,7 @@ An example showcasing custom styling with a light and dark theme.
 The example code is located in the __[`main`](styling/src/main.rs)__ file.
 
 <div align="center">
-  <img src="https://iced.rs/examples/styling.gif">
+  <img src="https://enative.rs/examples/styling.gif">
 </div>
 
 You can run it with `cargo run`:
@@ -86,8 +86,8 @@ A bunch of simpler examples exist:
 - [`custom_widget`](custom_widget), a demonstration of how to build a custom widget that draws a circle.
 - [`download_progress`](download_progress), a basic application that asynchronously downloads a dummy file of 100 MB and tracks the download progress.
 - [`events`](events), a log of native events displayed using a conditional `Subscription`.
-- [`geometry`](geometry), a custom widget showcasing how to draw geometry with the `Mesh2D` primitive in [`iced_wgpu`](../wgpu).
-- [`integration`](integration), a demonstration of how to integrate Iced in an existing [`wgpu`] application.
+- [`geometry`](geometry), a custom widget showcasing how to draw geometry with the `Mesh2D` primitive in [`enative_wgpu`](../wgpu).
+- [`integration`](integration), a demonstration of how to integrate enative in an existing [`wgpu`] application.
 - [`pane_grid`](pane_grid), a grid of panes that can be split, resized, and reorganized.
 - [`pick_list`](pick_list), a dropdown list of selectable options.
 - [`pokedex`](pokedex), an application that displays a random Pokédex entry (sprite included!) by using the [PokéAPI].
@@ -109,14 +109,14 @@ cargo run --package <example>
 [`wgpu`]: https://github.com/gfx-rs/wgpu
 
 ## [Coffee]
-Since [Iced was born in May 2019], it has been powering the user interfaces in
+Since [enative was born in May 2019], it has been powering the user interfaces in
 [Coffee], an experimental 2D game engine.
 
 
 <div align="center">
-  <img src="https://iced.rs/examples/coffee.gif">
+  <img src="https://enative.rs/examples/coffee.gif">
 </div>
 
-[Iced was born in May 2019]: https://github.com/hecrj/coffee/pull/35
+[enative was born in May 2019]: https://github.com/hecrj/coffee/pull/35
 [`ui` module]: https://docs.rs/coffee/0.3.2/coffee/ui/index.html
 [Coffee]: https://github.com/hecrj/coffee

@@ -1,5 +1,5 @@
 [package]
-name = "iced_selector"
+name = "enative_selector"
 description = "A set of abstractions for selecting data from the widget tree"
 version.workspace = true
 authors.workspace = true
@@ -12,7 +12,7 @@ keywords.workspace = true
 rust-version.workspace = true
 
 [dependencies]
-iced_core.workspace = true
+enative_core.workspace = true
 
 [lints]
 workspace = true

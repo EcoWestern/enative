@@ -1,10 +1,10 @@
 //! This example showcases a drawing a quad.
-use iced::border;
-use iced::widget::{center, column, slider, text, toggler};
-use iced::{Center, Color, Element, Shadow, Vector};
+use enative::border;
+use enative::widget::{center, column, slider, text, toggler};
+use enative::{Center, Color, Element, Shadow, Vector};
 
-pub fn main() -> iced::Result {
-    iced::run(Example::update, Example::view)
+pub fn main() -> enative::Result {
+    enative::run(Example::update, Example::view)
 }
 
 struct Example {
@@ -126,12 +126,12 @@ impl Default for Example {
 }
 
 mod quad {
-    use iced::advanced::layout::{self, Layout};
-    use iced::advanced::renderer;
-    use iced::advanced::widget::{self, Widget};
-    use iced::border;
-    use iced::mouse;
-    use iced::{Border, Color, Element, Length, Rectangle, Shadow, Size};
+    use enative::advanced::layout::{self, Layout};
+    use enative::advanced::renderer;
+    use enative::advanced::widget::{self, Widget};
+    use enative::border;
+    use enative::mouse;
+    use enative::{Border, Color, Element, Length, Rectangle, Shadow, Size};
 
     pub struct CustomQuad {
         size: f32,

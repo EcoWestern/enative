@@ -2,7 +2,7 @@
 
 An application that uses the `Canvas` widget to draw a rotating arc.
 
-This is a simple demo for https://github.com/iced-rs/iced/pull/1358.
+This is a simple demo for https://github.com/enative-rs/enative/pull/1358.
 
 The __[`main`]__ file contains all the code of the example.
 

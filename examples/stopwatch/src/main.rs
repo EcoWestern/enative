@@ -1,10 +1,10 @@
-use iced::keyboard;
-use iced::time::{self, Duration, Instant, milliseconds};
-use iced::widget::{button, center, column, row, text};
-use iced::{Center, Element, Subscription};
+use enative::keyboard;
+use enative::time::{self, Duration, Instant, milliseconds};
+use enative::widget::{button, center, column, row, text};
+use enative::{Center, Element, Subscription};
 
-pub fn main() -> iced::Result {
-    iced::application(Stopwatch::default, Stopwatch::update, Stopwatch::view)
+pub fn main() -> enative::Result {
+    enative::application(Stopwatch::default, Stopwatch::update, Stopwatch::view)
         .subscription(Stopwatch::subscription)
         .run()
 }

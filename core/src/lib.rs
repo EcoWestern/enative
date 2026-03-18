@@ -1,13 +1,13 @@
-//! The core library of [Iced].
+//! The core library of [enative].
 //!
 //! This library holds basic types that can be reused and re-exported in
 //! different runtime implementations.
 //!
-//! ![The foundations of the Iced ecosystem](https://github.com/iced-rs/iced/blob/0525d76ff94e828b7b21634fa94a747022001c83/docs/graphs/foundations.png?raw=true)
+//! ![The foundations of the enative ecosystem](https://github.com/enative-rs/enative/blob/0525d76ff94e828b7b21634fa94a747022001c83/docs/graphs/foundations.png?raw=true)
 //!
-//! [Iced]: https://github.com/iced-rs/iced
+//! [enative]: https://github.com/enative-rs/enative
 #![doc(
-    html_logo_url = "https://raw.githubusercontent.com/iced-rs/iced/9ab6923e943f784985e9ef9ca28b10278297225d/docs/logo.svg"
+    html_logo_url = "https://raw.githubusercontent.com/enative-rs/enative/9ab6923e943f784985e9ef9ca28b10278297225d/docs/logo.svg"
 )]
 pub mod alignment;
 pub mod animation;
@@ -99,7 +99,7 @@ pub fn never<T>(never: Never) -> T {
 /// A trait extension for binary functions (`Fn(A, B) -> O`).
 ///
 /// It enables you to use a bunch of nifty functional programming paradigms
-/// that work well with iced.
+/// that work well with enative.
 pub trait Function<A, B, O> {
     /// Applies the given first argument to a binary function and returns
     /// a new function that takes the other argument.
@@ -127,7 +127,7 @@ pub trait Function<A, B, O> {
     /// That's quite a mouthful. [`with`](Self::with) lets you write:
     ///
     /// ```rust
-    /// # use iced_core::Function;
+    /// # use enative_core::Function;
     /// # let element: Option<()> = Some(());
     /// # enum Message { ButtonPressed(u32, ()) }
     /// let id = 123;

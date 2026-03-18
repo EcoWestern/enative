@@ -1,8 +1,8 @@
-use iced::widget::{center, column, combo_box, scrollable, space, text};
-use iced::{Center, Element, Fill};
+use enative::widget::{center, column, combo_box, scrollable, space, text};
+use enative::{Center, Element, Fill};
 
-pub fn main() -> iced::Result {
-    iced::run(Example::update, Example::view)
+pub fn main() -> enative::Result {
+    enative::run(Example::update, Example::view)
 }
 
 struct Example {

@@ -12,7 +12,7 @@ use vertex::Vertex;
 use crate::wgpu;
 use crate::wgpu::util::DeviceExt;
 
-use iced::{Rectangle, Size};
+use enative::{Rectangle, Size};
 
 const SKY_TEXTURE_SIZE: u32 = 128;
 

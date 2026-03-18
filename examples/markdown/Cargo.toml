@@ -6,8 +6,8 @@ edition = "2024"
 publish = false
 
 [dependencies]
-iced.workspace = true
-iced.features = ["markdown", "highlighter", "image", "tokio", "debug"]
+enative.workspace = true
+enative.features = ["markdown", "highlighter", "image", "tokio", "debug"]
 
 reqwest.version = "0.12"
 reqwest.features = ["json"]
@@ -23,4 +23,4 @@ webbrowser = "1"
 # Disabled to keep amount of build dependencies low
 # This can be re-enabled on demand
 # [build-dependencies]
-# iced_fontello = "0.13"
+# enative_fontello = "0.13"

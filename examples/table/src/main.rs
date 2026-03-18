@@ -1,12 +1,12 @@
-use iced::font;
-use iced::time::{Duration, hours, minutes};
-use iced::widget::{
+use enative::font;
+use enative::time::{Duration, hours, minutes};
+use enative::widget::{
     center_x, center_y, column, container, row, scrollable, slider, table, text, tooltip,
 };
-use iced::{Center, Element, Fill, Font, Right, Theme};
+use enative::{Center, Element, Fill, Font, Right, Theme};
 
-pub fn main() -> iced::Result {
-    iced::application(Table::new, Table::update, Table::view)
+pub fn main() -> enative::Result {
+    enative::application(Table::new, Table::update, Table::view)
         .theme(Theme::CatppuccinMocha)
         .run()
 }

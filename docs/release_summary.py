@@ -48,7 +48,7 @@ def get_authors(prs):
     return sorted(authors, key=str.casefold)
 
 def main():
-    repo = 'iced-rs/iced'
+    repo = 'enative-rs/enative'
     milestone = '0.12'
     token = os.environ['GITHUB_TOKEN']
 

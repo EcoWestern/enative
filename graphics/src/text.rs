@@ -123,7 +123,7 @@ pub fn font_system() -> &'static RwLock<FontSystem> {
         #[allow(unused_mut)]
         let mut raw = cosmic_text::FontSystem::new_with_fonts([
             cosmic_text::fontdb::Source::Binary(Arc::new(
-                include_bytes!("../fonts/Iced-Icons.ttf").as_slice(),
+                include_bytes!("../fonts/enative-Icons.ttf").as_slice(),
             )),
             #[cfg(feature = "fira-sans")]
             cosmic_text::fontdb::Source::Binary(Arc::new(
@@ -400,7 +400,7 @@ pub fn hint_factor(_size: Pixels, _scale_factor: Option<f32>) -> Option<f32> {
     None // Disable all text hinting for now
 }
 
-/// A text renderer coupled to `iced_graphics`.
+/// A text renderer coupled to `enative_graphics`.
 pub trait Renderer {
     /// Draws the given [`Raw`] text.
     fn fill_raw(&mut self, raw: Raw);

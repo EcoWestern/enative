@@ -2,10 +2,10 @@
 //!
 //! # Example
 //! ```no_run
-//! # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-//! # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+//! # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+//! # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 //! #
-//! use iced::widget::text_editor;
+//! use enative::widget::text_editor;
 //!
 //! struct State {
 //!    content: text_editor::Content,
@@ -65,10 +65,10 @@ pub use text::editor::{Action, Cursor, Edit, Line, LineEnding, Motion, Position,
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } pub use iced_widget::Renderer; pub use iced_widget::core::*; }
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
+/// # mod enative { pub mod widget { pub use enative_widget::*; } pub use enative_widget::Renderer; pub use enative_widget::core::*; }
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
 /// #
-/// use iced::widget::text_editor;
+/// use enative::widget::text_editor;
 ///
 /// struct State {
 ///    content: text_editor::Content,
@@ -239,13 +239,13 @@ where
     pub fn highlight(
         self,
         syntax: &str,
-        theme: iced_highlighter::Theme,
-    ) -> TextEditor<'a, iced_highlighter::Highlighter, Message, Theme, Renderer>
+        theme: enative_highlighter::Theme,
+    ) -> TextEditor<'a, enative_highlighter::Highlighter, Message, Theme, Renderer>
     where
         Renderer: text::Renderer<Font = crate::core::Font>,
     {
-        self.highlight_with::<iced_highlighter::Highlighter>(
-            iced_highlighter::Settings {
+        self.highlight_with::<enative_highlighter::Highlighter>(
+            enative_highlighter::Settings {
                 theme,
                 token: syntax.to_owned(),
             },
@@ -588,7 +588,7 @@ where
         tree: &mut widget::Tree,
         renderer: &Renderer,
         limits: &layout::Limits,
-    ) -> iced_renderer::core::layout::Node {
+    ) -> enative_renderer::core::layout::Node {
         let mut internal = self.content.0.borrow_mut();
         let state = tree.state.downcast_mut::<State<Highlighter>>();
 

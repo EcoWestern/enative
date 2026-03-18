@@ -1,8 +1,8 @@
-use iced::widget::{center, center_x, checkbox, column, svg};
-use iced::{Element, Fill, color};
+use enative::widget::{center, center_x, checkbox, column, svg};
+use enative::{Element, Fill, color};
 
-pub fn main() -> iced::Result {
-    iced::run(Tiger::update, Tiger::view)
+pub fn main() -> enative::Result {
+    enative::run(Tiger::update, Tiger::view)
 }
 
 #[derive(Debug, Default)]

@@ -1,5 +1,5 @@
-use iced::futures::StreamExt;
-use iced::task::{Straw, sipper};
+use enative::futures::StreamExt;
+use enative::task::{Straw, sipper};
 
 use std::sync::Arc;
 

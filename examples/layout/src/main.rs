@@ -1,17 +1,17 @@
-use iced::border;
-use iced::keyboard;
-use iced::mouse;
-use iced::widget::{
+use enative::border;
+use enative::keyboard;
+use enative::mouse;
+use enative::widget::{
     button, canvas, center, center_y, checkbox, column, container, pick_list, pin, responsive, row,
     rule, scrollable, space, stack, text,
 };
-use iced::{
+use enative::{
     Center, Element, Fill, Font, Length, Point, Rectangle, Renderer, Shrink, Subscription, Theme,
     color,
 };
 
-pub fn main() -> iced::Result {
-    iced::application(Layout::default, Layout::update, Layout::view)
+pub fn main() -> enative::Result {
+    enative::application(Layout::default, Layout::update, Layout::view)
         .subscription(Layout::subscription)
         .theme(Layout::theme)
         .title(Layout::title)
@@ -35,7 +35,7 @@ enum Message {
 
 impl Layout {
     fn title(&self) -> String {
-        format!("{} - Layout - Iced", self.example.title)
+        format!("{} - Layout - enative", self.example.title)
     }
 
     fn update(&mut self, message: Message) {

@@ -1,15 +1,15 @@
-# `iced_core`
-[![Documentation](https://docs.rs/iced_core/badge.svg)][documentation]
-[![Crates.io](https://img.shields.io/crates/v/iced_core.svg)](https://crates.io/crates/iced_core)
-[![License](https://img.shields.io/crates/l/iced_core.svg)](https://github.com/iced-rs/iced/blob/master/LICENSE)
+# `enative_core`
+[![Documentation](https://docs.rs/enative_core/badge.svg)][documentation]
+[![Crates.io](https://img.shields.io/crates/v/enative_core.svg)](https://crates.io/crates/enative_core)
+[![License](https://img.shields.io/crates/l/enative_core.svg)](https://github.com/enative-rs/enative/blob/master/LICENSE)
 [![Discord Server](https://img.shields.io/discord/628993209984614400?label=&labelColor=6A7EC2&logo=discord&logoColor=ffffff&color=7389D8)](https://discord.gg/3xZJ65GAhd)
 
-`iced_core` holds basic reusable types of the public API. For instance, basic data types like `Point`, `Rectangle`, `Length`, etc.
+`enative_core` holds basic reusable types of the public API. For instance, basic data types like `Point`, `Rectangle`, `Length`, etc.
 
-This crate is meant to be a starting point for an Iced runtime.
+This crate is meant to be a starting point for an enative runtime.
 
 <p align="center">
   <img alt="The foundations" src="../docs/graphs/foundations.png" width="50%">
 </p>
 
-[documentation]: https://docs.rs/iced_core
+[documentation]: https://docs.rs/enative_core

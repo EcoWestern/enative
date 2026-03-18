@@ -1,13 +1,13 @@
-use iced::widget::{
+use enative::widget::{
     button, center, center_x, column, container, operation, scrollable, space, text, text_input,
 };
-use iced::window;
-use iced::{Center, Element, Fill, Function, Subscription, Task, Theme, Vector};
+use enative::window;
+use enative::{Center, Element, Fill, Function, Subscription, Task, Theme, Vector};
 
 use std::collections::BTreeMap;
 
-fn main() -> iced::Result {
-    iced::daemon(Example::new, Example::update, Example::view)
+fn main() -> enative::Result {
+    enative::daemon(Example::new, Example::update, Example::view)
         .subscription(Example::subscription)
         .title(Example::title)
         .theme(Example::theme)
@@ -91,7 +91,7 @@ impl Example {
                 self.windows.remove(&id);
 
                 if self.windows.is_empty() {
-                    iced::exit()
+                    enative::exit()
                 } else {
                     Task::none()
                 }

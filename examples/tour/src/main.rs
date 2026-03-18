@@ -1,11 +1,11 @@
-use iced::widget::{Button, Column, Container, Slider};
-use iced::widget::{
+use enative::widget::{Button, Column, Container, Slider};
+use enative::widget::{
     button, center_x, center_y, checkbox, column, image, radio, rich_text, row, scrollable, slider,
     space, span, text, text_input, toggler,
 };
-use iced::{Center, Color, Element, Fill, Font, Pixels, color};
+use enative::{Center, Color, Element, Fill, Font, Pixels, color};
 
-pub fn main() -> iced::Result {
+pub fn main() -> enative::Result {
     #[cfg(target_arch = "wasm32")]
     {
         console_log::init().expect("Initialize logger");
@@ -15,7 +15,7 @@ pub fn main() -> iced::Result {
     #[cfg(not(target_arch = "wasm32"))]
     tracing_subscriber::fmt::init();
 
-    iced::application(Tour::default, Tour::update, Tour::view)
+    enative::application(Tour::default, Tour::update, Tour::view)
         .title(Tour::title)
         .centered()
         .run()
@@ -74,7 +74,7 @@ impl Tour {
             Screen::End => "End",
         };
 
-        format!("{screen} - Iced")
+        format!("{screen} - enative")
     }
 
     fn update(&mut self, event: Message) {
@@ -198,10 +198,10 @@ impl Tour {
         Self::container("Welcome!")
             .push(
                 "This is a simple tour meant to showcase a bunch of \
-                widgets that come bundled in Iced.",
+                widgets that come bundled in enative.",
             )
             .push(
-                "Iced is a cross-platform GUI library for Rust focused on \
+                "enative is a cross-platform GUI library for Rust focused on \
                  simplicity and type-safety. It is heavily inspired by Elm.",
             )
             .push(
@@ -209,7 +209,7 @@ impl Tour {
                  2D game engine for Rust.",
             )
             .push(
-                "On native platforms, Iced provides by default a renderer \
+                "On native platforms, enative provides by default a renderer \
                  built on top of wgpu, a graphics library supporting Vulkan, \
                  Metal, DX11, and DX12.",
             )
@@ -277,7 +277,7 @@ impl Tour {
         Self::container("Rows and columns")
             .spacing(self.spacing)
             .push(
-                "Iced uses a layout model based on flexbox to position UI \
+                "enative uses a layout model based on flexbox to position UI \
                  elements.",
             )
             .push(
@@ -327,7 +327,7 @@ impl Tour {
 
     fn radio(&self) -> Column<'_, Message> {
         let question = column![
-            text("Iced is written in...").size(24),
+            text("enative is written in...").size(24),
             column(
                 Language::all()
                     .iter()
@@ -349,7 +349,7 @@ impl Tour {
             )
             .push(question)
             .push(
-                "Iced works very well with iterators! The list above is \
+                "enative works very well with iterators! The list above is \
                  basically created by folding a column over the different \
                  choices, creating a radio button for each one of them!",
             )
@@ -388,7 +388,7 @@ impl Tour {
     fn scrollable(&self) -> Column<'_, Message> {
         Self::container("Scrollable")
             .push(
-                "Iced supports scrollable content. Try it out! Find the \
+                "enative supports scrollable content. Try it out! Find the \
                  button further below.",
             )
             .push(text("Tip: You can use the scrollbar to scroll down faster!").size(16))
@@ -455,7 +455,7 @@ impl Tour {
     fn debugger(&self) -> Column<'_, Message> {
         Self::container("Debugger")
             .push(
-                "You can ask Iced to visually explain the layouting of the \
+                "You can ask enative to visually explain the layouting of the \
                  different elements comprising your UI!",
             )
             .push(

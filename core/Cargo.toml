@@ -1,6 +1,6 @@
 [package]
-name = "iced_core"
-description = "The essential ideas of iced"
+name = "enative_core"
+description = "The essential ideas of enative"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true

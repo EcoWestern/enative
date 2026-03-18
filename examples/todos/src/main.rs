@@ -1,10 +1,10 @@
-use iced::keyboard;
-use iced::widget::{
+use enative::keyboard;
+use enative::widget::{
     self, Text, button, center, center_x, checkbox, column, keyed_column, operation, row,
     scrollable, text, text_input,
 };
-use iced::window;
-use iced::{
+use enative::window;
+use enative::{
     Application, Center, Element, Fill, Function, Preset, Program, Subscription, Task as Command,
     Theme,
 };
@@ -12,7 +12,7 @@ use iced::{
 use serde::{Deserialize, Serialize};
 use uuid::Uuid;
 
-pub fn main() -> iced::Result {
+pub fn main() -> enative::Result {
     #[cfg(not(target_arch = "wasm32"))]
     tracing_subscriber::fmt::init();
 
@@ -20,7 +20,7 @@ pub fn main() -> iced::Result {
 }
 
 fn application() -> Application<impl Program<Message = Message, Theme = Theme>> {
-    iced::application(Todos::new, Todos::update, Todos::view)
+    enative::application(Todos::new, Todos::update, Todos::view)
         .subscription(Todos::subscription)
         .title(Todos::title)
         .font(Todos::ICON_FONT)
@@ -71,7 +71,7 @@ impl Todos {
             Todos::Loaded(state) => state.dirty,
         };
 
-        format!("Todos{} - Iced", if dirty { "*" } else { "" })
+        format!("Todos{} - enative", if dirty { "*" } else { "" })
     }
 
     fn update(&mut self, message: Message) -> Command<Message> {
@@ -440,7 +440,7 @@ fn empty_message(message: &str) -> Element<'_, Message> {
 
 fn icon(unicode: char) -> Text<'static> {
     text(unicode.to_string())
-        .font("Iced-Todos-Icons")
+        .font("enative-Todos-Icons")
         .width(20)
         .align_x(Center)
         .shaping(text::Shaping::Basic)
@@ -484,7 +484,7 @@ enum SaveError {
 impl SavedState {
     fn path() -> std::path::PathBuf {
         let mut path =
-            if let Some(project_dirs) = directories::ProjectDirs::from("rs", "Iced", "Todos") {
+            if let Some(project_dirs) = directories::ProjectDirs::from("rs", "enative", "Todos") {
                 project_dirs.data_dir().into()
             } else {
                 std::env::current_dir().unwrap_or_default()
@@ -504,7 +504,7 @@ impl SavedState {
     }
 
     async fn save(self) -> Result<(), SaveError> {
-        use iced::time::milliseconds;
+        use enative::time::milliseconds;
 
         let json = serde_json::to_string_pretty(&self).map_err(|_| SaveError::Format)?;
 
@@ -593,9 +593,9 @@ fn presets() -> impl IntoIterator<Item = Preset<Todos, Message>> {
 mod tests {
     use super::*;
 
-    use iced::{Settings, Theme};
-    use iced_test::selector::id;
-    use iced_test::{Error, Simulator};
+    use enative::{Settings, Theme};
+    use enative_test::selector::id;
+    use enative_test::{Error, Simulator};
 
     fn simulator(todos: &Todos) -> Simulator<'_, Message> {
         Simulator::with_settings(
@@ -638,7 +638,7 @@ mod tests {
     #[test]
     #[ignore]
     fn it_passes_the_ice_tests() -> Result<(), Error> {
-        iced_test::run(
+        enative_test::run(
             application(),
             format!("{}/tests", env!("CARGO_MANIFEST_DIR")),
         )

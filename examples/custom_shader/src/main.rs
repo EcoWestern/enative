@@ -2,19 +2,23 @@ mod scene;
 
 use scene::Scene;
 
-use iced::time::Instant;
-use iced::wgpu;
-use iced::widget::{center, checkbox, column, row, shader, slider, text};
-use iced::window;
-use iced::{Center, Color, Element, Fill, Subscription};
+use enative::time::Instant;
+use enative::wgpu;
+use enative::widget::{center, checkbox, column, row, shader, slider, text};
+use enative::window;
+use enative::{Center, Color, Element, Fill, Subscription};
 
-fn main() -> iced::Result {
-    iced::application(IcedCubes::default, IcedCubes::update, IcedCubes::view)
-        .subscription(IcedCubes::subscription)
-        .run()
+fn main() -> enative::Result {
+    enative::application(
+        eNativeCubes::default,
+        eNativeCubes::update,
+        eNativeCubes::view,
+    )
+    .subscription(eNativeCubes::subscription)
+    .run()
 }
 
-struct IcedCubes {
+struct eNativeCubes {
     start: Instant,
     scene: Scene,
 }
@@ -28,7 +32,7 @@ enum Message {
     LightColorChanged(Color),
 }
 
-impl IcedCubes {
+impl eNativeCubes {
     fn new() -> Self {
         Self {
             start: Instant::now(),
@@ -131,7 +135,7 @@ impl IcedCubes {
     }
 }
 
-impl Default for IcedCubes {
+impl Default for eNativeCubes {
     fn default() -> Self {
         Self::new()
     }

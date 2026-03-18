@@ -1,10 +1,10 @@
-use iced::Element;
-use iced::widget::{
+use enative::Element;
+use enative::widget::{
     center, center_x, checkbox, column, progress_bar, row, slider, vertical_slider,
 };
 
-pub fn main() -> iced::Result {
-    iced::run(Progress::update, Progress::view)
+pub fn main() -> enative::Result {
+    enative::run(Progress::update, Progress::view)
 }
 
 #[derive(Default)]

@@ -1,10 +1,10 @@
 #![allow(missing_docs)]
-use iced_debug as debug;
-use iced_program as program;
-use iced_program::runtime;
-use iced_program::runtime::futures;
-use iced_widget as widget;
-use iced_widget::core;
+use enative_debug as debug;
+use enative_program as program;
+use enative_program::runtime;
+use enative_program::runtime::futures;
+use enative_widget as widget;
+use enative_widget::core;
 
 mod comet;
 mod time_machine;
@@ -310,7 +310,7 @@ where
                 .theme(state, window)
                 .as_ref()
                 .and_then(theme::Base::seed)
-                .map(|seed| Theme::custom("iced devtools", seed))
+                .map(|seed| Theme::custom("enative devtools", seed))
         };
 
         let setup = if let Mode::Setup(setup) = &self.mode {
@@ -442,7 +442,7 @@ where
     let command = container(
         text!(
             "cargo install --locked \\
-    --git https://github.com/iced-rs/comet.git \\
+    --git https://github.com/enative-rs/comet.git \\
     --rev {}",
             comet::COMPATIBLE_REVISION
         )
@@ -461,7 +461,7 @@ where
                 be installed in your system.",
             "The comet debugger is an official \
                 companion tool that helps you debug \
-                your iced applications.",
+                your enative applications.",
             column![
                 "Do you wish to install it with the \
                     following command?",

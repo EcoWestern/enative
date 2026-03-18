@@ -6,8 +6,8 @@ edition = "2024"
 publish = false
 
 [dependencies]
-iced.workspace = true
-iced.features = ["debug", "image", "advanced", "tokio"]
+enative.workspace = true
+enative.features = ["debug", "image", "advanced", "tokio"]
 
 image.workspace = true
 image.features = ["png"]

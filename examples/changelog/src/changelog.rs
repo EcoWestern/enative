@@ -156,7 +156,7 @@ impl Changelog {
         self.ids.push(entry.id);
 
         let item = format!(
-            "- {title}. [#{id}](https://github.com/iced-rs/iced/pull/{id})",
+            "- {title}. [#{id}](https://github.com/enative-rs/enative/pull/{id})",
             title = entry.title,
             id = entry.id
         );
@@ -342,11 +342,11 @@ impl PullRequest {
             .request(
                 reqwest::Method::GET,
                 format!(
-                    "https://api.github.com/repos/iced-rs/iced/pulls/{}",
+                    "https://api.github.com/repos/enative-rs/enative/pulls/{}",
                     contribution.id
                 ),
             )
-            .header("User-Agent", "iced changelog generator")
+            .header("User-Agent", "enative changelog generator")
             .header(
                 "Authorization",
                 format!(

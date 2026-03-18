@@ -13,7 +13,7 @@ pub fn launch() -> Task<launch::Result> {
         let installed_packages = String::from_utf8_lossy(&cargo_install.stdout);
 
         for line in installed_packages.lines() {
-            if !line.starts_with("iced_comet ") {
+            if !line.starts_with("enative_comet ") {
                 continue;
             }
 
@@ -31,7 +31,7 @@ pub fn launch() -> Task<launch::Result> {
                 });
             }
 
-            let _ = process::Command::new("iced_comet")
+            let _ = process::Command::new("enative_comet")
                 .stdin(process::Stdio::null())
                 .stdout(process::Stdio::null())
                 .stderr(process::Stdio::null())
@@ -55,7 +55,7 @@ pub fn install() -> Task<install::Result> {
                 "install",
                 "--locked",
                 "--git",
-                "https://github.com/iced-rs/comet.git",
+                "https://github.com/enative-rs/comet.git",
                 "--rev",
                 COMPATIBLE_REVISION,
             ])

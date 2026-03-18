@@ -1,16 +1,16 @@
-use iced::alignment;
-use iced::mouse;
-use iced::theme;
-use iced::widget::canvas::{self, Canvas, Frame, Geometry, Path};
-use iced::widget::{Slider, column, row, text};
-use iced::{Center, Color, Element, Fill, Font, Pixels, Point, Rectangle, Renderer, Size, Vector};
+use enative::alignment;
+use enative::mouse;
+use enative::theme;
+use enative::widget::canvas::{self, Canvas, Frame, Geometry, Path};
+use enative::widget::{Slider, column, row, text};
+use enative::{Center, Color, Element, Fill, Font, Pixels, Point, Rectangle, Renderer, Size, Vector};
 
 use palette::{Darken, Hsl, Lighten, ShiftHue, convert::FromColor, rgb::Rgb};
 use std::marker::PhantomData;
 use std::ops::RangeInclusive;
 
-pub fn main() -> iced::Result {
-    iced::application(
+pub fn main() -> enative::Result {
+    enative::application(
         ColorPalette::default,
         ColorPalette::update,
         ColorPalette::view,
@@ -79,8 +79,8 @@ impl ColorPalette {
         .into()
     }
 
-    fn theme(&self) -> iced::Theme {
-        iced::Theme::custom(
+    fn theme(&self) -> enative::Theme {
+        enative::Theme::custom(
             String::from("Custom"),
             theme::palette::Seed {
                 background: self.theme.base,
@@ -249,7 +249,7 @@ impl<Message> canvas::Program<Message> for Theme {
         &self,
         _state: &Self::State,
         renderer: &Renderer,
-        theme: &iced::Theme,
+        theme: &enative::Theme,
         bounds: Rectangle,
         _cursor: mouse::Cursor,
     ) -> Vec<Geometry> {

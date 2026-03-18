@@ -1,6 +1,6 @@
 [package]
-name = "iced_graphics"
-description = "A bunch of backend-agnostic types that can be leveraged to build a renderer for iced"
+name = "enative_graphics"
+description = "A bunch of backend-agnostic types that can be leveraged to build a renderer for enative"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -25,8 +25,8 @@ web-colors = []
 fira-sans = []
 
 [dependencies]
-iced_core.workspace = true
-iced_futures.workspace = true
+enative_core.workspace = true
+enative_futures.workspace = true
 
 bitflags.workspace = true
 bytemuck.workspace = true

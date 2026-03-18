@@ -5,8 +5,8 @@ A todos tracker inspired by [TodoMVC]. It showcases dynamic layout, text input, 
 All the example code is located in the __[`main`]__ file.
 
 <div align="center">
-  <a href="https://iced.rs/examples/todos.mp4">
-    <img src="https://iced.rs/examples/todos.gif">
+  <a href="https://enative.rs/examples/todos.mp4">
+    <img src="https://enative.rs/examples/todos.gif">
   </a>
 </div>
 

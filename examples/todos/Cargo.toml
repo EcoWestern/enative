@@ -6,11 +6,11 @@ edition = "2024"
 publish = false
 
 [features]
-tester = ["iced/tester"]
+tester = ["enative/tester"]
 
 [dependencies]
-iced.workspace = true
-iced.features = ["tokio", "debug", "time-travel"]
+enative.workspace = true
+enative.features = ["tokio", "debug", "time-travel"]
 
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
@@ -23,18 +23,18 @@ directories = "6.0"
 tracing-subscriber = "0.3"
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-iced.workspace = true
-iced.features = ["debug", "webgl", "fira-sans"]
+enative.workspace = true
+enative.features = ["debug", "webgl", "fira-sans"]
 
 uuid = { version = "1.0", features = ["js"] }
 web-sys = { workspace = true, features = ["Window", "Storage"] }
 wasmtimer.workspace = true
 
 [dev-dependencies]
-iced_test.workspace = true
+enative_test.workspace = true
 
 [package.metadata.deb]
 assets = [
-    ["target/release-opt/todos", "usr/bin/iced-todos", "755"],
-    ["iced-todos.desktop", "usr/share/applications/", "644"],
+    ["target/release-opt/todos", "usr/bin/enative-todos", "755"],
+    ["enative-todos.desktop", "usr/share/applications/", "644"],
 ]

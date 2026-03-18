@@ -1,9 +1,9 @@
 //! This example showcases an interactive `Canvas` for drawing Bézier curves.
-use iced::widget::{button, container, hover, right, space};
-use iced::{Element, Theme};
+use enative::widget::{button, container, hover, right, space};
+use enative::{Element, Theme};
 
-pub fn main() -> iced::Result {
-    iced::application(Example::default, Example::update, Example::view)
+pub fn main() -> enative::Result {
+    enative::application(Example::default, Example::update, Example::view)
         .theme(Theme::CatppuccinMocha)
         .run()
 }
@@ -54,9 +54,9 @@ impl Example {
 }
 
 mod bezier {
-    use iced::mouse;
-    use iced::widget::canvas::{self, Canvas, Event, Frame, Geometry, Path, Stroke};
-    use iced::{Element, Fill, Point, Rectangle, Renderer, Theme};
+    use enative::mouse;
+    use enative::widget::canvas::{self, Canvas, Event, Frame, Geometry, Path, Stroke};
+    use enative::{Element, Fill, Point, Rectangle, Renderer, Theme};
 
     #[derive(Default)]
     pub struct State {

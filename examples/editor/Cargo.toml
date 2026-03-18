@@ -6,8 +6,8 @@ edition = "2024"
 publish = false
 
 [dependencies]
-iced.workspace = true
-iced.features = ["highlighter", "tokio", "debug"]
+enative.workspace = true
+enative.features = ["highlighter", "tokio", "debug"]
 
 tokio.workspace = true
 tokio.features = ["fs"]

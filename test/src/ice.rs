@@ -4,7 +4,7 @@ use crate::core::Size;
 use crate::emulator;
 use crate::instruction;
 
-/// An end-to-end test for iced applications.
+/// An end-to-end test for enative applications.
 ///
 /// Ice tests encode a certain configuration together with a sequence of instructions.
 /// An ice test passes if all the instructions can be executed successfully.

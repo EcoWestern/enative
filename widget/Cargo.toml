@@ -1,6 +1,6 @@
 [package]
-name = "iced_widget"
-description = "The built-in widgets for iced"
+name = "enative_widget"
+description = "The built-in widgets for enative"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -19,17 +19,17 @@ all-features = true
 
 [features]
 lazy = ["ouroboros"]
-image = ["iced_renderer/image"]
-svg = ["iced_renderer/svg"]
-canvas = ["iced_renderer/geometry"]
+image = ["enative_renderer/image"]
+svg = ["enative_renderer/svg"]
+canvas = ["enative_renderer/geometry"]
 qr_code = ["canvas", "dep:qrcode"]
-wgpu = ["iced_renderer/wgpu-bare"]
+wgpu = ["enative_renderer/wgpu-bare"]
 markdown = ["dep:pulldown-cmark"]
-highlighter = ["dep:iced_highlighter"]
+highlighter = ["dep:enative_highlighter"]
 advanced = []
 
 [dependencies]
-iced_renderer.workspace = true
+enative_renderer.workspace = true
 
 num-traits.workspace = true
 log.workspace = true
@@ -46,5 +46,5 @@ qrcode.optional = true
 pulldown-cmark.workspace = true
 pulldown-cmark.optional = true
 
-iced_highlighter.workspace = true
-iced_highlighter.optional = true
+enative_highlighter.workspace = true
+enative_highlighter.optional = true

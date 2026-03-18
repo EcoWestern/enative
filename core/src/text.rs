@@ -361,10 +361,10 @@ pub trait Renderer: crate::Renderer {
     /// [`ICON_FONT`]: Self::ICON_FONT
     const SCROLL_RIGHT_ICON: char;
 
-    /// The 'char' representing the iced logo in the built-in ['ICON_FONT'].
+    /// The 'char' representing the enative logo in the built-in ['ICON_FONT'].
     ///
     /// ['ICON_FONT']: Self::ICON_FONT
-    const ICED_LOGO: char;
+    const ENATIVE_LOGO: char;
 
     /// Returns the default [`Self::Font`].
     fn default_font(&self) -> Self::Font;

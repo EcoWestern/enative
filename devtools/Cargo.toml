@@ -1,6 +1,6 @@
 [package]
-name = "iced_devtools"
-description = "Attachable developer tools for any iced program"
+name = "enative_devtools"
+description = "Attachable developer tools for any enative program"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
@@ -15,12 +15,12 @@ rust-version.workspace = true
 workspace = true
 
 [features]
-time-travel = ["iced_program/time-travel"]
+time-travel = ["enative_program/time-travel"]
 
 [dependencies]
-iced_debug.workspace = true
-iced_widget.workspace = true
+enative_debug.workspace = true
+enative_widget.workspace = true
 log.workspace = true
 
-iced_program.workspace = true
-iced_program.features = ["debug"]
+enative_program.workspace = true
+enative_program.features = ["debug"]

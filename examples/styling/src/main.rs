@@ -1,12 +1,12 @@
-use iced::keyboard;
-use iced::widget::{
+use enative::keyboard;
+use enative::widget::{
     button, center_x, center_y, checkbox, column, container, pick_list, progress_bar, row, rule,
     scrollable, slider, space, text, text_input, toggler,
 };
-use iced::{Center, Element, Fill, Shrink, Subscription, Theme};
+use enative::{Center, Element, Fill, Shrink, Subscription, Theme};
 
-pub fn main() -> iced::Result {
-    iced::application(Styling::default, Styling::update, Styling::view)
+pub fn main() -> enative::Result {
+    enative::application(Styling::default, Styling::update, Styling::view)
         .subscription(Styling::subscription)
         .theme(Styling::theme)
         .run()
@@ -202,7 +202,7 @@ mod tests {
     use super::*;
     use rayon::prelude::*;
 
-    use iced_test::{Error, simulator};
+    use enative_test::{Error, simulator};
 
     #[test]
     #[ignore]

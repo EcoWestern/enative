@@ -61,7 +61,7 @@ where
         }
 
         let mut renderer = {
-            let backend = env::var("ICED_TEST_BACKEND").ok();
+            let backend = env::var("enative_TEST_BACKEND").ok();
 
             crate::futures::futures::executor::block_on(Renderer::new(
                 core::renderer::Settings {

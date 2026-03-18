@@ -1,6 +1,6 @@
 # Overview
 
-Inspired by [The Elm Architecture], Iced expects you to split user interfaces into four different concepts:
+Inspired by [The Elm Architecture], enative expects you to split user interfaces into four different concepts:
 
 * __State__ — the state of your application
 * __Messages__ — user interactions or meaningful events that you care about
@@ -31,7 +31,7 @@ pub enum Message {
 Now, let's show the actual counter by putting it all together in our __view logic__:
 
 ```rust
-use iced::widget::{button, column, text, Column};
+use enative::widget::{button, column, text, Column};
 
 impl Counter {
     pub fn view(&self) -> Column<'_, Message> {
@@ -74,12 +74,12 @@ impl Counter {
 And that's everything! We just wrote a whole user interface. Let's run it:
 
 ```rust
-fn main() -> iced::Result {
-    iced::run("A cool counter", Counter::update, Counter::view)
+fn main() -> enative::Result {
+    enative::run("A cool counter", Counter::update, Counter::view)
 }
 ```
 
-Iced will automatically:
+enative will automatically:
 
   1. Take the result of our __view logic__ and layout its widgets.
   1. Process events from our system and produce __messages__ for our __update logic__.
@@ -87,7 +87,7 @@ Iced will automatically:
 
 Read the [book], the [documentation], and the [examples] to learn more!
 
-[book]: https://book.iced.rs/
-[documentation]: https://docs.rs/iced/
-[examples]: https://github.com/iced-rs/iced/tree/master/examples#examples
+[book]: https://book.enative.rs/
+[documentation]: https://docs.rs/enative/
+[examples]: https://github.com/enative-rs/enative/tree/master/examples#examples
 [The Elm Architecture]: https://guide.elm-lang.org/architecture/

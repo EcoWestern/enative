@@ -28,12 +28,12 @@ use crate::{Event, Length, Rectangle, Shell, Size, Vector};
 /// - [`custom_widget`], a demonstration of how to build a custom widget that
 ///   draws a circle.
 /// - [`geometry`], a custom widget showcasing how to draw geometry with the
-///   `Mesh2D` primitive in [`iced_wgpu`].
+///   `Mesh2D` primitive in [`enative_wgpu`].
 ///
-/// [examples]: https://github.com/iced-rs/iced/tree/master/examples
-/// [`custom_widget`]: https://github.com/iced-rs/iced/tree/master/examples/custom_widget
-/// [`geometry`]: https://github.com/iced-rs/iced/tree/master/examples/geometry
-/// [`iced_wgpu`]: https://github.com/iced-rs/iced/tree/master/wgpu
+/// [examples]: https://github.com/enative-rs/enative/tree/master/examples
+/// [`custom_widget`]: https://github.com/enative-rs/enative/tree/master/examples/custom_widget
+/// [`geometry`]: https://github.com/enative-rs/enative/tree/master/examples/geometry
+/// [`enative_wgpu`]: https://github.com/enative-rs/enative/tree/master/wgpu
 pub trait Widget<Message, Theme, Renderer>
 where
     Renderer: crate::Renderer,

@@ -74,7 +74,7 @@ pub type Hasher = rustc_hash::FxHasher;
 ///
 /// # The Lifetime of a [`Subscription`]
 /// Much like a [`Future`] or a [`Stream`], a [`Subscription`] does not produce any effects
-/// on its own. For a [`Subscription`] to run, it must be returned to the iced runtime—normally
+/// on its own. For a [`Subscription`] to run, it must be returned to the enative runtime—normally
 /// in the `subscription` function of an `application` or a `daemon`.
 ///
 /// When a [`Subscription`] is provided to the runtime for the first time, the runtime will
@@ -85,23 +85,23 @@ pub type Hasher = rustc_hash::FxHasher;
 /// to build a certain [`Stream`] together with some way to _identify_ it.
 ///
 /// Identification is important because when a specific [`Subscription`] stops being returned to the
-/// iced runtime, the runtime will kill its associated [`Stream`]. The runtime uses the identity of a
+/// enative runtime, the runtime will kill its associated [`Stream`]. The runtime uses the identity of a
 /// [`Subscription`] to keep track of it.
 ///
-/// This way, iced allows you to declaratively __subscribe__ to particular streams of data temporarily
+/// This way, enative allows you to declaratively __subscribe__ to particular streams of data temporarily
 /// and whenever necessary.
 ///
 /// ```
-/// # mod iced {
+/// # mod enative {
 /// #     pub mod time {
-/// #         pub use iced_futures::backend::default::time::every;
+/// #         pub use enative_futures::backend::default::time::every;
 /// #         pub use std::time::{Duration, Instant};
 /// #     }
 /// #
-/// #     pub use iced_futures::Subscription;
+/// #     pub use enative_futures::Subscription;
 /// # }
-/// use iced::time::{self, Duration, Instant};
-/// use iced::Subscription;
+/// use enative::time::{self, Duration, Instant};
+/// use enative::Subscription;
 ///
 /// struct State {
 ///     timer_enabled: bool,
@@ -136,22 +136,22 @@ impl<T> Subscription<T> {
     /// # Creating an asynchronous worker with bidirectional communication
     /// You can leverage this helper to create a [`Subscription`] that spawns
     /// an asynchronous worker in the background and establish a channel of
-    /// communication with an `iced` application.
+    /// communication with an `enative` application.
     ///
     /// You can achieve this by creating an `mpsc` channel inside the closure
     /// and returning the `Sender` as a `Message` for the `Application`:
     ///
     /// ```
-    /// # mod iced {
-    /// #     pub use iced_futures::Subscription;   
-    /// #     pub use iced_futures::futures;
-    /// #     pub use iced_futures::stream;
+    /// # mod enative {
+    /// #     pub use enative_futures::Subscription;   
+    /// #     pub use enative_futures::futures;
+    /// #     pub use enative_futures::stream;
     /// # }
-    /// use iced::futures::channel::mpsc;
-    /// use iced::futures::sink::SinkExt;
-    /// use iced::futures::Stream;
-    /// use iced::stream;
-    /// use iced::Subscription;
+    /// use enative::futures::channel::mpsc;
+    /// use enative::futures::sink::SinkExt;
+    /// use enative::futures::Stream;
+    /// use enative::stream;
+    /// use enative::Subscription;
     ///
     /// pub enum Event {
     ///     Ready(mpsc::Sender<Input>),
@@ -173,7 +173,7 @@ impl<T> Subscription<T> {
     ///         output.send(Event::Ready(sender)).await;
     ///
     ///         loop {
-    ///             use iced_futures::futures::StreamExt;
+    ///             use enative_futures::futures::StreamExt;
     ///
     ///             // Read next input sent from `Application`
     ///             let input = receiver.select_next_some().await;
@@ -199,7 +199,7 @@ impl<T> Subscription<T> {
     /// Check out the [`websocket`] example, which showcases this pattern to maintain a `WebSocket`
     /// connection open.
     ///
-    /// [`websocket`]: https://github.com/iced-rs/iced/tree/master/examples/websocket
+    /// [`websocket`]: https://github.com/enative-rs/enative/tree/master/examples/websocket
     pub fn run<S>(builder: fn() -> S) -> Self
     where
         S: Stream<Item = T> + MaybeSend + 'static,

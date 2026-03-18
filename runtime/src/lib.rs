@@ -1,12 +1,12 @@
 //! A renderer-agnostic native GUI runtime.
 //!
-//! ![The native path of the Iced ecosystem](https://github.com/iced-rs/iced/blob/master/docs/graphs/native.png?raw=true)
+//! ![The native path of the enative ecosystem](https://github.com/enative-rs/enative/blob/master/docs/graphs/native.png?raw=true)
 //!
-//! `iced_runtime` takes [`iced_core`] and builds a native runtime on top of it.
+//! `enative_runtime` takes [`enative_core`] and builds a native runtime on top of it.
 //!
-//! [`iced_core`]: https://github.com/iced-rs/iced/tree/master/core
+//! [`enative_core`]: https://github.com/enative-rs/enative/tree/master/core
 #![doc(
-    html_logo_url = "https://raw.githubusercontent.com/iced-rs/iced/9ab6923e943f784985e9ef9ca28b10278297225d/docs/logo.svg"
+    html_logo_url = "https://raw.githubusercontent.com/enative-rs/enative/9ab6923e943f784985e9ef9ca28b10278297225d/docs/logo.svg"
 )]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 pub mod clipboard;
@@ -19,8 +19,8 @@ pub mod user_interface;
 pub mod widget;
 pub mod window;
 
-pub use iced_core as core;
-pub use iced_futures as futures;
+pub use enative_core as core;
+pub use enative_futures as futures;
 
 pub use task::Task;
 pub use user_interface::UserInterface;
@@ -30,7 +30,7 @@ use crate::core::Event;
 
 use std::fmt;
 
-/// An action that the iced runtime can perform.
+/// An action that the enative runtime can perform.
 pub enum Action<T> {
     /// Output some value.
     Output(T),
@@ -127,7 +127,7 @@ where
     }
 }
 
-/// Creates a [`Task`] that exits the iced runtime.
+/// Creates a [`Task`] that exits the enative runtime.
 ///
 /// This will normally close any application windows and
 /// terminate the runtime loop.

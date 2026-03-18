@@ -8,14 +8,14 @@ pub struct PlatformSpecific {
     ///
     /// If set to `None`, the application will be appended to the HTML body.
     ///
-    /// By default, it is set to `"iced"`.
+    /// By default, it is set to `"enative"`.
     pub target: Option<String>,
 }
 
 impl Default for PlatformSpecific {
     fn default() -> Self {
         Self {
-            target: Some(String::from("iced")),
+            target: Some(String::from("enative")),
         }
     }
 }

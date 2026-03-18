@@ -1,13 +1,13 @@
 //! This example showcases a simple native custom widget that renders using
 //! arbitrary low-level geometry.
 mod rainbow {
-    use iced::advanced::Shell;
-    use iced::advanced::graphics::color;
-    use iced::advanced::layout::{self, Layout};
-    use iced::advanced::renderer;
-    use iced::advanced::widget::{self, Widget};
-    use iced::mouse;
-    use iced::{Element, Event, Length, Rectangle, Renderer, Size, Theme, Transformation, Vector};
+    use enative::advanced::Shell;
+    use enative::advanced::graphics::color;
+    use enative::advanced::layout::{self, Layout};
+    use enative::advanced::renderer;
+    use enative::advanced::widget::{self, Widget};
+    use enative::mouse;
+    use enative::{Element, Event, Length, Rectangle, Renderer, Size, Theme, Transformation, Vector};
 
     #[derive(Debug, Clone, Copy, Default)]
     pub struct Rainbow;
@@ -60,8 +60,8 @@ mod rainbow {
             cursor: mouse::Cursor,
             _viewport: &Rectangle,
         ) {
-            use iced::advanced::Renderer as _;
-            use iced::advanced::graphics::mesh::{self, Mesh, Renderer as _, SolidVertex2D};
+            use enative::advanced::Renderer as _;
+            use enative::advanced::graphics::mesh::{self, Mesh, Renderer as _, SolidVertex2D};
 
             let bounds = layout.bounds();
 
@@ -160,12 +160,12 @@ mod rainbow {
     }
 }
 
-use iced::widget::{center_x, center_y, column, scrollable};
-use iced::{Element, Never};
+use enative::widget::{center_x, center_y, column, scrollable};
+use enative::{Element, Never};
 use rainbow::rainbow;
 
-pub fn main() -> iced::Result {
-    iced::run((), view)
+pub fn main() -> enative::Result {
+    enative::run((), view)
 }
 
 fn view(_state: &()) -> Element<'_, Never> {

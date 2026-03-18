@@ -2,12 +2,12 @@ mod download;
 
 use download::download;
 
-use iced::task;
-use iced::widget::{Column, button, center, column, progress_bar, text};
-use iced::{Center, Element, Function, Right, Task};
+use enative::task;
+use enative::widget::{Column, button, center, column, progress_bar, text};
+use enative::{Center, Element, Function, Right, Task};
 
-pub fn main() -> iced::Result {
-    iced::application(Example::default, Example::update, Example::view).run()
+pub fn main() -> enative::Result {
+    enative::application(Example::default, Example::update, Example::view).run()
 }
 
 #[derive(Debug)]

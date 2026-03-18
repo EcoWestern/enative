@@ -256,7 +256,7 @@ impl Base for Theme {
         static SYSTEM: OnceLock<Option<Theme>> = OnceLock::new();
 
         let system = SYSTEM.get_or_init(|| {
-            let name = env::var("ICED_THEME").ok()?;
+            let name = env::var("enative_THEME").ok()?;
 
             Theme::ALL
                 .iter()

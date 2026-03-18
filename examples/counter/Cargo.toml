@@ -6,11 +6,11 @@ edition = "2024"
 publish = false
 
 [dependencies]
-iced.workspace = true
+enative.workspace = true
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-iced.workspace = true
-iced.features = ["webgl", "fira-sans"]
+enative.workspace = true
+enative.features = ["webgl", "fira-sans"]
 
 [dev-dependencies]
-iced_test.workspace = true
+enative_test.workspace = true

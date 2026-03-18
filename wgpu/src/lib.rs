@@ -1,24 +1,24 @@
-//! A [`wgpu`] renderer for [Iced].
+//! A [`wgpu`] renderer for [enative].
 //!
-//! ![The native path of the Iced ecosystem](https://github.com/iced-rs/iced/blob/0525d76ff94e828b7b21634fa94a747022001c83/docs/graphs/native.png?raw=true)
+//! ![The native path of the enative ecosystem](https://github.com/enative-rs/enative/blob/0525d76ff94e828b7b21634fa94a747022001c83/docs/graphs/native.png?raw=true)
 //!
 //! [`wgpu`] supports most modern graphics backends: Vulkan, Metal, DX11, and
 //! DX12 (OpenGL and WebGL are still WIP). Additionally, it will support the
 //! incoming [WebGPU API].
 //!
-//! Currently, `iced_wgpu` supports the following primitives:
+//! Currently, `enative_wgpu` supports the following primitives:
 //! - Text, which is rendered using [`glyphon`].
 //! - Quads or rectangles, with rounded borders and a solid background color.
 //! - Clip areas, useful to implement scrollables or hide overflowing content.
 //! - Images and SVG, loaded from memory or the file system.
 //! - Meshes of triangles, useful to draw geometry freely.
 //!
-//! [Iced]: https://github.com/iced-rs/iced
+//! [enative]: https://github.com/enative-rs/enative
 //! [`wgpu`]: https://github.com/gfx-rs/wgpu-rs
 //! [WebGPU API]: https://gpuweb.github.io/gpuweb/
 //! [`glyphon`]: https://github.com/grovesNL/glyphon
 #![doc(
-    html_logo_url = "https://raw.githubusercontent.com/iced-rs/iced/9ab6923e943f784985e9ef9ca28b10278297225d/docs/logo.svg"
+    html_logo_url = "https://raw.githubusercontent.com/enative-rs/enative/9ab6923e943f784985e9ef9ca28b10278297225d/docs/logo.svg"
 )]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 #![allow(missing_docs)]
@@ -46,9 +46,9 @@ mod image;
 
 use buffer::Buffer;
 
-use iced_debug as debug;
-pub use iced_graphics as graphics;
-pub use iced_graphics::core;
+use enative_debug as debug;
+pub use enative_graphics as graphics;
+pub use enative_graphics::core;
 
 pub use wgpu;
 
@@ -65,10 +65,10 @@ use crate::graphics::mesh;
 use crate::graphics::text::{Editor, Paragraph};
 use crate::graphics::{Shell, Viewport};
 
-/// A [`wgpu`] graphics renderer for [`iced`].
+/// A [`wgpu`] graphics renderer for [`enative`].
 ///
 /// [`wgpu`]: https://github.com/gfx-rs/wgpu-rs
-/// [`iced`]: https://github.com/iced-rs/iced
+/// [`enative`]: https://github.com/enative-rs/enative
 pub struct Renderer {
     engine: Engine,
     settings: renderer::Settings,
@@ -131,7 +131,7 @@ impl Renderer {
             self.engine
                 .device
                 .create_command_encoder(&wgpu::CommandEncoderDescriptor {
-                    label: Some("iced_wgpu encoder"),
+                    label: Some("enative_wgpu encoder"),
                 });
 
         self.prepare(&mut encoder, viewport);
@@ -206,7 +206,7 @@ impl Renderer {
         };
 
         let texture = self.engine.device.create_texture(&wgpu::TextureDescriptor {
-            label: Some("iced_wgpu.offscreen.source_texture"),
+            label: Some("enative_wgpu.offscreen.source_texture"),
             size: texture_extent,
             mip_level_count: 1,
             sample_count: 1,
@@ -234,7 +234,7 @@ impl Renderer {
         );
 
         let output_buffer = self.engine.device.create_buffer(&wgpu::BufferDescriptor {
-            label: Some("iced_wgpu.offscreen.output_texture_buffer"),
+            label: Some("enative_wgpu.offscreen.output_texture_buffer"),
             size: (dimensions.padded_bytes_per_row * dimensions.height as usize) as u64,
             usage: wgpu::BufferUsages::MAP_READ | wgpu::BufferUsages::COPY_DST,
             mapped_at_creation: false,
@@ -400,7 +400,7 @@ impl Renderer {
 
         let mut render_pass =
             ManuallyDrop::new(encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                label: Some("iced_wgpu render pass"),
+                label: Some("enative_wgpu render pass"),
                 color_attachments: &[Some(wgpu::RenderPassColorAttachment {
                     view: frame,
                     depth_slice: None,
@@ -484,7 +484,7 @@ impl Renderer {
 
                 render_pass =
                     ManuallyDrop::new(encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                        label: Some("iced_wgpu render pass"),
+                        label: Some("enative_wgpu render pass"),
                         color_attachments: &[Some(wgpu::RenderPassColorAttachment {
                             view: frame,
                             depth_slice: None,
@@ -572,7 +572,7 @@ impl Renderer {
 
                     render_pass =
                         ManuallyDrop::new(encoder.begin_render_pass(&wgpu::RenderPassDescriptor {
-                            label: Some("iced_wgpu render pass"),
+                            label: Some("enative_wgpu render pass"),
                             color_attachments: &[Some(wgpu::RenderPassColorAttachment {
                                 view: frame,
                                 depth_slice: None,
@@ -692,10 +692,10 @@ impl core::text::Renderer for Renderer {
     type Paragraph = Paragraph;
     type Editor = Editor;
 
-    const ICON_FONT: Font = Font::new("Iced-Icons");
+    const ICON_FONT: Font = Font::new("enative-Icons");
     const CHECKMARK_ICON: char = '\u{f00c}';
     const ARROW_DOWN_ICON: char = '\u{e800}';
-    const ICED_LOGO: char = '\u{e801}';
+    const ENATIVE_LOGO: char = '\u{e801}';
     const SCROLL_UP_ICON: char = '\u{e802}';
     const SCROLL_DOWN_ICON: char = '\u{e803}';
     const SCROLL_LEFT_ICON: char = '\u{e804}';
@@ -887,7 +887,7 @@ impl renderer::Headless for Renderer {
 
         let (device, queue) = adapter
             .request_device(&wgpu::DeviceDescriptor {
-                label: Some("iced_wgpu [headless]"),
+                label: Some("enative_wgpu [headless]"),
                 required_features: wgpu::Features::empty(),
                 required_limits: wgpu::Limits {
                     max_bind_groups: 2,

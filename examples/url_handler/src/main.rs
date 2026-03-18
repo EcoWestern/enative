@@ -1,9 +1,9 @@
-use iced::event;
-use iced::widget::{center, text};
-use iced::{Element, Subscription};
+use enative::event;
+use enative::widget::{center, text};
+use enative::{Element, Subscription};
 
-pub fn main() -> iced::Result {
-    iced::application(App::default, App::update, App::view)
+pub fn main() -> enative::Result {
+    enative::application(App::default, App::update, App::view)
         .subscription(App::subscription)
         .run()
 }

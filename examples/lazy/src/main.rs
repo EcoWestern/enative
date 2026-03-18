@@ -1,11 +1,11 @@
-use iced::widget::{button, column, lazy, pick_list, row, scrollable, space, text, text_input};
-use iced::{Element, Fill};
+use enative::widget::{button, column, lazy, pick_list, row, scrollable, space, text, text_input};
+use enative::{Element, Fill};
 
 use std::collections::HashSet;
 use std::hash::Hash;
 
-pub fn main() -> iced::Result {
-    iced::run(App::update, App::view)
+pub fn main() -> enative::Result {
+    enative::run(App::update, App::view)
 }
 
 struct App {
@@ -67,16 +67,16 @@ impl std::fmt::Display for Color {
     }
 }
 
-impl From<Color> for iced::Color {
+impl From<Color> for enative::Color {
     fn from(value: Color) -> Self {
         match value {
-            Color::Black => iced::Color::from_rgb8(0, 0, 0),
-            Color::Red => iced::Color::from_rgb8(220, 50, 47),
-            Color::Orange => iced::Color::from_rgb8(203, 75, 22),
-            Color::Yellow => iced::Color::from_rgb8(181, 137, 0),
-            Color::Green => iced::Color::from_rgb8(133, 153, 0),
-            Color::Blue => iced::Color::from_rgb8(38, 139, 210),
-            Color::Purple => iced::Color::from_rgb8(108, 113, 196),
+            Color::Black => enative::Color::from_rgb8(0, 0, 0),
+            Color::Red => enative::Color::from_rgb8(220, 50, 47),
+            Color::Orange => enative::Color::from_rgb8(203, 75, 22),
+            Color::Yellow => enative::Color::from_rgb8(181, 137, 0),
+            Color::Green => enative::Color::from_rgb8(133, 153, 0),
+            Color::Blue => enative::Color::from_rgb8(38, 139, 210),
+            Color::Purple => enative::Color::from_rgb8(108, 113, 196),
         }
     }
 }

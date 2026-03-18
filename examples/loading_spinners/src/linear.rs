@@ -1,12 +1,12 @@
 //! Show a linear progress indicator.
-use iced::advanced::layout;
-use iced::advanced::renderer::{self, Quad};
-use iced::advanced::widget::tree::{self, Tree};
-use iced::advanced::{self, Layout, Shell, Widget};
-use iced::mouse;
-use iced::time::Instant;
-use iced::window;
-use iced::{Background, Color, Element, Event, Length, Rectangle, Size};
+use enative::advanced::layout;
+use enative::advanced::renderer::{self, Quad};
+use enative::advanced::widget::tree::{self, Tree};
+use enative::advanced::{self, Layout, Shell, Widget};
+use enative::mouse;
+use enative::time::Instant;
+use enative::window;
+use enative::{Background, Color, Element, Event, Length, Rectangle, Size};
 
 use super::easing::{self, Easing};
 
@@ -247,7 +247,7 @@ impl<'a, Message, Theme, Renderer> From<Linear<'a, Theme>> for Element<'a, Messa
 where
     Message: Clone + 'a,
     Theme: StyleSheet + 'a,
-    Renderer: iced::advanced::Renderer + 'a,
+    Renderer: enative::advanced::Renderer + 'a,
 {
     fn from(linear: Linear<'a, Theme>) -> Self {
         Self::new(linear)
@@ -280,7 +280,7 @@ pub trait StyleSheet {
     fn appearance(&self, style: &Self::Style) -> Appearance;
 }
 
-impl StyleSheet for iced::Theme {
+impl StyleSheet for enative::Theme {
     type Style = ();
 
     fn appearance(&self, _style: &Self::Style) -> Appearance {

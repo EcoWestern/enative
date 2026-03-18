@@ -1,6 +1,6 @@
 [package]
-name = "iced_renderer"
-description = "The official renderer for iced"
+name = "enative_renderer"
+description = "The official renderer for enative"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -14,27 +14,27 @@ keywords.workspace = true
 workspace = true
 
 [features]
-wgpu = ["iced_wgpu/default"]
-wgpu-bare = ["iced_wgpu"]
-tiny-skia = ["iced_tiny_skia"]
-image = ["iced_tiny_skia?/image", "iced_wgpu?/image"]
-svg = ["iced_tiny_skia?/svg", "iced_wgpu?/svg"]
-geometry = ["iced_graphics/geometry", "iced_tiny_skia?/geometry", "iced_wgpu?/geometry"]
-web-colors = ["iced_wgpu?/web-colors"]
-webgl = ["iced_wgpu?/webgl"]
-fira-sans = ["iced_graphics/fira-sans"]
-strict-assertions = ["iced_wgpu?/strict-assertions"]
-x11 = ["iced_tiny_skia?/x11"]
-wayland = ["iced_tiny_skia?/wayland"]
+wgpu = ["enative_wgpu/default"]
+wgpu-bare = ["enative_wgpu"]
+tiny-skia = ["enative_tiny_skia"]
+image = ["enative_tiny_skia?/image", "enative_wgpu?/image"]
+svg = ["enative_tiny_skia?/svg", "enative_wgpu?/svg"]
+geometry = ["enative_graphics/geometry", "enative_tiny_skia?/geometry", "enative_wgpu?/geometry"]
+web-colors = ["enative_wgpu?/web-colors"]
+webgl = ["enative_wgpu?/webgl"]
+fira-sans = ["enative_graphics/fira-sans"]
+strict-assertions = ["enative_wgpu?/strict-assertions"]
+x11 = ["enative_tiny_skia?/x11"]
+wayland = ["enative_tiny_skia?/wayland"]
 
 [dependencies]
-iced_graphics.workspace = true
+enative_graphics.workspace = true
 
-iced_tiny_skia.workspace = true
-iced_tiny_skia.optional = true
+enative_tiny_skia.workspace = true
+enative_tiny_skia.optional = true
 
-iced_wgpu.workspace = true
-iced_wgpu.optional = true
+enative_wgpu.workspace = true
+enative_wgpu.optional = true
 
 log.workspace = true
 thiserror.workspace = true

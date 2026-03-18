@@ -5,7 +5,7 @@ edition = "2024"
 publish = false
 
 [dependencies]
-iced.workspace = true
-iced.features = ["debug"]
+enative.workspace = true
+enative.features = ["debug"]
 
 tracing-subscriber = "0.3"

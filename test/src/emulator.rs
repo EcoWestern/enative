@@ -22,7 +22,7 @@ use crate::{Instruction, Selector};
 
 use std::fmt;
 
-/// A headless runtime that can run iced applications and execute
+/// A headless runtime that can run enative applications and execute
 /// [instructions](crate::Instruction).
 ///
 /// An [`Emulator`] runs its program as faithfully as possible to the real thing.
@@ -255,7 +255,7 @@ impl<P: Program + 'static> Emulator<P> {
                     // TODO
                     dbg!(action);
                 }
-                iced_runtime::Action::Event { window, event } => {
+                enative_runtime::Action::Event { window, event } => {
                     // TODO
                     dbg!(window, event);
                 }

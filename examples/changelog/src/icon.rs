@@ -1,5 +1,5 @@
-use iced::widget::{text, Text};
-use iced::Font;
+use enative::widget::{text, Text};
+use enative::Font;
 
 pub const FONT_BYTES: &[u8] = include_bytes!("../fonts/changelog-icons.ttf");
 

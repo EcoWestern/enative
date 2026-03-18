@@ -283,7 +283,7 @@ pub unsafe fn allocate(handle: &Handle, size: Size<u32>) -> Allocation {
 ///
 /// [renderer]: crate::renderer
 pub trait Renderer: crate::Renderer {
-    /// The image Handle to be displayed. Iced exposes its own default implementation of a [`Handle`]
+    /// The image Handle to be displayed. enative exposes its own default implementation of a [`Handle`]
     ///
     /// [`Handle`]: Self::Handle
     type Handle: Clone;

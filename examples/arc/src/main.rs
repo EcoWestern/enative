@@ -1,12 +1,12 @@
 use std::{f32::consts::PI, time::Instant};
 
-use iced::mouse;
-use iced::widget::canvas::{self, Cache, Canvas, Geometry, Path, Stroke, stroke};
-use iced::window;
-use iced::{Element, Fill, Point, Rectangle, Renderer, Subscription, Theme};
+use enative::mouse;
+use enative::widget::canvas::{self, Cache, Canvas, Geometry, Path, Stroke, stroke};
+use enative::window;
+use enative::{Element, Fill, Point, Rectangle, Renderer, Subscription, Theme};
 
-pub fn main() -> iced::Result {
-    iced::application(Arc::new, Arc::update, Arc::view)
+pub fn main() -> enative::Result {
+    enative::application(Arc::new, Arc::update, Arc::view)
         .subscription(Arc::subscription)
         .theme(Theme::Dark)
         .run()

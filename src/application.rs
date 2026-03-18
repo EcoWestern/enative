@@ -1,12 +1,12 @@
-//! Create and run iced applications step by step.
+//! Create and run enative applications step by step.
 //!
 //! # Example
 //! ```no_run,standalone_crate
-//! use iced::widget::{button, column, text, Column};
-//! use iced::Theme;
+//! use enative::widget::{button, column, text, Column};
+//! use enative::Theme;
 //!
-//! pub fn main() -> iced::Result {
-//!     iced::application(u64::default, update, view)
+//! pub fn main() -> enative::Result {
+//!     enative::application(u64::default, update, view)
 //!         .theme(Theme::Dark)
 //!         .centered()
 //!         .run()
@@ -39,7 +39,7 @@ use crate::{
     Element, Executor, Font, Never, Preset, Result, Settings, Size, Subscription, Task, Theme,
 };
 
-use iced_debug as debug;
+use enative_debug as debug;
 
 use std::borrow::Cow;
 
@@ -47,14 +47,14 @@ pub mod timed;
 
 pub use timed::timed;
 
-/// Creates an iced [`Application`] given its boot, update, and view logic.
+/// Creates an enative [`Application`] given its boot, update, and view logic.
 ///
 /// # Example
 /// ```no_run,standalone_crate
-/// use iced::widget::{button, column, text, Column};
+/// use enative::widget::{button, column, text, Column};
 ///
-/// pub fn main() -> iced::Result {
-///     iced::application(u64::default, update, view).run()
+/// pub fn main() -> enative::Result {
+///     enative::application(u64::default, update, view).run()
 /// }
 ///
 /// #[derive(Debug, Clone)]
@@ -112,7 +112,7 @@ where
         type Message = Message;
         type Theme = Theme;
         type Renderer = Renderer;
-        type Executor = iced_futures::backend::default::Executor;
+        type Executor = enative_futures::backend::default::Executor;
 
         fn name() -> &'static str {
             let name = std::any::type_name::<State>();
@@ -140,7 +140,7 @@ where
             Settings::default()
         }
 
-        fn window(&self) -> Option<iced_core::window::Settings> {
+        fn window(&self) -> Option<enative_core::window::Settings> {
             Some(window::Settings::default())
         }
     }
@@ -161,9 +161,9 @@ where
     }
 }
 
-/// The underlying definition and configuration of an iced application.
+/// The underlying definition and configuration of an enative application.
 ///
-/// You can use this API to create and run iced applications
+/// You can use this API to create and run enative applications
 /// step by step—without coupling your logic to a trait
 /// or a specific type.
 ///
@@ -184,21 +184,21 @@ impl<P: Program> Application<P> {
         P::Message: message::MaybeDebug + message::MaybeClone,
     {
         #[cfg(feature = "debug")]
-        iced_debug::init(iced_debug::Metadata {
+        enative_debug::init(enative_debug::Metadata {
             name: P::name(),
             theme: None,
             can_time_travel: cfg!(feature = "time-travel"),
         });
 
         #[cfg(feature = "tester")]
-        let program = iced_tester::attach(self);
+        let program = enative_tester::attach(self);
 
         #[cfg(all(
             feature = "debug",
             not(feature = "tester"),
             not(target_arch = "wasm32")
         ))]
-        let program = iced_devtools::attach(self);
+        let program = enative_devtools::attach(self);
 
         #[cfg(not(any(
             feature = "tester",
@@ -473,7 +473,7 @@ impl<P: Program> Program for Application<P> {
         debug::hot(|| self.raw.subscription(state))
     }
 
-    fn theme(&self, state: &Self::State, window: iced_core::window::Id) -> Option<Self::Theme> {
+    fn theme(&self, state: &Self::State, window: enative_core::window::Id) -> Option<Self::Theme> {
         debug::hot(|| self.raw.theme(state, window))
     }
 
@@ -608,13 +608,13 @@ where
 /// Any implementors of this trait can be provided as an argument to
 /// [`Application::theme`].
 ///
-/// `iced` provides two implementors:
+/// `enative` provides two implementors:
 /// - the built-in [`Theme`] itself
 /// - and any `Fn(&State) -> impl Into<Option<Theme>>`.
 pub trait ThemeFn<State, Theme> {
     /// Returns the theme of the [`Application`] for the current state.
     ///
-    /// If `None` is returned, `iced` will try to use a theme that
+    /// If `None` is returned, `enative` will try to use a theme that
     /// matches the system color scheme.
     fn theme(&self, state: &State) -> Option<Theme>;
 }

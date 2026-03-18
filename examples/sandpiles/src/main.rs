@@ -1,15 +1,15 @@
-use iced::mouse;
-use iced::widget::{canvas, column, container, row, slider, text};
-use iced::window;
-use iced::{
+use enative::mouse;
+use enative::widget::{canvas, column, container, row, slider, text};
+use enative::window;
+use enative::{
     Center, Element, Event, Fill, Font, Point, Rectangle, Renderer, Size, Subscription, Theme,
     Vector,
 };
 
 use std::collections::{HashMap, HashSet};
 
-pub fn main() -> iced::Result {
-    iced::application(Sandpiles::new, Sandpiles::update, Sandpiles::view)
+pub fn main() -> enative::Result {
+    enative::application(Sandpiles::new, Sandpiles::update, Sandpiles::view)
         .subscription(Sandpiles::subscription)
         .run()
 }

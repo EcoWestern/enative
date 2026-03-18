@@ -1,6 +1,6 @@
 [package]
-name = "iced_highlighter"
-description = "A syntax highlighter for iced"
+name = "enative_highlighter"
+description = "A syntax highlighter for enative"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
@@ -14,6 +14,6 @@ keywords.workspace = true
 workspace = true
 
 [dependencies]
-iced_core.workspace = true
+enative_core.workspace = true
 
 two-face.workspace = true

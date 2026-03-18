@@ -315,7 +315,7 @@ impl Interpolable for Color {
 /// # Examples
 ///
 /// ```
-/// # use iced_core::{Color, color};
+/// # use enative_core::{Color, color};
 /// assert_eq!(color!(0, 0, 0), Color::BLACK);
 /// assert_eq!(color!(0, 0, 0, 0.0), Color::TRANSPARENT);
 /// assert_eq!(color!(0xffffff), Color::from_rgb(1.0, 1.0, 1.0));

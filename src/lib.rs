@@ -1,22 +1,23 @@
-//! iced is a cross-platform GUI library focused on simplicity and type-safety.
-//! Inspired by [Elm].
+//! enative is a high-performance, cross-platform GUI engine for the EcoWestern Ecosystem.
+//! Originally a fork of [Iced], it is designed for rapid cross-platform application development.
 //!
-//! [Elm]: https://elm-lang.org/
+//! [Iced]: https://github.com/iced-rs/iced
+//!
+//! # Status
+//! enative is currently in development and inherits most existing quirks of Iced.
+//! Fixes and optimizations for MatePC, MateOS, and other EcoWestern platforms are underway.
 //!
 //! # Disclaimer
-//! iced is __experimental__ software. If you expect the documentation to hold your hand
-//! as you learn the ropes, you are in for a frustrating experience.
-//!
 //! The library leverages Rust to its full extent: ownership, borrowing, lifetimes, futures,
 //! streams, first-class functions, trait bounds, closures, and more. This documentation
 //! is not meant to teach you any of these. Far from it, it will assume you have __mastered__
 //! all of them.
 //!
-//! Furthermore—just like Rust—iced is very unforgiving. It will not let you easily cut corners.
+//! Furthermore—just like Rust—enative is very unforgiving. It will not let you easily cut corners.
 //! The type signatures alone can be used to learn how to use most of the library.
 //! Everything is connected.
 //!
-//! Therefore, iced is easy to learn for __advanced__ Rust programmers; but plenty of patient
+//! Therefore, enative is easy to learn for __advanced__ Rust programmers; but plenty of patient
 //! beginners have learned it and had a good time with it. Since it leverages a lot of what
 //! Rust has to offer in a type-safe way, it can be a great way to discover Rust itself.
 //!
@@ -24,17 +25,17 @@
 //! and struggle to use the library; then I recommend you to wait patiently until [the book]
 //! is finished.
 //!
-//! [the book]: https://book.iced.rs
+//! [the book]: https://book.enative.rs
 //!
 //! # The Pocket Guide
 //! Start by calling [`run`]:
 //!
 //! ```no_run,standalone_crate
-//! pub fn main() -> iced::Result {
-//!     iced::run(update, view)
+//! pub fn main() -> enative::Result {
+//!     enative::run(update, view)
 //! }
 //! # fn update(state: &mut (), message: ()) {}
-//! # fn view(state: &()) -> iced::Element<'_, ()> { iced::widget::text("").into() }
+//! # fn view(state: &()) -> enative::Element<'_, ()> { enative::widget::text("").into() }
 //! ```
 //!
 //! Define an `update` function to __change__ your state:
@@ -52,8 +53,8 @@
 //! Define a `view` function to __display__ your state:
 //!
 //! ```standalone_crate
-//! use iced::widget::{button, text};
-//! use iced::Element;
+//! use enative::widget::{button, text};
+//! use enative::Element;
 //!
 //! fn view(counter: &u64) -> Element<'_, Message> {
 //!     button(text(counter)).on_press(Message::Increment).into()
@@ -87,8 +88,8 @@
 //! # struct Counter { value: u64 }
 //! # #[derive(Clone)]
 //! # enum Message { Increment }
-//! # use iced::widget::{button, text};
-//! # use iced::Element;
+//! # use enative::widget::{button, text};
+//! # use enative::Element;
 //! fn update(counter: &mut Counter, message: Message) {
 //!     match message {
 //!         Message::Increment => counter.value += 1,
@@ -112,8 +113,8 @@
 //! # struct Counter { value: u64 }
 //! # #[derive(Clone)]
 //! # enum Message { Increment }
-//! use iced::widget::{button, column, text};
-//! use iced::Element;
+//! use enative::widget::{button, column, text};
+//! use enative::Element;
 //!
 //! fn view(counter: &Counter) -> Element<'_, Message> {
 //!     column![
@@ -132,7 +133,7 @@
 //! your `update`.
 //!
 //! ## Layout
-//! There is no unified layout system in iced. Instead, each widget implements
+//! There is no unified layout system in enative. Instead, each widget implements
 //! its own layout strategy.
 //!
 //! Building your layout will often consist in using a combination of
@@ -141,8 +142,8 @@
 //! ```standalone_crate
 //! # struct State;
 //! # enum Message {}
-//! use iced::widget::{column, container, row};
-//! use iced::{Fill, Element};
+//! use enative::widget::{column, container, row};
+//! use enative::{Fill, Element};
 //!
 //! fn view(state: &State) -> Element<'_, Message> {
 //!     container(
@@ -184,8 +185,8 @@
 //! ```standalone_crate
 //! # struct State;
 //! # enum Message {}
-//! use iced::widget::container;
-//! use iced::Element;
+//! use enative::widget::container;
+//! use enative::Element;
 //!
 //! fn view(state: &State) -> Element<'_, Message> {
 //!     container("I am 300px tall!").height(300).into()
@@ -199,10 +200,10 @@
 //!
 //! ```no_run,standalone_crate
 //! # struct State;
-//! use iced::Theme;
+//! use enative::Theme;
 //!
-//! pub fn main() -> iced::Result {
-//!     iced::application(new, update, view)
+//! pub fn main() -> enative::Result {
+//!     enative::application(new, update, view)
 //!         .theme(theme)
 //!         .run()
 //! }
@@ -216,7 +217,7 @@
 //!     Theme::TokyoNight
 //! }
 //! # fn update(state: &mut State, message: ()) {}
-//! # fn view(state: &State) -> iced::Element<'_, ()> { iced::widget::text("").into() }
+//! # fn view(state: &State) -> enative::Element<'_, ()> { enative::widget::text("").into() }
 //! ```
 //!
 //! The `theme` function takes the current state of the application, allowing the
@@ -226,7 +227,7 @@
 //! also [create your own](Theme::custom).
 //!
 //! ## Styling
-//! As with layout, iced does not have a unified styling system. However, all
+//! As with layout, enative does not have a unified styling system. However, all
 //! of the built-in widgets follow the same styling approach.
 //!
 //! The appearance of a widget can be changed by calling its `style` method:
@@ -234,8 +235,8 @@
 //! ```standalone_crate
 //! # struct State;
 //! # enum Message {}
-//! use iced::widget::container;
-//! use iced::Element;
+//! use enative::widget::container;
+//! use enative::Element;
 //!
 //! fn view(state: &State) -> Element<'_, Message> {
 //!     container("I am a rounded box!").style(container::rounded_box).into()
@@ -249,8 +250,8 @@
 //! # struct State;
 //! # #[derive(Clone)]
 //! # enum Message {}
-//! use iced::widget::button;
-//! use iced::{Element, Theme};
+//! use enative::widget::button;
+//! use enative::{Element, Theme};
 //!
 //! fn view(state: &State) -> Element<'_, Message> {
 //!     button("I am a styled button!").style(|theme: &Theme, status| {
@@ -291,7 +292,7 @@
 //! ```standalone_crate
 //! # #[derive(Clone)]
 //! # struct Weather;
-//! use iced::Task;
+//! use enative::Task;
 //!
 //! struct State {
 //!     weather: Option<Weather>,
@@ -322,7 +323,7 @@
 //! }
 //! ```
 //!
-//! Tasks can also be used to interact with the iced runtime. Some modules
+//! Tasks can also be used to interact with the enative runtime. Some modules
 //! expose functions that create tasks for different purposes—like [changing
 //! window settings](window#functions), [focusing a widget](widget::operation::focus_next), or
 //! [querying its visible bounds](widget::selector::find).
@@ -338,16 +339,16 @@
 //!
 //! ```no_run,standalone_crate
 //! # struct State;
-//! use iced::window;
-//! use iced::{Size, Subscription};
+//! use enative::window;
+//! use enative::{Size, Subscription};
 //!
 //! #[derive(Debug, Clone)]
 //! enum Message {
 //!     WindowResized(Size),
 //! }
 //!
-//! pub fn main() -> iced::Result {
-//!     iced::application(new, update, view)
+//! pub fn main() -> enative::Result {
+//!     enative::application(new, update, view)
 //!         .subscription(subscription)
 //!         .run()
 //! }
@@ -357,7 +358,7 @@
 //! }
 //! # fn new() -> State { State }
 //! # fn update(state: &mut State, message: Message) {}
-//! # fn view(state: &State) -> iced::Element<'_, Message> { iced::widget::text("").into() }
+//! # fn view(state: &State) -> enative::Element<'_, Message> { enative::widget::text("").into() }
 //! ```
 //!
 //! A [`Subscription`] is [a _declarative_ builder of streams](Subscription#the-lifetime-of-a-subscription)
@@ -379,7 +380,7 @@
 //!
 //! ```standalone_crate
 //! # mod contacts {
-//! #     use iced::{Element, Task};
+//! #     use enative::{Element, Task};
 //! #     pub struct Contacts;
 //! #     impl Contacts {
 //! #         pub fn update(&mut self, message: Message) -> Action { unimplemented!() }
@@ -390,7 +391,7 @@
 //! #     pub enum Action { None, Run(Task<Message>), Chat(()) }
 //! # }
 //! # mod conversation {
-//! #     use iced::{Element, Task};
+//! #     use enative::{Element, Task};
 //! #     pub struct Conversation;
 //! #     impl Conversation {
 //! #         pub fn new(contact: ()) -> (Self, Task<Message>) { unimplemented!() }
@@ -403,7 +404,7 @@
 //! use contacts::Contacts;
 //! use conversation::Conversation;
 //!
-//! use iced::{Element, Task};
+//! use enative::{Element, Task};
 //!
 //! struct State {
 //!     screen: Screen,
@@ -469,18 +470,18 @@
 //! Furthermore, functor methods like [`Task::map`], [`Element::map`], and [`Subscription::map`] make composition
 //! seamless.
 #![doc(
-    html_logo_url = "https://raw.githubusercontent.com/iced-rs/iced/bdf0430880f5c29443f5f0a0ae4895866dfef4c6/docs/logo.svg"
+    html_logo_url = "https://raw.githubusercontent.com/ecowestern/enative/master/docs/logo.svg"
 )]
 #![cfg_attr(docsrs, feature(doc_cfg))]
-use iced_widget::graphics;
-use iced_widget::renderer;
-use iced_winit as shell;
-use iced_winit::core;
-use iced_winit::program;
-use iced_winit::runtime;
+use enative_widget::graphics;
+use enative_widget::renderer;
+use enative_winit as shell;
+use enative_winit::core;
+use enative_winit::program;
+use enative_winit::runtime;
 
-pub use iced_futures::futures;
-pub use iced_futures::stream;
+pub use enative_futures::futures;
+pub use enative_futures::stream;
 
 #[cfg(not(any(
     target_arch = "wasm32",
@@ -507,10 +508,10 @@ compile_error!(
 );
 
 #[cfg(feature = "highlighter")]
-pub use iced_highlighter as highlighter;
+pub use enative_highlighter as highlighter;
 
 #[cfg(feature = "wgpu")]
-pub use iced_renderer::wgpu::wgpu;
+pub use enative_renderer::wgpu::wgpu;
 
 mod error;
 
@@ -537,7 +538,7 @@ pub use crate::core::{
 pub use crate::program::Preset;
 pub use crate::program::message;
 pub use crate::runtime::exit;
-pub use iced_futures::Subscription;
+pub use enative_futures::Subscription;
 
 pub use Alignment::Center;
 pub use Length::{Fill, FillPortion, Shrink};
@@ -546,7 +547,7 @@ pub use alignment::Vertical::{Bottom, Top};
 
 pub mod debug {
     //! Debug your applications.
-    pub use iced_debug::{Span, time, time_with};
+    pub use enative_debug::{Span, time, time_with};
 }
 
 pub mod task {
@@ -571,8 +572,8 @@ pub mod clipboard {
 
 pub mod executor {
     //! Choose your preferred executor to power your application.
-    pub use iced_futures::Executor;
-    pub use iced_futures::backend::default::Executor as Default;
+    pub use enative_futures::Executor;
+    pub use enative_futures::backend::default::Executor as Default;
 }
 
 pub mod font {
@@ -584,14 +585,14 @@ pub mod font {
 pub mod event {
     //! Handle events of a user interface.
     pub use crate::core::event::{Event, Status};
-    pub use iced_futures::event::{listen, listen_raw, listen_url, listen_with};
+    pub use enative_futures::event::{listen, listen_raw, listen_url, listen_with};
 }
 
 pub mod keyboard {
     //! Listen and react to keyboard events.
     pub use crate::core::keyboard::key;
     pub use crate::core::keyboard::{Event, Key, Location, Modifiers};
-    pub use iced_futures::keyboard::listen;
+    pub use enative_futures::keyboard::listen;
 }
 
 pub mod mouse {
@@ -618,7 +619,7 @@ pub mod overlay {
     pub type Element<'a, Message, Theme = crate::Theme, Renderer = crate::Renderer> =
         crate::core::overlay::Element<'a, Message, Theme, Renderer>;
 
-    pub use iced_widget::overlay::*;
+    pub use enative_widget::overlay::*;
 }
 
 pub mod touch {
@@ -629,17 +630,17 @@ pub mod touch {
 #[allow(hidden_glob_reexports)]
 pub mod widget {
     //! Use the built-in widgets or create your own.
-    pub use iced_runtime::widget::*;
-    pub use iced_widget::*;
+    pub use enative_runtime::widget::*;
+    pub use enative_widget::*;
 
     #[cfg(feature = "image")]
     pub mod image {
         //! Images display raster graphics in different formats (PNG, JPG, etc.).
-        pub use iced_runtime::image::{Allocation, Error, allocate};
-        pub use iced_widget::image::*;
+        pub use enative_runtime::image::{Allocation, Error, allocate};
+        pub use enative_widget::image::*;
     }
 
-    // We hide the re-exported modules by `iced_widget`
+    // We hide the re-exported modules by `enative_widget`
     mod core {}
     mod graphics {}
     mod renderer {}
@@ -663,24 +664,24 @@ pub use daemon::daemon;
 
 /// A generic widget.
 ///
-/// This is an alias of an `iced_native` element with a default `Renderer`.
+/// This is an alias of an `enative_native` element with a default `Renderer`.
 pub type Element<'a, Message, Theme = crate::Theme, Renderer = crate::Renderer> =
     crate::core::Element<'a, Message, Theme, Renderer>;
 
-/// The result of running an iced program.
+/// The result of running an enative program.
 pub type Result = std::result::Result<(), Error>;
 
-/// Runs a basic iced application with default [`Settings`] given its update
+/// Runs a basic enative application with default [`Settings`] given its update
 /// and view logic.
 ///
 /// This is equivalent to chaining [`application()`] with [`Application::run`].
 ///
 /// # Example
 /// ```no_run,standalone_crate
-/// use iced::widget::{button, column, text, Column};
+/// use enative::widget::{button, column, text, Column};
 ///
-/// pub fn main() -> iced::Result {
-///     iced::run(update, view)
+/// pub fn main() -> enative::Result {
+///     enative::run(update, view)
 /// }
 ///
 /// #[derive(Debug, Clone)]

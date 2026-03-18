@@ -4,7 +4,7 @@ use crate::{Font, Pixels};
 
 use std::borrow::Cow;
 
-/// The settings of an iced program.
+/// The settings of an enative program.
 #[derive(Debug, Clone)]
 pub struct Settings {
     /// The identifier of the application.

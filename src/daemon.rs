@@ -7,11 +7,11 @@ use crate::theme;
 use crate::window;
 use crate::{Element, Executor, Font, Preset, Result, Settings, Subscription, Task, Theme};
 
-use iced_debug as debug;
+use enative_debug as debug;
 
 use std::borrow::Cow;
 
-/// Creates an iced [`Daemon`] given its boot, update, and view logic.
+/// Creates an enative [`Daemon`] given its boot, update, and view logic.
 ///
 /// A [`Daemon`] will not open a window by default, but will run silently
 /// instead until a [`Task`] from [`window::open`] is returned by its update logic.
@@ -58,7 +58,7 @@ where
         type Message = Message;
         type Theme = Theme;
         type Renderer = Renderer;
-        type Executor = iced_futures::backend::default::Executor;
+        type Executor = enative_futures::backend::default::Executor;
 
         fn name() -> &'static str {
             let name = std::any::type_name::<State>();
@@ -70,7 +70,7 @@ where
             Settings::default()
         }
 
-        fn window(&self) -> Option<iced_core::window::Settings> {
+        fn window(&self) -> Option<enative_core::window::Settings> {
             None
         }
 
@@ -106,9 +106,9 @@ where
     }
 }
 
-/// The underlying definition and configuration of an iced daemon.
+/// The underlying definition and configuration of an enative daemon.
 ///
-/// You can use this API to create and run iced applications
+/// You can use this API to create and run enative applications
 /// step by step—without coupling your logic to a trait
 /// or a specific type.
 ///
@@ -128,17 +128,17 @@ impl<P: Program> Daemon<P> {
         P::Message: message::MaybeDebug + message::MaybeClone,
     {
         #[cfg(feature = "debug")]
-        iced_debug::init(iced_debug::Metadata {
+        enative_debug::init(enative_debug::Metadata {
             name: P::name(),
             theme: None,
             can_time_travel: cfg!(feature = "time-travel"),
         });
 
         #[cfg(feature = "tester")]
-        let program = iced_tester::attach(self);
+        let program = enative_tester::attach(self);
 
         #[cfg(all(feature = "debug", not(feature = "tester")))]
-        let program = iced_devtools::attach(self);
+        let program = enative_devtools::attach(self);
 
         #[cfg(not(any(feature = "tester", feature = "debug")))]
         let program = self;
@@ -309,7 +309,7 @@ impl<P: Program> Program for Daemon<P> {
         debug::hot(|| self.raw.subscription(state))
     }
 
-    fn theme(&self, state: &Self::State, window: iced_core::window::Id) -> Option<Self::Theme> {
+    fn theme(&self, state: &Self::State, window: enative_core::window::Id) -> Option<Self::Theme> {
         debug::hot(|| self.raw.theme(state, window))
     }
 
@@ -378,13 +378,13 @@ where
 /// Any implementors of this trait can be provided as an argument to
 /// [`Daemon::theme`].
 ///
-/// `iced` provides two implementors:
+/// `enative` provides two implementors:
 /// - the built-in [`Theme`] itself
 /// - and any `Fn(&State, window::Id) -> impl Into<Option<Theme>>`.
 pub trait ThemeFn<State, Theme> {
     /// Returns the theme of the [`Daemon`] for the current state and window.
     ///
-    /// If `None` is returned, `iced` will try to use a theme that
+    /// If `None` is returned, `enative` will try to use a theme that
     /// matches the system color scheme.
     fn theme(&self, state: &State, window: window::Id) -> Option<Theme>;
 }

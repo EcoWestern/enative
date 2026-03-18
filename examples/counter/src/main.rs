@@ -1,8 +1,8 @@
-use iced::Center;
-use iced::widget::{Column, button, column, text};
+use enative::Center;
+use enative::widget::{Column, button, column, text};
 
-pub fn main() -> iced::Result {
-    iced::run(Counter::update, Counter::view)
+pub fn main() -> enative::Result {
+    enative::run(Counter::update, Counter::view)
 }
 
 #[derive(Default)]
@@ -42,7 +42,7 @@ impl Counter {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use iced_test::{Error, simulator};
+    use enative_test::{Error, simulator};
 
     #[test]
     fn it_counts() -> Result<(), Error> {

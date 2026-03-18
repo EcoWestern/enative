@@ -16,7 +16,7 @@ body:
 
         The core team does not appreciate that. Don't do it.
 
-        If you want to ask a question or request a feature, please [go back here](https://github.com/iced-rs/iced/issues/new/choose) and read carefully.
+        If you want to ask a question or request a feature, please [go back here](https://github.com/enative-rs/enative/issues/new/choose) and read carefully.
       options:
       - label: My issue is indeed a bug!
         required: true
@@ -28,13 +28,13 @@ body:
       description: |
         Please, search [the existing issues] and see if an issue already exists for the bug you encountered.
 
-        [the existing issues]: https://github.com/iced-rs/iced/issues
+        [the existing issues]: https://github.com/enative-rs/enative/issues
       options:
       - label: I have searched the existing issues.
         required: true
   - type: checkboxes
     attributes:
-      label: Is this issue related to iced?
+      label: Is this issue related to enative?
       description: |
         If your application is crashing during startup or you are observing graphical glitches, there is a chance it may be caused by incompatible hardware or outdated graphics drivers.
 

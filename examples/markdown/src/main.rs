@@ -1,22 +1,22 @@
 mod icon;
 
-use iced::animation;
-use iced::clipboard;
-use iced::highlighter;
-use iced::time::{self, Instant, milliseconds};
-use iced::widget::{
+use enative::animation;
+use enative::clipboard;
+use enative::highlighter;
+use enative::time::{self, Instant, milliseconds};
+use enative::widget::{
     button, center_x, container, hover, image, markdown, operation, right, row, scrollable, sensor,
     space, text_editor, toggler,
 };
-use iced::window;
-use iced::{Animation, Element, Fill, Font, Function, Subscription, Task, Theme};
+use enative::window;
+use enative::{Animation, Element, Fill, Font, Function, Subscription, Task, Theme};
 
 use std::collections::HashMap;
 use std::io;
 use std::sync::Arc;
 
-pub fn main() -> iced::Result {
-    iced::application::timed(
+pub fn main() -> enative::Result {
+    enative::application::timed(
         Markdown::new,
         Markdown::update,
         Markdown::subscription,

@@ -5,7 +5,7 @@ A simple [Sierpiński triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84ski_tr
 Left-click add fixed point, right-click remove fixed point.
 
 <div align="center">
-  <img src="https://iced.rs/examples/sierpinski_triangle.gif">
+  <img src="https://enative.rs/examples/sierpinski_triangle.gif">
 </div>
 
 You can run with cargo:

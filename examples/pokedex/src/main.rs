@@ -1,9 +1,9 @@
-use iced::futures;
-use iced::widget::{self, center, column, image, row, text};
-use iced::{Center, Element, Fill, Right, Task};
+use enative::futures;
+use enative::widget::{self, center, column, image, row, text};
+use enative::{Center, Element, Fill, Right, Task};
 
-pub fn main() -> iced::Result {
-    iced::application(Pokedex::new, Pokedex::update, Pokedex::view)
+pub fn main() -> enative::Result {
+    enative::application(Pokedex::new, Pokedex::update, Pokedex::view)
         .title(Pokedex::title)
         .run()
 }

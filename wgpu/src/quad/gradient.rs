@@ -32,7 +32,7 @@ impl Layer {
     pub fn new(device: &wgpu::Device) -> Self {
         let instances = Buffer::new(
             device,
-            "iced_wgpu.quad.gradient.buffer",
+            "enative_wgpu.quad.gradient.buffer",
             quad::INITIAL_INSTANCES,
             wgpu::BufferUsages::VERTEX | wgpu::BufferUsages::COPY_DST,
         );
@@ -73,13 +73,13 @@ impl Pipeline {
         #[cfg(not(target_arch = "wasm32"))]
         {
             let layout = device.create_pipeline_layout(&wgpu::PipelineLayoutDescriptor {
-                label: Some("iced_wgpu.quad.gradient.pipeline"),
+                label: Some("enative_wgpu.quad.gradient.pipeline"),
                 bind_group_layouts: &[constants_layout],
                 immediate_size: 0,
             });
 
             let shader = device.create_shader_module(wgpu::ShaderModuleDescriptor {
-                label: Some("iced_wgpu.quad.gradient.shader"),
+                label: Some("enative_wgpu.quad.gradient.shader"),
                 source: wgpu::ShaderSource::Wgsl(std::borrow::Cow::Borrowed(concat!(
                     include_str!("../shader/quad.wgsl"),
                     "\n",
@@ -94,7 +94,7 @@ impl Pipeline {
             });
 
             let pipeline = device.create_render_pipeline(&wgpu::RenderPipelineDescriptor {
-                label: Some("iced_wgpu.quad.gradient.pipeline"),
+                label: Some("enative_wgpu.quad.gradient.pipeline"),
                 layout: Some(&layout),
                 vertex: wgpu::VertexState {
                     module: &shader,

@@ -1,10 +1,10 @@
-use iced::widget::{center, checkbox, column, row, text};
-use iced::{Element, Font};
+use enative::widget::{center, checkbox, column, row, text};
+use enative::{Element, Font};
 
 const ICON_FONT: Font = Font::new("icons");
 
-pub fn main() -> iced::Result {
-    iced::application(Example::default, Example::update, Example::view)
+pub fn main() -> enative::Result {
+    enative::application(Example::default, Example::update, Example::view)
         .font(include_bytes!("../fonts/icons.ttf").as_slice())
         .run()
 }

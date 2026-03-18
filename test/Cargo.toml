@@ -1,6 +1,6 @@
 [package]
-name = "iced_test"
-description = "A library for testing iced applications in headless mode"
+name = "enative_test"
+description = "A library for testing enative applications in headless mode"
 version.workspace = true
 authors.workspace = true
 edition.workspace = true
@@ -15,15 +15,15 @@ rust-version.workspace = true
 workspace = true
 
 [dependencies]
-iced_runtime.workspace = true
-iced_program.workspace = true
-iced_selector.workspace = true
+enative_runtime.workspace = true
+enative_program.workspace = true
+enative_selector.workspace = true
 
-iced_futures.workspace = true
-iced_futures.features = ["thread-pool"]
+enative_futures.workspace = true
+enative_futures.features = ["thread-pool"]
 
-iced_renderer.workspace = true
-iced_renderer.features = ["fira-sans"]
+enative_renderer.workspace = true
+enative_renderer.features = ["fira-sans"]
 
 nom.workspace = true
 png.workspace = true

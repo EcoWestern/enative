@@ -1,16 +1,16 @@
-use iced::keyboard;
-use iced::widget::{button, center_y, column, container, image, row, text, text_input};
-use iced::window;
-use iced::window::screenshot::{self, Screenshot};
-use iced::{Center, ContentFit, Element, Fill, FillPortion, Rectangle, Subscription, Task};
+use enative::keyboard;
+use enative::widget::{button, center_y, column, container, image, row, text, text_input};
+use enative::window;
+use enative::window::screenshot::{self, Screenshot};
+use enative::{Center, ContentFit, Element, Fill, FillPortion, Rectangle, Subscription, Task};
 
 use ::image as img;
 use ::image::ColorType;
 
-fn main() -> iced::Result {
+fn main() -> enative::Result {
     tracing_subscriber::fmt::init();
 
-    iced::application(Example::default, Example::update, Example::view)
+    enative::application(Example::default, Example::update, Example::view)
         .subscription(Example::subscription)
         .run()
 }

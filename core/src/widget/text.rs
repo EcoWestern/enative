@@ -2,19 +2,19 @@
 //!
 //! # Example
 //! ```no_run
-//! # mod iced { pub mod widget { pub fn text<T>(t: T) -> iced_core::widget::Text<'static, iced_core::Theme, ()> { unimplemented!() } }
-//! #            pub use iced_core::color; }
+//! # mod enative { pub mod widget { pub fn text<T>(t: T) -> enative_core::widget::Text<'static, enative_core::Theme, ()> { unimplemented!() } }
+//! #            pub use enative_core::color; }
 //! # pub type State = ();
-//! # pub type Element<'a, Message> = iced_core::Element<'a, Message, iced_core::Theme, ()>;
-//! use iced::widget::text;
-//! use iced::color;
+//! # pub type Element<'a, Message> = enative_core::Element<'a, Message, enative_core::Theme, ()>;
+//! use enative::widget::text;
+//! use enative::color;
 //!
 //! enum Message {
 //!     // ...
 //! }
 //!
 //! fn view(state: &State) -> Element<'_, Message> {
-//!     text("Hello, this is iced!")
+//!     text("Hello, this is enative!")
 //!         .size(20)
 //!         .color(color!(0x0000ff))
 //!         .into()
@@ -35,19 +35,19 @@ pub use text::{Alignment, Ellipsis, LineHeight, Shaping, Wrapping};
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub fn text<T>(t: T) -> iced_core::widget::Text<'static, iced_core::Theme, ()> { unimplemented!() } }
-/// #            pub use iced_core::color; }
+/// # mod enative { pub mod widget { pub fn text<T>(t: T) -> enative_core::widget::Text<'static, enative_core::Theme, ()> { unimplemented!() } }
+/// #            pub use enative_core::color; }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_core::Element<'a, Message, iced_core::Theme, ()>;
-/// use iced::widget::text;
-/// use iced::color;
+/// # pub type Element<'a, Message> = enative_core::Element<'a, Message, enative_core::Theme, ()>;
+/// use enative::widget::text;
+/// use enative::color;
 ///
 /// enum Message {
 ///     // ...
 /// }
 ///
 /// fn view(state: &State) -> Element<'_, Message> {
-///     text("Hello, this is iced!")
+///     text("Hello, this is enative!")
 ///         .size(20)
 ///         .color(color!(0x0000ff))
 ///         .into()

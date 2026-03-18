@@ -1,4 +1,4 @@
-//! Test your `iced` applications in headless mode.
+//! Test your `enative` applications in headless mode.
 //!
 //! # Basic Usage
 //! Let's assume we want to test [the classical counter interface].
@@ -8,9 +8,9 @@
 //! ```rust,no_run
 //! # struct Counter { value: i64 }
 //! # impl Counter {
-//! #    pub fn view(&self) -> iced_runtime::core::Element<(), iced_runtime::core::Theme, iced_renderer::Renderer> { unimplemented!() }
+//! #    pub fn view(&self) -> enative_runtime::core::Element<(), enative_runtime::core::Theme, enative_renderer::Renderer> { unimplemented!() }
 //! # }
-//! use iced_test::simulator;
+//! use enative_test::simulator;
 //!
 //! let mut counter = Counter { value: 0 };
 //! let mut ui = simulator(counter.view());
@@ -22,9 +22,9 @@
 //! ```rust,no_run
 //! # struct Counter { value: i64 }
 //! # impl Counter {
-//! #    pub fn view(&self) -> iced_runtime::core::Element<(), iced_runtime::core::Theme, iced_renderer::Renderer> { unimplemented!() }
+//! #    pub fn view(&self) -> enative_runtime::core::Element<(), enative_runtime::core::Theme, enative_renderer::Renderer> { unimplemented!() }
 //! # }
-//! # use iced_test::simulator;
+//! # use enative_test::simulator;
 //! #
 //! # let mut counter = Counter { value: 0 };
 //! # let mut ui = simulator(counter.view());
@@ -44,9 +44,9 @@
 //! # struct Counter { value: i64 }
 //! # impl Counter {
 //! #    pub fn update(&mut self, message: ()) {}
-//! #    pub fn view(&self) -> iced_runtime::core::Element<(), iced_runtime::core::Theme, iced_renderer::Renderer> { unimplemented!() }
+//! #    pub fn view(&self) -> enative_runtime::core::Element<(), enative_runtime::core::Theme, enative_renderer::Renderer> { unimplemented!() }
 //! # }
-//! # use iced_test::simulator;
+//! # use enative_test::simulator;
 //! #
 //! # let mut counter = Counter { value: 0 };
 //! # let mut ui = simulator(counter.view());
@@ -67,9 +67,9 @@
 //! ```rust,no_run
 //! # struct Counter { value: i64 }
 //! # impl Counter {
-//! #    pub fn view(&self) -> iced_runtime::core::Element<(), iced_runtime::core::Theme, iced_renderer::Renderer> { unimplemented!() }
+//! #    pub fn view(&self) -> enative_runtime::core::Element<(), enative_runtime::core::Theme, enative_renderer::Renderer> { unimplemented!() }
 //! # }
-//! # use iced_test::simulator;
+//! # use enative_test::simulator;
 //! #
 //! # let mut counter = Counter { value: 0 };
 //! let mut ui = simulator(counter.view());
@@ -77,19 +77,19 @@
 //! assert!(ui.find("1").is_ok(), "Counter should display 1!");
 //! ```
 //!
-//! And that's it! That's the gist of testing `iced` applications!
+//! And that's it! That's the gist of testing `enative` applications!
 //!
 //! [`Simulator`] contains additional operations you can use to simulate more interactions—like [`tap_key`](Simulator::tap_key) or
 //! [`typewrite`](Simulator::typewrite)—and even perform [_snapshot testing_](Simulator::snapshot)!
 //!
-//! [the classical counter interface]: https://book.iced.rs/architecture.html#dissecting-an-interface
-pub use iced_futures as futures;
-pub use iced_program as program;
-pub use iced_renderer as renderer;
-pub use iced_runtime as runtime;
-pub use iced_runtime::core;
+//! [the classical counter interface]: https://book.enative.rs/architecture.html#dissecting-an-interface
+pub use enative_futures as futures;
+pub use enative_program as program;
+pub use enative_renderer as renderer;
+pub use enative_runtime as runtime;
+pub use enative_runtime::core;
 
-pub use iced_selector as selector;
+pub use enative_selector as selector;
 
 pub mod emulator;
 pub mod ice;

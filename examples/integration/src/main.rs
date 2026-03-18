@@ -4,17 +4,17 @@ mod scene;
 use controls::Controls;
 use scene::Scene;
 
-use iced_wgpu::graphics::{Shell, Viewport};
-use iced_wgpu::{Engine, Renderer, wgpu};
-use iced_winit::conversion;
-use iced_winit::core::mouse;
-use iced_winit::core::renderer;
-use iced_winit::core::time::Instant;
-use iced_winit::core::window;
-use iced_winit::core::{Event, Size, Theme};
-use iced_winit::futures;
-use iced_winit::runtime::user_interface::{self, UserInterface};
-use iced_winit::winit;
+use enative_wgpu::graphics::{Shell, Viewport};
+use enative_wgpu::{Engine, Renderer, wgpu};
+use enative_winit::conversion;
+use enative_winit::core::mouse;
+use enative_winit::core::renderer;
+use enative_winit::core::time::Instant;
+use enative_winit::core::window;
+use enative_winit::core::{Event, Size, Theme};
+use enative_winit::futures;
+use enative_winit::runtime::user_interface::{self, UserInterface};
+use enative_winit::winit;
 
 use winit::{
     event::WindowEvent,
@@ -133,7 +133,7 @@ pub fn main() -> Result<(), winit::error::EventLoopError> {
                 let scene = Scene::new(&device, format);
                 let controls = Controls::new();
 
-                // Initialize iced
+                // Initialize enative
 
                 let renderer = {
                     let engine = Engine::new(
@@ -246,7 +246,7 @@ pub fn main() -> Result<(), winit::error::EventLoopError> {
                             // Submit the scene
                             queue.submit([encoder.finish()]);
 
-                            // Draw iced on top
+                            // Draw enative on top
                             let mut interface = UserInterface::build(
                                 controls.view(),
                                 viewport.logical_size(),
@@ -270,7 +270,7 @@ pub fn main() -> Result<(), winit::error::EventLoopError> {
                             {
                                 // Update the mouse cursor
                                 if let Some(icon) =
-                                    iced_winit::conversion::mouse_interaction(mouse_interaction)
+                                    enative_winit::conversion::mouse_interaction(mouse_interaction)
                                 {
                                     window.set_cursor(icon);
                                     window.set_cursor_visible(true);
@@ -325,7 +325,7 @@ pub fn main() -> Result<(), winit::error::EventLoopError> {
                 _ => {}
             }
 
-            // Map window event to iced event
+            // Map window event to enative event
             if let Some(event) =
                 conversion::window_event(event, window.scale_factor() as f32, *modifiers)
             {

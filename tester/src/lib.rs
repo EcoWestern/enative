@@ -1,10 +1,10 @@
-//! Record, edit, and run end-to-end tests for your iced applications.
-pub use iced_test as test;
-pub use iced_test::core;
-pub use iced_test::program;
-pub use iced_test::runtime;
-pub use iced_test::runtime::futures;
-pub use iced_widget as widget;
+//! Record, edit, and run end-to-end tests for your enative applications.
+pub use enative_test as test;
+pub use enative_test::core;
+pub use enative_test::program;
+pub use enative_test::runtime;
+pub use enative_test::runtime::futures;
+pub use enative_widget as widget;
 
 mod icon;
 mod recorder;

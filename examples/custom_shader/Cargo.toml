@@ -5,8 +5,8 @@ authors = ["Bingus <shankern@protonmail.com>"]
 edition = "2024"
 
 [dependencies]
-iced.workspace = true
-iced.features = ["debug", "image", "advanced"]
+enative.workspace = true
+enative.features = ["debug", "image", "advanced"]
 
 image.workspace = true
 bytemuck.workspace = true

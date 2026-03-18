@@ -1,9 +1,9 @@
-use iced::widget::{button, center, column};
-use iced::window;
-use iced::{Center, Element, Task};
+use enative::widget::{button, center, column};
+use enative::window;
+use enative::{Center, Element, Task};
 
-pub fn main() -> iced::Result {
-    iced::run(Exit::update, Exit::view)
+pub fn main() -> enative::Result {
+    enative::run(Exit::update, Exit::view)
 }
 
 #[derive(Default)]

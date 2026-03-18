@@ -1,11 +1,11 @@
 //! A bunch of backend-agnostic types that can be leveraged to build a renderer
-//! for [`iced`].
+//! for [`enative`].
 //!
-//! ![The native path of the Iced ecosystem](https://github.com/iced-rs/iced/blob/0525d76ff94e828b7b21634fa94a747022001c83/docs/graphs/native.png?raw=true)
+//! ![The native path of the enative ecosystem](https://github.com/enative-rs/enative/blob/0525d76ff94e828b7b21634fa94a747022001c83/docs/graphs/native.png?raw=true)
 //!
-//! [`iced`]: https://github.com/iced-rs/iced
+//! [`enative`]: https://github.com/enative-rs/enative
 #![doc(
-    html_logo_url = "https://raw.githubusercontent.com/iced-rs/iced/9ab6923e943f784985e9ef9ca28b10278297225d/docs/logo.svg"
+    html_logo_url = "https://raw.githubusercontent.com/enative-rs/enative/9ab6923e943f784985e9ef9ca28b10278297225d/docs/logo.svg"
 )]
 #![cfg_attr(docsrs, feature(doc_cfg))]
 mod antialiasing;
@@ -38,5 +38,5 @@ pub use shell::Shell;
 pub use text::Text;
 pub use viewport::Viewport;
 
-pub use iced_core as core;
-pub use iced_futures as futures;
+pub use enative_core as core;
+pub use enative_futures as futures;

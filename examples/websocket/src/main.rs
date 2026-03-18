@@ -1,10 +1,10 @@
 mod echo;
 
-use iced::widget::{button, center, column, operation, row, scrollable, text, text_input};
-use iced::{Center, Element, Fill, Subscription, Task, color};
+use enative::widget::{button, center, column, operation, row, scrollable, text, text_input};
+use enative::{Center, Element, Fill, Subscription, Task, color};
 
-pub fn main() -> iced::Result {
-    iced::application(WebSocket::new, WebSocket::update, WebSocket::view)
+pub fn main() -> enative::Result {
+    enative::application(WebSocket::new, WebSocket::update, WebSocket::view)
         .subscription(WebSocket::subscription)
         .run()
 }

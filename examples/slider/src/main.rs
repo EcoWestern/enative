@@ -1,8 +1,8 @@
-use iced::widget::{column, container, iced, slider, text, vertical_slider};
-use iced::{Center, Element, Fill};
+use enative::widget::{column, container, enative, slider, text, vertical_slider};
+use enative::{Center, Element, Fill};
 
-pub fn main() -> iced::Result {
-    iced::run(Slider::update, Slider::view)
+pub fn main() -> enative::Result {
+    enative::run(Slider::update, Slider::view)
 }
 
 #[derive(Debug, Clone)]
@@ -44,7 +44,7 @@ impl Slider {
 
         let text = text(self.value);
 
-        column![v_slider, h_slider, text, iced(self.value as f32),]
+        column![v_slider, h_slider, text, enative(self.value as f32),]
             .width(Fill)
             .align_x(Center)
             .spacing(20)

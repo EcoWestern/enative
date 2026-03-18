@@ -1,10 +1,10 @@
-use iced::widget::{
+use enative::widget::{
     button, column, container, operation, progress_bar, radio, row, scrollable, slider, space, text,
 };
-use iced::{Border, Center, Color, Element, Fill, Task, Theme};
+use enative::{Border, Center, Color, Element, Fill, Task, Theme};
 
-pub fn main() -> iced::Result {
-    iced::application(
+pub fn main() -> enative::Result {
+    enative::application(
         ScrollableDemo::default,
         ScrollableDemo::update,
         ScrollableDemo::view,

@@ -14,10 +14,10 @@ use crate::core::{
 ///
 /// # Example
 /// ```no_run
-/// # mod iced { pub mod widget { pub use iced_widget::*; } }
+/// # mod enative { pub mod widget { pub use enative_widget::*; } }
 /// # pub type State = ();
-/// # pub type Element<'a, Message> = iced_widget::core::Element<'a, Message, iced_widget::Theme, iced_widget::Renderer>;
-/// use iced::widget::{keyed_column, text};
+/// # pub type Element<'a, Message> = enative_widget::core::Element<'a, Message, enative_widget::Theme, enative_widget::Renderer>;
+/// use enative::widget::{keyed_column, text};
 ///
 /// enum Message {
 ///     // ...
@@ -89,7 +89,7 @@ where
 
     /// Sets the vertical spacing _between_ elements.
     ///
-    /// Custom margins per element do not exist in iced. You should use this
+    /// Custom margins per element do not exist in enative. You should use this
     /// method instead! While less flexible, it helps you keep spacing between
     /// elements consistent.
     pub fn spacing(mut self, amount: impl Into<Pixels>) -> Self {

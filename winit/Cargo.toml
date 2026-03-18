@@ -1,6 +1,6 @@
 [package]
-name = "iced_winit"
-description = "A runtime for iced on top of winit"
+name = "enative_winit"
+description = "A runtime for enative on top of winit"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -15,19 +15,19 @@ workspace = true
 
 [features]
 default = ["x11", "wayland"]
-debug = ["iced_debug/enable"]
+debug = ["enative_debug/enable"]
 sysinfo = ["dep:sysinfo"]
 hinting = []
 unconditional-rendering = []
 linux-theme-detection = ["dep:mundy", "mundy/async-io", "mundy/color-scheme"]
-image = ["iced_runtime/image", "arboard/image-data"]
+image = ["enative_runtime/image", "arboard/image-data"]
 x11 = ["winit/x11"]
 wayland = ["winit/wayland", "winit/wayland-dlopen", "winit/wayland-csd-adwaita", "arboard/wayland-data-control"]
 
 [dependencies]
-iced_debug.workspace = true
-iced_program.workspace = true
-iced_runtime.workspace = true
+enative_debug.workspace = true
+enative_program.workspace = true
+enative_runtime.workspace = true
 
 log.workspace = true
 rustc-hash.workspace = true

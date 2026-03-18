@@ -6,19 +6,21 @@
 //! Inspired by the example found in the MDN docs[1].
 //!
 //! [1]: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations#An_animated_solar_system
-use iced::mouse;
-use iced::widget::canvas::stroke::{self, Stroke};
-use iced::widget::canvas::{Geometry, Path};
-use iced::widget::{canvas, image};
-use iced::window;
-use iced::{Color, Element, Fill, Point, Rectangle, Renderer, Size, Subscription, Theme, Vector};
+use enative::mouse;
+use enative::widget::canvas::stroke::{self, Stroke};
+use enative::widget::canvas::{Geometry, Path};
+use enative::widget::{canvas, image};
+use enative::window;
+use enative::{
+    Color, Element, Fill, Point, Rectangle, Renderer, Size, Subscription, Theme, Vector,
+};
 
 use std::time::Instant;
 
-pub fn main() -> iced::Result {
+pub fn main() -> enative::Result {
     tracing_subscriber::fmt::init();
 
-    iced::application::timed(
+    enative::application::timed(
         SolarSystem::new,
         SolarSystem::update,
         SolarSystem::subscription,
