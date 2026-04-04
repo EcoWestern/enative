@@ -558,10 +558,17 @@ pub fn background(background: impl Into<Background>) -> Style {
 pub fn rounded_box(theme: &Theme) -> Style {
     let palette = theme.palette();
 
+    let border = match theme {
+        Theme::MateFluency(_) | Theme::MateFluencyDark(_) => {
+            border::organic()
+        }
+        _ => border::rounded(2),
+    };
+
     Style {
         background: Some(palette.background.weak.color.into()),
         text_color: Some(palette.background.weak.text),
-        border: border::rounded(2),
+        border,
         ..Style::default()
     }
 }
@@ -570,14 +577,21 @@ pub fn rounded_box(theme: &Theme) -> Style {
 pub fn bordered_box(theme: &Theme) -> Style {
     let palette = theme.palette();
 
-    Style {
-        background: Some(palette.background.weakest.color.into()),
-        text_color: Some(palette.background.weakest.text),
-        border: Border {
+    let border = match theme {
+        Theme::MateFluency(_) | Theme::MateFluencyDark(_) => border::organic()
+            .width(1)
+            .color(palette.background.weak.color),
+        _ => Border {
             width: 1.0,
             radius: 5.0.into(),
             color: palette.background.weak.color,
         },
+    };
+
+    Style {
+        background: Some(palette.background.weakest.color.into()),
+        text_color: Some(palette.background.weakest.text),
+        border,
         ..Style::default()
     }
 }
@@ -625,11 +639,119 @@ pub fn danger(theme: &Theme) -> Style {
     style(palette.danger.base)
 }
 
+/// A MateFluency surface style.
+pub fn biodegradable(theme: &Theme) -> Style {
+    use crate::core::theme::Intensity;
+
+    let palette = theme.palette();
+    let intensity = match theme {
+        Theme::MateFluency(intensity) => *intensity,
+        Theme::MateFluencyDark(intensity) => *intensity,
+        _ => Intensity::default(),
+    };
+
+    let (alpha, shadow) = match intensity {
+        Intensity::Light => (1.0, Shadow::default()),
+        Intensity::Casual => (0.85, Shadow::default()),
+        Intensity::Deep => (
+            0.75,
+            Shadow {
+                color: Color {
+                    a: 0.15,
+                    ..palette.primary.base.color
+                },
+                offset: Vector::new(0.0, 8.0),
+                blur_radius: 24.0,
+            },
+        ),
+    };
+
+    let base_color = Color {
+        a: alpha,
+        ..palette.background.base.color
+    };
+    let light_color = Color {
+        a: (alpha + 0.05).min(1.0),
+        r: (base_color.r + 0.03).min(1.0),
+        g: (base_color.g + 0.03).min(1.0),
+        b: (base_color.b + 0.03).min(1.0),
+    };
+
+    Style {
+        background: Some(Background::Gradient(
+            gradient::Linear::new(std::f32::consts::FRAC_PI_4)
+                .add_stop(0.0, light_color)
+                .add_stop(1.0, base_color)
+                .into()
+        )),
+        text_color: Some(palette.background.base.text),
+        border: border::organic(),
+        shadow,
+        ..Style::default()
+    }
+}
+
+/// A MateFluency Dark surface style.
+pub fn biodegradable_dark(theme: &Theme) -> Style {
+    use crate::core::theme::Intensity;
+
+    let palette = match theme {
+        Theme::MateFluencyDark(_) => theme.palette(),
+        _ => &theme::palette::DARK,
+    };
+
+    let intensity = match theme {
+        Theme::MateFluency(intensity) => *intensity,
+        Theme::MateFluencyDark(intensity) => *intensity,
+        _ => Intensity::default(),
+    };
+
+    let (alpha, shadow) = match intensity {
+        Intensity::Light => (1.0, Shadow::default()),
+        Intensity::Casual => (0.85, Shadow::default()),
+        Intensity::Deep => (
+            0.65,
+            Shadow {
+                color: Color {
+                    a: 0.25,
+                    ..Color::BLACK
+                },
+                offset: Vector::new(0.0, 10.0),
+                blur_radius: 32.0,
+            },
+        ),
+    };
+
+    let base_color = Color {
+        a: alpha,
+        ..palette.background.neutral.color
+    };
+    let light_color = Color {
+        a: (alpha + 0.05).min(1.0),
+        r: (base_color.r + 0.04).min(1.0),
+        g: (base_color.g + 0.04).min(1.0),
+        b: (base_color.b + 0.04).min(1.0),
+    };
+
+    Style {
+        background: Some(Background::Gradient(
+            gradient::Linear::new(std::f32::consts::FRAC_PI_4)
+                .add_stop(0.0, light_color)
+                .add_stop(1.0, base_color)
+                .into()
+        )),
+        text_color: Some(palette.background.neutral.text),
+        border: border::organic(),
+        shadow,
+        ..Style::default()
+    }
+}
+
 fn style(pair: theme::palette::Pair) -> Style {
     Style {
         background: Some(pair.color.into()),
         text_color: Some(pair.text),
-        border: border::rounded(2),
+        border: Border::default(),
         ..Style::default()
     }
 }

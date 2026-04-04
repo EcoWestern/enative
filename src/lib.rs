@@ -515,10 +515,40 @@ pub use enative_renderer::wgpu::wgpu;
 
 mod error;
 
+/// A convenience module that re-exports the most common types and widgets.
+pub mod prelude {
+    pub use crate::application::{Application, application};
+    pub use crate::daemon::{Daemon, daemon};
+    pub use crate::executor::Executor;
+    pub use crate::font::Font;
+    pub use crate::program::Program;
+    pub use crate::renderer::Renderer;
+    pub use crate::task::Task;
+    pub use crate::theme::{Theme, Intensity};
+    pub use crate::window::Window;
+    pub use crate::{
+        Alignment, Animation, Background, Border, Color, ContentFit, Degrees, Element,
+        Function, Gradient, Length, Padding, Pixels, Point, Radians, Rectangle, Rotation,
+        Settings, Shadow, Size, Subscription, Transformation, Vector,
+    };
+    pub use crate::widget::{
+        button, checkbox, column, container, mouse_area, pick_list, progress_bar, Radio,
+        row, scrollable, slider, space, text, text_input, toggler, vertical_slider,
+        Column, Row,
+    };
+    pub use crate::layershell::{self, Layer, Anchor, LayerSettings};
+    pub use crate::{Center, Fill, Shrink};
+}
+
 pub mod application;
 pub mod daemon;
+/// Native view integration.
+pub mod native_view;
 pub mod time;
 pub mod window;
+/// Layer shell integration for Wayland.
+pub mod layershell;
+
 
 #[cfg(feature = "advanced")]
 pub mod advanced;

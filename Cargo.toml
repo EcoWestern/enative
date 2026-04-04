@@ -22,7 +22,7 @@ all-features = true
 maintenance = { status = "actively-developed" }
 
 [features]
-default = ["wgpu", "tiny-skia", "crisp", "hinting", "web-colors", "thread-pool", "linux-theme-detection", "x11", "wayland"]
+default = ["wgpu", "tiny-skia", "crisp", "hinting", "web-colors", "tokio", "linux-theme-detection", "x11", "wayland"]
 # Enables the `wgpu` GPU-accelerated renderer with all its default features (Vulkan, Metal, DX12, OpenGL, and WebGPU)
 wgpu = ["wgpu-bare", "enative_renderer/wgpu"]
 # Enables the `wgpu` GPU-accelerated renderer with the minimum required features (no backends!)
@@ -100,6 +100,12 @@ enative_renderer.workspace = true
 enative_runtime.workspace = true
 enative_widget.workspace = true
 enative_winit.workspace = true
+wayland-client.workspace = true
+wayland-protocols.workspace = true
+enative_layershell.workspace = true
+
+
+
 
 enative_devtools.workspace = true
 enative_devtools.optional = true
@@ -143,6 +149,7 @@ members = [
     "futures",
     "graphics",
     "highlighter",
+    "layershell",
     "program",
     "renderer",
     "runtime",
@@ -154,7 +161,6 @@ members = [
     "widget",
     "winit",
     "examples/*",
-    "../apps/mate_calc",
 ]
 
 [workspace.package]
@@ -163,7 +169,7 @@ authors = ["EcoWestern Team", "eNative Contributors"]
 edition = "2024"
 license = "MIT"
 repository = "https://github.com/ecowestern/enative"
-homepage = "https://ecowestern.com"
+homepage = "https://ecowestern.net"
 categories = ["gui"]
 keywords = ["gui", "ui", "graphics", "interface", "widgets"]
 rust-version = "1.92"
@@ -187,6 +193,7 @@ enative_tiny_skia = { version = "0.15.0-dev", path = "tiny_skia", default-featur
 enative_wgpu = { version = "0.15.0-dev", path = "wgpu", default-features = false }
 enative_widget = { version = "0.15.0-dev", path = "widget" }
 enative_winit = { version = "0.15.0-dev", path = "winit", default-features = false }
+enative_layershell = { version = "0.15.0-dev", path = "layershell" }
 
 arboard = { version = "3.6", default-features = false }
 bincode = "1.3"
@@ -239,6 +246,8 @@ web-sys = "=0.3.85"
 web-time = "1.1"
 wgpu = { version = "28.0", default-features = false, features = ["std", "wgsl"] }
 winit = { git = "https://github.com/iced-rs/winit.git", rev = "05b8ff17a06562f0a10bb46e6eaacbe2a95cb5ed", default-features = false, features = ["rwh_06"] }
+wayland-client = "0.31"
+wayland-protocols = "0.31"
 
 [workspace.lints.rust]
 rust_2018_idioms = { level = "deny", priority = -1 }

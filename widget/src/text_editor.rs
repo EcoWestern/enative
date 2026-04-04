@@ -96,7 +96,7 @@ pub use text::editor::{Action, Cursor, Edit, Line, LineEnding, Motion, Position,
 /// ```
 pub struct TextEditor<'a, Highlighter, Message, Theme = crate::Theme, Renderer = crate::Renderer>
 where
-    Highlighter: text::Highlighter,
+    Highlighter: text::Highlighter + 'static,
     Theme: Catalog,
     Renderer: text::Renderer,
 {
@@ -491,7 +491,7 @@ where
 
 /// The state of a [`TextEditor`].
 #[derive(Debug)]
-pub struct State<Highlighter: text::Highlighter> {
+pub struct State<Highlighter: text::Highlighter + 'static> {
     focus: Option<Focus>,
     preedit: Option<input_method::Preedit>,
     last_click: Option<mouse::Click>,
@@ -537,7 +537,7 @@ impl<Highlighter: text::Highlighter> State<Highlighter> {
     }
 }
 
-impl<Highlighter: text::Highlighter> operation::Focusable for State<Highlighter> {
+impl<Highlighter: text::Highlighter + 'static> operation::Focusable for State<Highlighter> {
     fn is_focused(&self) -> bool {
         self.focus.is_some()
     }
@@ -554,8 +554,8 @@ impl<Highlighter: text::Highlighter> operation::Focusable for State<Highlighter>
 impl<Highlighter, Message, Theme, Renderer> Widget<Message, Theme, Renderer>
     for TextEditor<'_, Highlighter, Message, Theme, Renderer>
 where
-    Highlighter: text::Highlighter,
-    Theme: Catalog,
+    Highlighter: text::Highlighter + 'static,
+    Theme: Catalog + theme::Base,
     Renderer: text::Renderer,
 {
     fn tag(&self) -> widget::tree::Tag {
@@ -1039,7 +1039,7 @@ impl<'a, Highlighter, Message, Theme, Renderer>
 where
     Highlighter: text::Highlighter,
     Message: 'a,
-    Theme: Catalog + 'a,
+    Theme: Catalog + theme::Base + 'a,
     Renderer: text::Renderer,
 {
     fn from(text_editor: TextEditor<'a, Highlighter, Message, Theme, Renderer>) -> Self {

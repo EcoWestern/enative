@@ -24,6 +24,8 @@ pub mod container;
 pub mod float;
 pub mod grid;
 pub mod keyed;
+    /// A widget that displays a native view.
+    pub mod native_view;
 pub mod overlay;
 pub mod pane_grid;
 pub mod pick_list;

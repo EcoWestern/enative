@@ -578,7 +578,7 @@ impl Catalog for Theme {
 /// A primary button; denoting a main action.
 pub fn primary(theme: &Theme, status: Status) -> Style {
     let palette = theme.palette();
-    let base = styled(palette.primary.base);
+    let base = styled(theme, palette.primary.base);
 
     match status {
         Status::Active | Status::Pressed => base,
@@ -593,7 +593,7 @@ pub fn primary(theme: &Theme, status: Status) -> Style {
 /// A secondary button; denoting a complementary action.
 pub fn secondary(theme: &Theme, status: Status) -> Style {
     let palette = theme.palette();
-    let base = styled(palette.secondary.base);
+    let base = styled(theme, palette.secondary.base);
 
     match status {
         Status::Active | Status::Pressed => base,
@@ -608,7 +608,7 @@ pub fn secondary(theme: &Theme, status: Status) -> Style {
 /// A success button; denoting a good outcome.
 pub fn success(theme: &Theme, status: Status) -> Style {
     let palette = theme.palette();
-    let base = styled(palette.success.base);
+    let base = styled(theme, palette.success.base);
 
     match status {
         Status::Active | Status::Pressed => base,
@@ -623,7 +623,7 @@ pub fn success(theme: &Theme, status: Status) -> Style {
 /// A warning button; denoting a risky action.
 pub fn warning(theme: &Theme, status: Status) -> Style {
     let palette = theme.palette();
-    let base = styled(palette.warning.base);
+    let base = styled(theme, palette.warning.base);
 
     match status {
         Status::Active | Status::Pressed => base,
@@ -638,7 +638,7 @@ pub fn warning(theme: &Theme, status: Status) -> Style {
 /// A danger button; denoting a destructive action.
 pub fn danger(theme: &Theme, status: Status) -> Style {
     let palette = theme.palette();
-    let base = styled(palette.danger.base);
+    let base = styled(theme, palette.danger.base);
 
     match status {
         Status::Active | Status::Pressed => base,
@@ -672,7 +672,7 @@ pub fn text(theme: &Theme, status: Status) -> Style {
 /// A button using background shades.
 pub fn background(theme: &Theme, status: Status) -> Style {
     let palette = theme.palette();
-    let base = styled(palette.background.base);
+    let base = styled(theme, palette.background.base);
 
     match status {
         Status::Active => base,
@@ -691,7 +691,7 @@ pub fn background(theme: &Theme, status: Status) -> Style {
 /// A subtle button using weak background shades.
 pub fn subtle(theme: &Theme, status: Status) -> Style {
     let palette = theme.palette();
-    let base = styled(palette.background.weakest);
+    let base = styled(theme, palette.background.weakest);
 
     match status {
         Status::Active => base,
@@ -707,11 +707,102 @@ pub fn subtle(theme: &Theme, status: Status) -> Style {
     }
 }
 
-fn styled(pair: palette::Pair) -> Style {
+/// A primary MateFluency button.
+pub fn mate_primary(theme: &Theme, status: Status) -> Style {
+    use crate::core::gradient;
+    let palette = theme.palette();
+    let mut style = styled(theme, palette.primary.base);
+
+    let base_color = match status {
+        Status::Hovered => palette.primary.strong.color,
+        Status::Pressed => palette.primary.weak.color,
+        Status::Disabled => {
+            style.text_color = style.text_color.scale_alpha(0.5);
+            palette.primary.base.color.scale_alpha(0.5)
+        }
+        _ => palette.primary.base.color,
+    };
+
+    let light_color = Color {
+        a: base_color.a,
+        r: (base_color.r + 0.08).min(1.0),
+        g: (base_color.g + 0.08).min(1.0),
+        b: (base_color.b + 0.08).min(1.0),
+    };
+
+    style.background = Some(Background::Gradient(
+        gradient::Linear::new(std::f32::consts::FRAC_PI_4)
+            .add_stop(0.0, light_color)
+            .add_stop(1.0, base_color)
+            .into()
+    ));
+
+    if let Status::Pressed | Status::Disabled = status {
+        style.shadow = Shadow::default();
+    } else {
+        style.shadow = Shadow {
+            color: Color { a: 0.15, ..Color::BLACK },
+            offset: Vector::new(0.0, 2.0),
+            blur_radius: 6.0,
+        };
+    }
+
+    style
+}
+
+/// A secondary MateFluency button.
+pub fn mate_secondary(theme: &Theme, status: Status) -> Style {
+    use crate::core::gradient;
+    let palette = theme.palette();
+    let mut style = styled(theme, palette.secondary.base);
+
+    let base_color = match status {
+        Status::Hovered => palette.secondary.strong.color,
+        Status::Pressed => palette.secondary.weak.color,
+        Status::Disabled => {
+            style.text_color = style.text_color.scale_alpha(0.5);
+            palette.secondary.base.color.scale_alpha(0.5)
+        }
+        _ => palette.secondary.base.color,
+    };
+
+    let light_color = Color {
+        a: base_color.a,
+        r: (base_color.r + 0.06).min(1.0),
+        g: (base_color.g + 0.06).min(1.0),
+        b: (base_color.b + 0.06).min(1.0),
+    };
+
+    style.background = Some(Background::Gradient(
+        gradient::Linear::new(std::f32::consts::FRAC_PI_4)
+            .add_stop(0.0, light_color)
+            .add_stop(1.0, base_color)
+            .into()
+    ));
+
+    if let Status::Pressed | Status::Disabled = status {
+        style.shadow = Shadow::default();
+    } else {
+        style.shadow = Shadow {
+            color: Color { a: 0.1, ..Color::BLACK },
+            offset: Vector::new(0.0, 2.0),
+            blur_radius: 6.0,
+        };
+    }
+
+    style
+}
+
+fn styled(theme: &Theme, pair: palette::Pair) -> Style {
+    let border = match theme {
+        Theme::MateFluency(_) | Theme::MateFluencyDark(_) => border::organic(),
+        _ => border::rounded(2),
+    };
+
     Style {
         background: Some(Background::Color(pair.color)),
         text_color: pair.text,
-        border: border::rounded(2),
+        border,
         ..Style::default()
     }
 }

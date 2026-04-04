@@ -141,7 +141,7 @@ where
         cursor: mouse::Cursor,
         viewport: &Rectangle,
     ) {
-        let default_theme = theme::Base::default(theme.mode());
+        let default_theme = Theme::default(theme.mode());
         let theme = self.theme.as_ref().unwrap_or(&default_theme);
 
         if let Some(background) = self.background {
@@ -200,7 +200,7 @@ where
                 layout: Layout<'_>,
                 cursor: mouse::Cursor,
             ) {
-                let default_theme = theme::Base::default(theme.mode());
+                let default_theme = Theme::default(theme.mode());
                 let theme = self.theme.as_ref().unwrap_or(&default_theme);
 
                 self.content

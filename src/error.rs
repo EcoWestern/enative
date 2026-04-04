@@ -30,6 +30,22 @@ impl From<shell::Error> for Error {
     }
 }
 
+impl From<enative_layershell::Error> for Error {
+    fn from(error: enative_layershell::Error) -> Error {
+        match error {
+            enative_layershell::Error::ExecutorCreationFailed(error) => {
+                Error::ExecutorCreationFailed(error)
+            }
+            enative_layershell::Error::WindowCreationFailed(error) => {
+                Error::WindowCreationFailed(error)
+            }
+            enative_layershell::Error::GraphicsCreationFailed(error) => {
+                Error::GraphicsCreationFailed(error)
+            }
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

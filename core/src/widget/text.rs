@@ -187,6 +187,58 @@ where
         self.class = class.into();
         self
     }
+
+    /// Applies the `mf-h1` preset (48px, Google Sans).
+    pub fn h1(self) -> Self
+    where
+        Renderer::Font: From<crate::Font>,
+    {
+        self.size(48).font(crate::Font::GOOGLE_SANS)
+    }
+
+    /// Applies the `mf-h2` preset (36px, Google Sans).
+    pub fn h2(self) -> Self
+    where
+        Renderer::Font: From<crate::Font>,
+    {
+        self.size(36).font(crate::Font::GOOGLE_SANS)
+    }
+
+    /// Applies the `mf-h3` preset (24px, Google Sans).
+    pub fn h3(self) -> Self
+    where
+        Renderer::Font: From<crate::Font>,
+    {
+        self.size(24).font(crate::Font::GOOGLE_SANS)
+    }
+
+    /// Applies the `mf-eyebrow` preset (12px Google Sans).
+    ///
+    /// Chain `.style(text::primary)` to add the brand color.
+    pub fn eyebrow(self) -> Self
+    where
+        Renderer::Font: From<crate::Font>,
+    {
+        self.size(12).font(crate::Font::GOOGLE_SANS)
+    }
+
+    /// Applies the `mf-body` preset (16px, Google Sans).
+    pub fn body(self) -> Self
+    where
+        Renderer::Font: From<crate::Font>,
+    {
+        self.size(16).font(crate::Font::GOOGLE_SANS)
+    }
+
+    /// Applies the `mf-meta` preset (12px Google Sans).
+    ///
+    /// Chain `.style(text::secondary)` to add the muted color.
+    pub fn meta(self) -> Self
+    where
+        Renderer::Font: From<crate::Font>,
+    {
+        self.size(12).font(crate::Font::GOOGLE_SANS)
+    }
 }
 
 /// The internal state of a [`Text`] widget.

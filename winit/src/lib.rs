@@ -39,7 +39,7 @@ pub use proxy::Proxy;
 
 use crate::core::mouse;
 use crate::core::renderer;
-use crate::core::theme;
+use crate::core::theme::{self, Base};
 use crate::core::time::Instant;
 use crate::core::widget::operation;
 use crate::core::{Point, Renderer, Size};
@@ -643,7 +643,7 @@ async fn run_instance<P>(
 
                 debug::theme_changed(|| {
                     if is_first {
-                        theme::Base::seed(window.state.theme())
+                        window.state.theme().seed()
                     } else {
                         None
                     }
@@ -1758,7 +1758,7 @@ where
     debug::theme_changed(|| {
         window_manager
             .first()
-            .and_then(|window| theme::Base::seed(window.state.theme()))
+            .and_then(|window| window.state.theme().seed())
     });
 
     cached_user_interfaces

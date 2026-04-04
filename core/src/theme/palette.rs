@@ -424,6 +424,26 @@ impl Seed {
         warning: color!(0xf5d76e), // Honey
         danger: color!(0xe06b75),
     };
+
+    /// The built-in MateFluency variant of a [`Palette`].
+    pub const MATE_FLUENCY: Self = Self {
+        background: color!(0xf7f7f2),
+        text: color!(0x1d1d1f),
+        primary: color!(0x086d00),
+        success: color!(0x086d00), // brand green
+        warning: color!(0xb77e33),
+        danger: color!(0xc3423f),
+    };
+
+    /// The built-in MateFluency Dark variant of a [`Palette`].
+    pub const MATE_FLUENCY_DARK: Self = Self {
+        background: color!(0x1d1d1f),
+        text: color!(0xf7f7f2),
+        primary: color!(0x1db100), // focus green for dark
+        success: color!(0x1db100),
+        warning: color!(0xffc14e),
+        danger: color!(0xc3423f),
+    };
 }
 
 /// The built-in light variant of a [`Palette`].
@@ -504,6 +524,13 @@ pub static OXOCARBON: LazyLock<Palette> = LazyLock::new(|| Palette::generate(See
 
 /// The built-in Ferra variant of a [`Palette`].
 pub static FERRA: LazyLock<Palette> = LazyLock::new(|| Palette::generate(Seed::FERRA));
+
+/// The built-in MateFluency variant of a [`Palette`].
+pub static MATE_FLUENCY: LazyLock<Palette> = LazyLock::new(|| Palette::generate(Seed::MATE_FLUENCY));
+
+/// The built-in MateFluency Dark variant of a [`Palette`].
+pub static MATE_FLUENCY_DARK: LazyLock<Palette> =
+    LazyLock::new(|| Palette::generate(Seed::MATE_FLUENCY_DARK));
 
 struct Oklch {
     l: f32,

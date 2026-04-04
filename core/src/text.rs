@@ -2,6 +2,7 @@
 pub mod editor;
 pub mod highlighter;
 pub mod paragraph;
+pub mod typography;
 
 pub use editor::Editor;
 pub use highlighter::Highlighter;

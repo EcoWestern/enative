@@ -23,6 +23,12 @@ impl Font {
         style: Style::Normal,
     };
 
+    /// The Google Sans font family.
+    pub const GOOGLE_SANS: Font = Font {
+        family: Family::Name("Google Sans Flex"),
+        ..Self::DEFAULT
+    };
+
     /// A monospaced font with normal [`Weight`].
     pub const MONOSPACE: Font = Font {
         family: Family::Monospace,

@@ -28,3 +28,69 @@ pub use rich::Rich;
 /// ```
 pub type Text<'a, Theme = crate::Theme, Renderer = crate::Renderer> =
     crate::core::widget::Text<'a, Theme, Renderer>;
+
+/// Creates a new [`Text`] widget with the provided content.
+pub fn text<'a, Theme, Renderer>(
+    content: impl crate::core::text::IntoFragment<'a>,
+) -> Text<'a, Theme, Renderer>
+where
+    Theme: crate::core::widget::text::Catalog,
+    Renderer: crate::core::text::Renderer,
+{
+    Text::new(content)
+}
+
+/// Creates a new [`Text`] widget with the [`Preset::H1`] size.
+pub fn h1<'a, Theme, Renderer>(
+    content: impl crate::core::text::IntoFragment<'a>,
+) -> Text<'a, Theme, Renderer>
+where
+    Theme: crate::core::widget::text::Catalog + crate::core::theme::Base + 'a,
+    Renderer: crate::core::text::Renderer,
+{
+    text(content).size(crate::core::text::typography::Preset::H1)
+}
+
+/// Creates a new [`Text`] widget with the [`Preset::H2`] size.
+pub fn h2<'a, Theme, Renderer>(
+    content: impl crate::core::text::IntoFragment<'a>,
+) -> Text<'a, Theme, Renderer>
+where
+    Theme: crate::core::widget::text::Catalog + crate::core::theme::Base + 'a,
+    Renderer: crate::core::text::Renderer,
+{
+    text(content).size(crate::core::text::typography::Preset::H2)
+}
+
+/// Creates a new [`Text`] widget with the [`Preset::H3`] size.
+pub fn h3<'a, Theme, Renderer>(
+    content: impl crate::core::text::IntoFragment<'a>,
+) -> Text<'a, Theme, Renderer>
+where
+    Theme: crate::core::widget::text::Catalog + crate::core::theme::Base + 'a,
+    Renderer: crate::core::text::Renderer,
+{
+    text(content).size(crate::core::text::typography::Preset::H3)
+}
+
+/// Creates a new [`Text`] widget with the [`Preset::Body`] size.
+pub fn body<'a, Theme, Renderer>(
+    content: impl crate::core::text::IntoFragment<'a>,
+) -> Text<'a, Theme, Renderer>
+where
+    Theme: crate::core::widget::text::Catalog + crate::core::theme::Base + 'a,
+    Renderer: crate::core::text::Renderer,
+{
+    text(content).size(crate::core::text::typography::Preset::Body)
+}
+
+/// Creates a new [`Text`] widget with the [`Preset::Label`] size.
+pub fn label<'a, Theme, Renderer>(
+    content: impl crate::core::text::IntoFragment<'a>,
+) -> Text<'a, Theme, Renderer>
+where
+    Theme: crate::core::widget::text::Catalog + crate::core::theme::Base + 'a,
+    Renderer: crate::core::text::Renderer,
+{
+    text(content).size(crate::core::text::typography::Preset::Label)
+}

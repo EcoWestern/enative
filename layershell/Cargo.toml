@@ -1,0 +1,32 @@
+[package]
+name = "enative_layershell"
+description = "Layer shell integration for the eNative GUI engine"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+categories.workspace = true
+keywords.workspace = true
+rust-version.workspace = true
+
+[lints]
+workspace = true
+
+[package.metadata.docs.rs]
+rustdoc-args = ["--cfg", "docsrs"]
+
+[dependencies]
+enative_core.workspace = true
+enative_futures.workspace = true
+enative_graphics.workspace = true
+enative_program.workspace = true
+enative_runtime.workspace = true
+enative_debug.workspace = true
+
+layershellev = "0.7.2"
+futures = { version = "0.3", default-features = false, features = ["std", "async-await"] }
+window_clipboard = "0.4.1"
+log.workspace = true
+thiserror.workspace = true

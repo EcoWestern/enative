@@ -25,6 +25,11 @@ pub fn rounded(radius: impl Into<Radius>) -> Border {
     Border::default().rounded(radius)
 }
 
+/// Creates a new [`Border`] with an organic [`Radius`].
+pub fn organic() -> Border {
+    Border::default().rounded(Radius::ORGANIC)
+}
+
 /// Creates a new [`Border`] with the given [`Color`].
 ///
 /// ```
@@ -87,6 +92,16 @@ pub struct Radius {
     pub bottom_right: f32,
     /// Bottom left radius
     pub bottom_left: f32,
+}
+
+impl Radius {
+    /// An organic radius (32.0).
+    pub const ORGANIC: Self = Self {
+        top_left: 32.0,
+        top_right: 32.0,
+        bottom_right: 32.0,
+        bottom_left: 32.0,
+    };
 }
 
 /// Creates a new [`Radius`] with the same value for each corner.

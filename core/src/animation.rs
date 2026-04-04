@@ -3,6 +3,36 @@ use crate::time::{Duration, Instant};
 
 pub use lilt::{Easing, FloatRepresentable as Float, Interpolable};
 
+/// The default easing of the [MateFluency] theme.
+///
+/// Uses `EaseOutExpo` to create a "fast-start, slow-settle" effect
+/// characteristic of high-end naturalistic interfaces (e.g. Apple).
+pub const MATE_EASE: Easing = Easing::EaseOutExpo;
+
+/// Standard durations for [MateFluency] interactions.
+pub mod duration {
+    use crate::time::Duration;
+    use crate::theme::Intensity;
+
+    /// Returns the standard interaction duration for the given intensity.
+    pub fn standard(intensity: Intensity) -> Duration {
+        match intensity {
+            Intensity::Light => Duration::from_millis(200),
+            Intensity::Casual => Duration::from_millis(250),
+            Intensity::Deep => Duration::from_millis(350),
+        }
+    }
+
+    /// Returns a quick, snappy duration for the given intensity.
+    pub fn quick(intensity: Intensity) -> Duration {
+        match intensity {
+            Intensity::Light => Duration::from_millis(100),
+            Intensity::Casual => Duration::from_millis(150),
+            Intensity::Deep => Duration::from_millis(200),
+        }
+    }
+}
+
 /// The animation of some particular state.
 ///
 /// It tracks state changes and allows projecting interpolated values
@@ -23,8 +53,8 @@ where
     /// Creates a new [`Animation`] with the given initial state.
     pub fn new(state: T) -> Self {
         Self {
-            raw: lilt::Animated::new(state),
-            duration: Duration::from_millis(100),
+            raw: lilt::Animated::new(state).easing(MATE_EASE),
+            duration: Duration::from_millis(250),
         }
     }
 
